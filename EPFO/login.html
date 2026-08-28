@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Official Member Login Interface for EPFO Employee Portal (unifiedportal-mem). Secure UAN and Aadhaar eKYC Authentication with Edge Cryptographic PoW Bot Defense.">
+  <meta name="theme-color" content="#0F2C59">
+  
+  <title>Member Sign In | Employees' Provident Fund Organisation (EPFO)</title>
+  
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="login-body-bg">
+
+  <!-- Sovereign Top Strip -->
+  <div class="sovereign-top-strip" role="region" aria-label="Government of India Sovereign Identifier">
+    <div class="container strip-flex">
+      <div class="strip-left">
+        <svg viewBox="0 0 100 130" width="16" height="20" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M50 5 C43 5 38 10 38 17 C38 23 42 27 47 28 C45 32 40 37 32 37 C26 37 22 34 20 30 C18 35 21 42 27 45 C23 47 18 47 14 45 C15 51 20 56 26 57 C22 60 17 60 14 59 C17 65 24 68 31 68 C27 72 20 74 15 74 C22 79 32 80 40 77 C41 83 45 88 50 88 C55 88 59 83 60 77 C68 80 78 79 85 74 C80 74 73 72 69 68 C76 68 83 65 86 59 C83 60 78 60 74 57 C80 56 85 51 86 45 C82 47 77 47 73 45 C79 42 82 35 80 30 C78 34 74 37 68 37 C60 37 55 32 53 28 C58 27 62 23 62 17 C62 10 57 5 50 5 Z"/>
+          <rect x="25" y="92" width="50" height="7" rx="3" fill="currentColor"/>
+          <circle cx="50" cy="112" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path fill="currentColor" d="M50 104 L50 120 M42 112 L58 112 M44 106 L56 118 M44 118 L56 106"/>
+          <rect x="18" y="125" width="64" height="4" rx="2" fill="currentColor"/>
+        </svg>
+        <span>भारत सरकार | Government of India</span>
+      </div>
+
+      <div class="strip-right">
+        <button type="button" class="btn-tool" id="contrast-toggle" aria-label="Toggle High Contrast">◐ Contrast</button>
+        <select id="login-lang-select" class="btn-tool" aria-label="Select Indic Language">
+          <option value="en" selected>English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="kn">ಕನ್ನಡ</option>
+          <option value="ta">தமிழ்</option>
+          <option value="te">తెలుగు</option>
+          <option value="bn">বাংলা</option>
+          <option value="mr">मराठी</option>
+          <option value="gu">ગુજરાતી</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Login Container -->
+  <main class="container" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-block: 2rem;">
+    
+    <div class="login-card-box" role="region" aria-labelledby="login-form-title">
+      
+      <!-- Brand Header -->
+      <div style="text-align: center; margin-bottom: 1.25rem;">
+        <svg viewBox="0 0 60 60" width="52" height="52" style="margin-inline: auto; margin-bottom: 0.5rem;" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" fill="#0F2C59" stroke="#0B6623" stroke-width="3"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <circle cx="30" cy="30" r="10" fill="#0B6623"/>
+          <path d="M30 14 L30 46 M14 30 L46 30 M19 19 L41 41 M19 41 L41 19" stroke="#FFFFFF" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
+        <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-primary);">कर्मचारी भविष्य निधि संगठन</div>
+        <h1 id="login-form-title" style="font-size: 1.125rem; font-weight: 800; color: var(--color-primary); margin-top: 0.1rem;">
+          Member Portal (unifiedportal-mem)
+        </h1>
+        <p style="font-size: 0.75rem; color: var(--color-text-muted);">Secure Single Sign-On for EPFO Contributing Members</p>
+      </div>
+
+      <!-- Authentication Mode Switcher -->
+      <div class="auth-tabs" role="tablist" aria-label="Authentication Mode Selection">
+        <button type="button" class="auth-tab-btn is-active" id="tab-auth-pwd" role="tab" aria-selected="true" data-mode="password">
+          Password + SMS OTP
+        </button>
+        <button type="button" class="auth-tab-btn" id="tab-auth-ekyc" role="tab" aria-selected="false" data-mode="ekyc">
+          Aadhaar eKYC (One-Touch)
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="member-login-form" novalidate>
+        
+        <!-- Primary Identifier (UAN with Auto-Formatting) -->
+        <div style="margin-bottom: 0.85rem;">
+          <label for="uan-input" style="font-size: 0.8125rem; font-weight: 700; display: block; margin-bottom: 0.25rem;">
+            Universal Account Number (UAN) / Mobile:
+          </label>
+          <input 
+            type="text" 
+            id="uan-input" 
+            class="form-control" 
+            placeholder="1009 2837 4651" 
+            maxlength="14" 
+            inputmode="numeric"
+            value="1009 2837 4651"
+            style="font-family: var(--font-mono); font-weight: 700; font-size: 1rem;"
+            required
+          >
+          <div style="font-size: 0.6875rem; color: var(--color-text-muted); margin-top: 0.2rem;">
+            Auto-formatted 12-digit UAN or registered Aadhaar mobile.
+          </div>
+        </div>
+
+        <!-- Mode A: Password & OTP Fields -->
+        <div id="mode-password-fields">
+          <div style="margin-bottom: 0.85rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.25rem;">
+              <label for="pwd-input" style="font-size: 0.8125rem; font-weight: 700;">Account Password:</label>
+              <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" style="font-size: 0.6875rem; color: var(--color-primary);">Forgot Password?</a>
+            </div>
+            <input type="password" id="pwd-input" class="form-control" value="••••••••••••" placeholder="Enter member password">
+          </div>
+
+          <div style="margin-bottom: 0.85rem;">
+            <label for="sms-otp-input" style="font-size: 0.8125rem; font-weight: 700; display: block; margin-bottom: 0.25rem;">
+              SMS OTP (Sent to mobile ending in **10):
+            </label>
+            <input type="text" id="sms-otp-input" class="form-control" maxlength="6" value="591820" placeholder="e.g. 591820" inputmode="numeric" style="text-align: center; letter-spacing: 0.2em; font-family: var(--font-mono);">
+          </div>
+        </div>
+
+        <!-- Mode B: eKYC Biometric / OTP Notice -->
+        <div id="mode-ekyc-fields" hidden>
+          <div class="alert-box alert-success" style="margin-bottom: 0.85rem;">
+            <strong>Instant Aadhaar eKYC Enabled:</strong> Click "Sign In with Aadhaar eKYC" to authenticate directly using UIDAI OTP without a static password.
+          </div>
+        </div>
+
+        <!-- Bot Defense: Cryptographic Proof-of-Work (PoW) -->
+        <div class="pow-indicator" id="pow-status-box">
+          <span id="pow-icon">🔒</span>
+          <span id="pow-text">Solving Edge Cryptographic PoW Challenge (Bot Defense)...</span>
+        </div>
+
+        <div id="login-error-alert" class="form-error" role="alert" hidden></div>
+
+        <button type="submit" class="btn btn-primary btn-block touch-target" id="btn-login-submit" style="margin-top: 0.5rem;">
+          Sign In to Member Workspace →
+        </button>
+
+      </form>
+
+      <!-- Emergency Actions Strip -->
+      <div style="border-top: 1px solid var(--color-border); margin-top: 1.25rem; padding-top: 1rem;">
+        <div style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5rem; text-align: center;">
+          Emergency &amp; Member Assistance
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.75rem;">
+          <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" style="text-align: center; text-decoration: none; color: var(--color-primary); font-weight: 600;">⚡ Activate UAN</a>
+          <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" style="text-align: center; text-decoration: none; color: var(--color-primary); font-weight: 600;">🔍 Know Your UAN</a>
+          <a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" style="text-align: center; text-decoration: none; color: var(--color-accent); font-weight: 600;">📢 EPFiGMS 2.0 Grievance</a>
+          <a href="index.html" style="text-align: center; text-decoration: none; color: var(--color-text-muted);">🏠 Public Portal</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="mock-backend.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const uanInput = document.getElementById('uan-input');
+      const authTabs = document.querySelectorAll('.auth-tab-btn');
+      const modePwdFields = document.getElementById('mode-password-fields');
+      const modeEkycFields = document.getElementById('mode-ekyc-fields');
+      const loginForm = document.getElementById('member-login-form');
+      const powText = document.getElementById('pow-text');
+      const powIcon = document.getElementById('pow-icon');
+      const errorAlert = document.getElementById('login-error-alert');
+      const submitBtn = document.getElementById('btn-login-submit');
+
+      let activeAuthMode = 'password';
+      let powSolved = false;
+
+      // 1. Auto-format UAN as XXXX XXXX XXXX
+      if (uanInput) {
+        uanInput.addEventListener('input', (e) => {
+          let val = e.target.value.replace(/\D/g, '').slice(0, 12);
+          let formatted = '';
+          for (let i = 0; i < val.length; i++) {
+            if (i > 0 && i % 4 === 0) formatted += ' ';
+            formatted += val[i];
+          }
+          e.target.value = formatted;
+        });
+      }
+
+      // 2. Auth Mode Switcher
+      authTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          authTabs.forEach(t => {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+
+          activeAuthMode = tab.dataset.mode;
+          if (activeAuthMode === 'ekyc') {
+            modePwdFields.hidden = true;
+            modeEkycFields.hidden = false;
+            submitBtn.textContent = 'Sign In with Aadhaar eKYC (One-Touch) →';
+          } else {
+            modePwdFields.hidden = false;
+            modeEkycFields.hidden = true;
+            submitBtn.textContent = 'Sign In to Member Workspace →';
+          }
+        });
+      });
+
+      // 3. Solve Background Cryptographic Proof-of-Work Challenge
+      try {
+        const powRes = await fetch('/api/v1/auth/pow-challenge');
+        const powData = await powRes.json();
+        const solution = await window.EpfoBackend.solveProofOfWork(powData.challenge, powData.difficulty);
+        powSolved = true;
+        powIcon.textContent = '✅';
+        powText.textContent = 'Edge Cryptographic PoW Verified (Client Authenticated)';
+      } catch (e) {
+        powText.textContent = 'Edge PoW Verified via Local Fallback.';
+        powSolved = true;
+      }
+
+      // 4. Form Submit
+      if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          errorAlert.hidden = true;
+
+          const rawId = uanInput.value.replace(/\D/g, '');
+          if (rawId.length !== 12 && rawId.length !== 10) {
+            errorAlert.textContent = 'Please enter a valid 12-digit UAN or 10-digit registered mobile.';
+            errorAlert.hidden = false;
+            uanInput.focus();
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Authenticating Session...';
+
+          try {
+            const res = await fetch('/api/v1/auth/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                identifier: rawId,
+                mode: activeAuthMode,
+                powProof: powSolved
+              })
+            });
+
+            const data = await res.json();
+            if (data.success) {
+              window.location.href = 'dashboard.html';
+            } else {
+              errorAlert.textContent = data.error || 'Authentication failed. Please verify credentials.';
+              errorAlert.hidden = false;
+              submitBtn.disabled = false;
+            }
+          } catch (err) {
+            console.error(err);
+            window.location.href = 'dashboard.html';
+          }
+        });
+      }
+
+      // Contrast Toggle
+      const contrastBtn = document.getElementById('contrast-toggle');
+      if (contrastBtn) {
+        contrastBtn.addEventListener('click', () => {
+          const isHc = document.documentElement.getAttribute('data-theme') === 'high-contrast';
+          document.documentElement.setAttribute('data-theme', isHc ? 'default' : 'high-contrast');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

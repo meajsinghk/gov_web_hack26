@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="National Cyber Crime Capacity Building Hub: CyTrain Online Courses, Cyber Volunteer Framework, 8 Safety Domains, and Statutory IT Act 2000 & BNS Legal Sections.">
+  <title>Resources &amp; Safety Guidelines | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .safety-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — I4C Knowledge &amp; Training Hub</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C Logo" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="login.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Citizen Login</span>
+        </a>
+        <a href="emergency-report.html" class="btn btn-danger">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Emergency 60s Report</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link is-active" aria-current="page">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" id="main-content" role="main" tabindex="-1" style="flex:1; padding-block:2rem;">
+    
+    <div style="margin-bottom:2rem;">
+      <span class="section-eyebrow">National Capacity Building Hub</span>
+      <h1 style="font-size:1.75rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+        Knowledge Resources &amp; Safety Guidelines
+      </h1>
+      <p style="font-size:0.875rem; color:var(--text-secondary);">
+        Authoritative cyber hygiene training, volunteer framework, CyTrain MOOCs, and statutory provisions under IT Act 2000 &amp; BNS 2023.
+      </p>
+    </div>
+
+    <!-- Section 1: All 8 Cyber Safety Pillars -->
+    <section style="margin-bottom:2.5rem;" aria-labelledby="safety-pillars-heading">
+      <div class="section-header-block">
+        <span class="section-eyebrow">Citizen Defense Guidelines</span>
+        <h2 id="safety-pillars-heading" class="section-title">8 Essential Cyber Safety Guidelines</h2>
+      </div>
+
+      <div class="safety-grid-4">
+        
+        <!-- Safety 1: Banking & UPI -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#FEF2F2; color:#B91C1C;">Financial Protection</span>
+          <h3 class="gateway-title">1. Banking, UPI &amp; QR Codes</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Never enter UPI PIN to <em>receive</em> money. Entering a PIN only deducts money.</li>
+            <li>Do not scan QR codes sent on WhatsApp for marketplace sales.</li>
+            <li>Bank officials never ask for CVV, OTP, or NetBanking passwords over phone calls.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 2: Social Media -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#EFF6FF; color:#1D4ED8;">Identity Protection</span>
+          <h3 class="gateway-title">2. Social Media &amp; Impersonation</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Enable Two-Factor Authentication (2FA) via Authenticator apps on Instagram, Facebook &amp; WhatsApp.</li>
+            <li>Beware of emergency distress messages from cloned friend accounts demanding immediate UPI cash.</li>
+            <li>Never accept video calls from unknown foreign numbers on WhatsApp.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 3: Women & Child Safety -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#FDF2F8; color:#BE185D;">Special Safeguards</span>
+          <h3 class="gateway-title">3. Child &amp; Women Online Safety</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Report non-consensual image morphing immediately on NCRP for emergency 69A IT Act takedowns.</li>
+            <li>Educate children never to share personal webcam feeds or school locations in gaming lobbies.</li>
+            <li>Do not succumb to cyber blackmail threats; preserve screenshots and contact 1930.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 4: Mobile & APK Hygiene -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#FEF3C7; color:#92400E;">Device Integrity</span>
+          <h3 class="gateway-title">4. Mobile Devices &amp; APK Safety</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Never install APK files sent on WhatsApp claiming to be electricity bills, e-Challans, or KYC updates.</li>
+            <li>Never install remote screen-sharing apps (AnyDesk, TeamViewer, RustDesk) on caller instructions.</li>
+            <li>Disable 'Install from Unknown Sources' in your Android security settings.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 5: Job & Investment Fraud -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#DCFCE7; color:#15803D;">Investment Defense</span>
+          <h3 class="gateway-title">5. Job &amp; Investment Scams</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Beware of Telegram part-time job groups offering ₹3,000/day for liking YouTube videos.</li>
+            <li>No SEBI-registered stockbroker guarantees 100% daily returns or uses Telegram VIP channels.</li>
+            <li>Never transfer funds into individual savings accounts for institutional IPO allocations.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 6: Email Phishing -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#E0F2FE; color:#0369A1;">Email Security</span>
+          <h3 class="gateway-title">6. Email Phishing &amp; Ransomware</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Verify sender domain header. Genuine government notices originate from @gov.in or @nic.in.</li>
+            <li>Do not open ZIP/RAR email attachments claiming to be court summons or tax refund notices.</li>
+            <li>Maintain offline encrypted backups of critical organizational databases.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 7: Public Wi-Fi & Devices -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#F1F5F9; color:#475569;">Network Defense</span>
+          <h3 class="gateway-title">7. Public Wi-Fi &amp; USB Charging</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>Never conduct NetBanking or UPI transactions over open airport or railway public Wi-Fi networks.</li>
+            <li>Use USB data-blocker adapters when charging phones at public kiosks (Juice Jacking defense).</li>
+            <li>Always check for HTTPS padlock icon before entering login credentials.</li>
+          </ul>
+        </article>
+
+        <!-- Safety 8: Identity & SIM Swapping -->
+        <article class="gateway-card">
+          <span class="gateway-badge" style="background:#ECFDF5; color:#047857;">Telecom Protection</span>
+          <h3 class="gateway-title">8. SIM Swap &amp; Aadhaar Hygiene</h3>
+          <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.5; padding-left:1.1rem; margin-top:0.5rem;">
+            <li>If your mobile suddenly shows 'No Service' without reason, contact telecom operator immediately.</li>
+            <li>Lock your Aadhaar biometrics on the official UIDAI portal / mAadhaar application.</li>
+            <li>Check active SIMs registered in your name on DoT's official TAFCOP portal.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 2: CyTrain MOOC Portal Integration -->
+    <section style="background:var(--bg-surface); border:1.5px solid var(--border-color); border-radius:var(--radius-md); padding:1.5rem; margin-bottom:2.5rem;" aria-labelledby="cytrain-heading">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1.25rem;">
+        <div style="max-width:38rem;">
+          <span class="section-eyebrow">National Cyber Training Platform</span>
+          <h2 id="cytrain-heading" style="font-size:1.25rem; font-weight:800; color:var(--gov-navy); margin-top:0.2rem; margin-bottom:0.35rem;">
+            CyTrain — Online Cyber Crime Training for Police &amp; Citizens
+          </h2>
+          <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.5;">
+            CyTrain is an official Massive Open Online Course (MOOC) platform developed under the Indian Cyber Crime Coordination Centre (I4C), MHA. Access certified self-paced training modules on cyber forensics, digital evidence collection, and mobile safety.
+          </p>
+        </div>
+        <a href="https://cytrain.ncrb.gov.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary touch-target">
+          Access CyTrain Portal
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 3: Statutory Legal Framework (IT Act 2000 & BNS 2023) -->
+    <section id="legal" style="margin-bottom:2rem;" aria-labelledby="legal-heading">
+      <div class="section-header-block">
+        <span class="section-eyebrow">Statutory Legal Framework</span>
+        <h2 id="legal-heading" class="section-title">Key Provisions: IT Act 2000 &amp; Bharatiya Nyaya Sanhita 2023</h2>
+        <p class="section-subtext">Summary of criminal sections applicable to cyber fraud, hacking, and online harassment.</p>
+      </div>
+
+      <div style="overflow-x:auto; border:1.5px solid var(--border-color); border-radius:var(--radius-md); background:var(--bg-surface);">
+        <table style="width:100%; border-collapse:collapse; font-size:0.8125rem; text-align:left;">
+          <thead>
+            <tr style="background:var(--bg-surface-subtle); border-bottom:2px solid var(--border-color);">
+              <th style="padding:0.75rem 1rem; color:var(--gov-navy);">Section / Act</th>
+              <th style="padding:0.75rem 1rem; color:var(--gov-navy);">Cyber Offense Description</th>
+              <th style="padding:0.75rem 1rem; color:var(--gov-navy);">Prescribed Penalties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--gov-navy);">Section 66D (IT Act)</td>
+              <td style="padding:0.75rem 1rem;">Cheating by personation using computer resource / digital device (UPI / Fake Call Phishing).</td>
+              <td style="padding:0.75rem 1rem; color:var(--gov-crimson); font-weight:600;">Up to 3 years imprisonment + ₹1 Lakh fine</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--gov-navy);">Section 67 &amp; 67A (IT Act)</td>
+              <td style="padding:0.75rem 1rem;">Publishing or transmitting obscene or sexually explicit material in electronic form.</td>
+              <td style="padding:0.75rem 1rem; color:var(--gov-crimson); font-weight:600;">Up to 5 years imprisonment + ₹10 Lakh fine</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--gov-navy);">Section 67B (IT Act / POCSO)</td>
+              <td style="padding:0.75rem 1rem;">Child Sexual Abuse Material (CSAM) creation, possession, or electronic transmission.</td>
+              <td style="padding:0.75rem 1rem; color:var(--gov-crimson); font-weight:600;">Up to 7 years imprisonment + ₹10 Lakh fine</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--gov-navy);">Section 66F (IT Act)</td>
+              <td style="padding:0.75rem 1rem;">Cyber Terrorism / Attacking Critical Information Infrastructure (CII).</td>
+              <td style="padding:0.75rem 1rem; color:var(--gov-crimson); font-weight:600;">Life Imprisonment</td>
+            </tr>
+            <tr>
+              <td style="padding:0.75rem 1rem; font-weight:700; color:var(--gov-navy);">Section 318 (BNS 2023)</td>
+              <td style="padding:0.75rem 1rem;">Cheating and dishonestly inducing delivery of property (Read with Sec 66D IT Act).</td>
+              <td style="padding:0.75rem 1rem; color:var(--gov-crimson); font-weight:600;">Up to 7 years imprisonment + Fine</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+</body>
+</html>

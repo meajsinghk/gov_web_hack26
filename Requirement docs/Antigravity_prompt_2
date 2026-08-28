@@ -1,0 +1,148 @@
+Role: Principal GovTech UI Architect & S3WaaS Systems Engineer
+You are tasked with engineering Version 2 of the revamped Employees' Provident Fund Organisation (EPFO) digital portal. This build must combine India's GIGW 3.0 (Guidelines for Indian Government Websites) and UX4G design tokens with the clean layout ergonomics of the United States Web Design System (USWDS / USCIS) and the modern aesthetic of Sarvam AI.
+
+The goal is to eliminate visual noise, strip away uninformative marketing bloat, introduce an official sovereign trust header, modularize dense content into dedicated subpages, and implement a streamlined left-navigation service explorer.
+
+1. Top Sovereign Trust Banner (USWDS Accordion Pattern)
+Implement an expandable sovereign trust identifier at the top of every page:
+
+Collapsed State:
+
+Left: Ashoka Emblem inline SVG + "भारत सरकार | Government of India" + "An official website of the Government of India".
+
+Toggle button: "Here’s how you know ⌄" (aria-expanded="false", aria-controls="gov-trust-details").
+
+Right: Accessibility toolbar (A-, A, A+, High-Contrast toggle ◐) and an Indic Language selector dropdown (English, हिन्दी, ಕನ್ನಡ, தமிழ், తెలుగు, etc.).
+
+Expanded Accordion State (#gov-trust-details):
+
+Two distinct trust indicators with clean micro-icons:
+
+Official domain identifier: "Official government portals in India end in .gov.in or .nic.in. Before sharing sensitive information, ensure you are on an authorized government server."
+
+Secure communication identifier: "The https:// protocol ensures that your connection is encrypted and all transmitted data is secure."
+
+2. Global Header, Navigation & Login Matrix
+Brand Identity Strip:
+
+Clean EPFO emblem + "Employees' Provident Fund Organisation" / "श्रम एवं रोजगार मंत्रालय, भारत सरकार".
+
+Compact global search bar with instant form suggestions (e.g., "Form 19", "UAN Passbook", "Date of Exit").
+
+Compact Direct Login Dropdown: A single, clean button labeled "Sign In ▾" that opens a modal/dropdown with three direct action links:
+
+👤 Member / Employee Login (UAN)
+
+🏢 Employer / Establishment Portal (ECR)
+
+👴 Pensioner Portal (PPO & Jeevan Pramaan)
+
+Semantic Primary Navigation Bar:
+
+Home
+
+Services ▾ (Online Claims, UAN Services, Passbook, KYC)
+
+Schemes ▾ (EPF Act 1952, EPS 1995, EDLI 1976, ABBRY)
+
+Tools & Calculators ▾ (Retirement Corpus, EPS Pension, EDLI Estimator)
+
+Reports & Data ▾ (Monthly Payroll Data, Audited Reports, Actuarial Studies)
+
+Grievances (EPFiGMS 2.0 & CPGRAMS)
+
+About Us ▾ (Ministry Leadership, Central Board of Trustees, Citizen Charter)
+
+FAQs & Contact
+
+3. Minimalist Hero Section (Radical De-Cluttering)
+Remove the giant paragraphs and marketing stat counters from the hero. Replace with a focused, utility-first intake:
+
+Heading: "Social Security Services & Claim Settlements"
+
+Sub-heading: "Check claim status, access passbooks, or resolve KYC discrepancies with pre-flight verification."
+
+Universal Single-Field Status Checker (Tabbed):
+
+Tab 1: Track Claim
+
+Tab 2: Passbook & Balance
+
+Tab 3: UAN Activation Status
+
+Tab 4: Pension PPO Status
+
+Single input box: "Enter 12-digit UAN or Claim Reference Number" + "Check Status Instantly" button + Voice search trigger (Bhashini compatible).
+
+4. Digital Citizen Pathways (USCIS Split Left-Nav Layout)
+Instead of giant, 40-link cards scattered across the page, implement a USCIS-inspired two-column service explorer:
+
+Left Column (Vertical Sticky Pillar Selector):
+
+👤 For Employees & Members (Active)
+
+👴 For Pensioners (EPS)
+
+🏢 For Employers & HR
+
+📢 Grievance Redressal (EPFiGMS)
+
+Right Column (Contextual Action Canvas):
+
+Displays only the top 4–5 essential actions for the active pillar in clean, minimal cards with precise descriptions (e.g., "File Settlement Claim (Form 19, 10C, 31)", "Member Passbook", "Aadhaar/Bank KYC Seeding").
+
+Includes a prominent secondary link: "Explore all [Category] forms and regulatory guidance →".
+
+5. Modular Subpages (Removing Homepage Bloat)
+Create separate, lightweight semantic HTML pages for secondary administrative data:
+
+tools-calculators.html: Houses the 3 financial calculators (Retirement Corpus Estimator, EPS Monthly Pension Calculator, and EDLI Insurance Coverage Estimator) with clean numeric inputs.
+
+schemes.html: Structured statutory breakdown of the EPF Act 1952, EPS 1995, EDLI Scheme 1976, and PMRPY employment incentives.
+
+reports-payroll.html: Tabulated monthly payroll net additions across age cohorts, audited financial statements, and actuarial evaluation reports.
+
+leadership.html: Profiles of the Union Minister of Labour & Employment, Minister of State, and Central Board of Trustees (CBT) tripartite governance structure.
+
+6. Homepage Utility Widgets
+Interactive Office Locator: A compact dropdown selector ("Select State" -> "Select District") that displays the jurisdiction, email, and address of the nearest EPFO Regional/Sub-Regional Office.
+
+Latest Official Notices & Press Releases: A clean, static, time-stamped 3-item list (NO auto-scrolling marquee). Includes published dates and gazette download links.
+
+7. Curated Inter-Governmental National Footer
+A standardized GIGW 3.0 / S3WaaS footer:
+
+National Resource Directory:
+
+National Portal of India (india.gov.in)
+
+Ministry of Labour & Employment (labour.gov.in)
+
+National Cyber Crime Reporting Portal (cybercrime.gov.in / Toll-Free 1930)
+
+National Emergency Response Support System (112)
+
+DigiLocker Sovereign Document Locker (digilocker.gov.in)
+
+UMANG Mobile Governance Portal (umang.gov.in)
+
+Statutory & Compliance Links: Website Policies, Privacy Policy, Terms & Conditions, Hyperlinking Policy, Accessibility Statement, Help/Sitemap.
+
+Trust & Provenance Badge: "Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 & UX4G Tokens | Last Updated: August 26, 2026".
+
+8. Styling & Performance Constraints (Sarvam AI / USWDS Aesthetic)
+Palette: Sovereign Deep Navy (#0F2C59), Trust Welfare Green (#0B6623), Clean Light Slate Background (#F8FAFC), Card Background (#FFFFFF), Border Color (#E2E8F0), Primary Dark Text (#0F172A).
+
+Typography: Strictly relative rem units based on 16px default (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif).
+
+Animations/3D: Strictly ZERO 3D canvas objects, zero auto-playing video/sliders, zero marquees. All transitions must be subtle (transition: all 0.15s ease-in-out).
+
+Target Deliverables:
+
+index.html (Transformed landing page)
+
+styles.css (Token-based, responsive CSS under 30KB)
+
+app.js (Accordion toggle, pillar switcher, UAN validation, contrast switcher)
+
+tools-calculators.html (Modularized calculator hub)

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="State and Union Territory Cyber Crime Nodal Officers & Grievance Directory — Indian Cyber Crime Coordination Centre (I4C), Ministry of Home Affairs, Government of India.">
+  <title>State Cyber Nodal Officers Directory | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .nodal-table-container {
+      max-height: 34rem;
+      overflow-y: auto;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      background: var(--bg-surface);
+    }
+    .nodal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      text-align: left;
+    }
+    .nodal-table th {
+      background-color: var(--bg-surface-subtle);
+      color: var(--gov-navy);
+      padding: 0.85rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      border-bottom: 2px solid var(--border-color);
+      font-weight: 800;
+    }
+    .nodal-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .nodal-table tr:hover {
+      background-color: #F8FAFC;
+    }
+    [data-theme="high-contrast"] .nodal-table tr:hover {
+      background-color: #1E293B;
+    }
+    .quick-stat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #BFDBFE;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" class="emblem-svg" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — I4C State Police Grid</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">◐ Contrast</button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C Logo" style="height:38px; width:auto; border-left:1px solid rgba(255,255,255,0.2); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+          <span class="brand-sub">State &amp; UT Cyber Nodal Officers Directory</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="login.html" class="btn btn-outline">👤 Citizen Login</a>
+        <a href="emergency-report.html" class="btn btn-danger">⚡ Emergency 60s Report</a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link is-active" aria-current="page">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" id="main-content" role="main" tabindex="-1" style="flex:1; padding-block:2rem;">
+    
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:1rem; margin-bottom:1.5rem;">
+      <div>
+        <span class="section-eyebrow">Law Enforcement Directory</span>
+        <h1 style="font-size:1.75rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          State &amp; Union Territory Cyber Nodal Officers
+        </h1>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">
+          Official contact details of designated Additional Director Generals (ADG), Inspectors General (IGP), and Superintendents of Police (SP) heading State Cyber Crime Divisions across all 36 States &amp; UTs.
+        </p>
+      </div>
+      <div class="quick-stat-badge">
+        <span>🛡️ 36 State &amp; UT Police Divisions Connected 24x7</span>
+      </div>
+    </div>
+
+    <!-- Filter Search Box -->
+    <div class="suspect-tool-card" style="max-width:44rem; margin-bottom:1.5rem; padding:1rem;">
+      <label for="nodal-state-search" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.35rem;">
+        Search by State, Officer Designation, City or Email:
+      </label>
+      <input type="search" id="nodal-state-search" class="form-control" placeholder="Type State name (e.g. Karnataka, Maharashtra, Delhi, Uttar Pradesh, Tamil Nadu)...">
+    </div>
+
+    <!-- Table Container -->
+    <div class="nodal-table-container">
+      <table class="nodal-table" id="state-nodal-table">
+        <thead>
+          <tr>
+            <th style="min-width:9rem;">State / UT</th>
+            <th style="min-width:13rem;">Designated Officer &amp; Rank</th>
+            <th style="min-width:14rem;">Cyber Police Cell / Headquarters</th>
+            <th style="min-width:14rem;">Official Grievance Email</th>
+            <th style="min-width:9rem;">Contact Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Andhra Pradesh</strong></td>
+            <td>Inspector General of Police (Cyber Crime)</td>
+            <td>CID Cyber Crime PS, Mangalagiri, Guntur</td>
+            <td><a href="mailto:cybercrime-cid@ap.gov.in" style="color:var(--gov-navy); font-weight:600;">cybercrime-cid@ap.gov.in</a></td>
+            <td>0863-2340100</td>
+          </tr>
+          <tr>
+            <td><strong>Arunachal Pradesh</strong></td>
+            <td>Superintendent of Police (Crime / Cyber)</td>
+            <td>PHQ, Itanagar</td>
+            <td><a href="mailto:spcrime-arn@nic.in" style="color:var(--gov-navy); font-weight:600;">spcrime-arn@nic.in</a></td>
+            <td>0360-2212260</td>
+          </tr>
+          <tr>
+            <td><strong>Assam</strong></td>
+            <td>Superintendent of Police (CID Cyber Cell)</td>
+            <td>CID Headquarters, Ulubari, Guwahati</td>
+            <td><a href="mailto:cid-assam@nic.in" style="color:var(--gov-navy); font-weight:600;">cid-assam@nic.in</a></td>
+            <td>0361-2462444</td>
+          </tr>
+          <tr>
+            <td><strong>Bihar</strong></td>
+            <td>Additional Director General of Police (Cyber)</td>
+            <td>Cyber Crime Division, Sardar Patel Bhawan, Patna</td>
+            <td><a href="mailto:cybercell-bih@nic.in" style="color:var(--gov-navy); font-weight:600;">cybercell-bih@nic.in</a></td>
+            <td>0612-2233004</td>
+          </tr>
+          <tr>
+            <td><strong>Chhattisgarh</strong></td>
+            <td>Superintendent of Police (State Cyber Cell)</td>
+            <td>State Cyber Police Station, Police HQ, Raipur</td>
+            <td><a href="mailto:statecybercell.cg@gov.in" style="color:var(--gov-navy); font-weight:600;">statecybercell.cg@gov.in</a></td>
+            <td>0771-2511678</td>
+          </tr>
+          <tr>
+            <td><strong>Delhi (NCT)</strong></td>
+            <td>Deputy Commissioner of Police (IFSO / Special Cell)</td>
+            <td>IFSO Special Cell, Sector 16-A, Dwarka, New Delhi</td>
+            <td><a href="mailto:dcp-cybercell-dl@nic.in" style="color:var(--gov-navy); font-weight:600;">dcp-cybercell-dl@nic.in</a></td>
+            <td>011-20892622</td>
+          </tr>
+          <tr>
+            <td><strong>Goa</strong></td>
+            <td>Superintendent of Police (Cyber Crime Cell)</td>
+            <td>Cyber Crime Police Station, Ribandar, Panaji</td>
+            <td><a href="mailto:spcyber@goapolice.gov.in" style="color:var(--gov-navy); font-weight:600;">spcyber@goapolice.gov.in</a></td>
+            <td>0832-2443210</td>
+          </tr>
+          <tr>
+            <td><strong>Gujarat</strong></td>
+            <td>Inspector General of Police (CID Crime)</td>
+            <td>State Cyber Crime Cell, CID Crime, Gandhinagar</td>
+            <td><a href="mailto:cc-cid@gujarat.gov.in" style="color:var(--gov-navy); font-weight:600;">cc-cid@gujarat.gov.in</a></td>
+            <td>079-23254383</td>
+          </tr>
+          <tr>
+            <td><strong>Haryana</strong></td>
+            <td>Superintendent of Police (Cyber Crime)</td>
+            <td>State Cyber Crime PS, Sector 6, Panchkula</td>
+            <td><a href="mailto:cybercrime-hry@nic.in" style="color:var(--gov-navy); font-weight:600;">cybercrime-hry@nic.in</a></td>
+            <td>0172-2587577</td>
+          </tr>
+          <tr>
+            <td><strong>Himachal Pradesh</strong></td>
+            <td>Superintendent of Police (State Cyber Crime PS)</td>
+            <td>CID Complex, Shimla</td>
+            <td><a href="mailto:sp-cyber-hp@nic.in" style="color:var(--gov-navy); font-weight:600;">sp-cyber-hp@nic.in</a></td>
+            <td>0177-2621714</td>
+          </tr>
+          <tr>
+            <td><strong>Jammu &amp; Kashmir</strong></td>
+            <td>Superintendent of Police (Cyber Police Station)</td>
+            <td>Cyber Crime Police Station, Kashmir Zone, Srinagar</td>
+            <td><a href="mailto:cyberpolice-jk@nic.in" style="color:var(--gov-navy); font-weight:600;">cyberpolice-jk@nic.in</a></td>
+            <td>0194-2450570</td>
+          </tr>
+          <tr>
+            <td><strong>Jharkhand</strong></td>
+            <td>Superintendent of Police (Cyber Crime CID)</td>
+            <td>Cyber Crime Police Station, CID HQ, Ranchi</td>
+            <td><a href="mailto:sp-cyber@jhpolice.gov.in" style="color:var(--gov-navy); font-weight:600;">sp-cyber@jhpolice.gov.in</a></td>
+            <td>0651-2490046</td>
+          </tr>
+          <tr>
+            <td><strong>Karnataka</strong></td>
+            <td>ADGP (CID &amp; Cyber Crime)</td>
+            <td>CID Headquarters, Palace Road, Bengaluru</td>
+            <td><a href="mailto:cybercrimeps-cid@karnataka.gov.in" style="color:var(--gov-navy); font-weight:600;">cybercrimeps-cid@karnataka.gov.in</a></td>
+            <td>080-22094496</td>
+          </tr>
+          <tr>
+            <td><strong>Kerala</strong></td>
+            <td>Inspector General of Police (Cyber Operations)</td>
+            <td>Cyber Crime Police Station, Police HQ, Thiruvananthapuram</td>
+            <td><a href="mailto:spcyberops.pol@kerala.gov.in" style="color:var(--gov-navy); font-weight:600;">spcyberops.pol@kerala.gov.in</a></td>
+            <td>0471-2315422</td>
+          </tr>
+          <tr>
+            <td><strong>Madhya Pradesh</strong></td>
+            <td>ADG of Police (Cyber Crime Cell)</td>
+            <td>State Cyber Police HQ, Bhadbhada Road, Bhopal</td>
+            <td><a href="mailto:mpcyberpolice@mp.gov.in" style="color:var(--gov-navy); font-weight:600;">mpcyberpolice@mp.gov.in</a></td>
+            <td>0755-2770248</td>
+          </tr>
+          <tr>
+            <td><strong>Maharashtra</strong></td>
+            <td>Special Inspector General of Police (Maharashtra Cyber)</td>
+            <td>World Trade Centre, Cuffe Parade, Mumbai</td>
+            <td><a href="mailto:ig.cbr-mah@gov.in" style="color:var(--gov-navy); font-weight:600;">ig.cbr-mah@gov.in</a></td>
+            <td>022-22160080</td>
+          </tr>
+          <tr>
+            <td><strong>Manipur</strong></td>
+            <td>Superintendent of Police (Cyber Crime Cell)</td>
+            <td>CID Headquarters, Imphal</td>
+            <td><a href="mailto:sp-cybercrime-mn@gov.in" style="color:var(--gov-navy); font-weight:600;">sp-cybercrime-mn@gov.in</a></td>
+            <td>0385-2450125</td>
+          </tr>
+          <tr>
+            <td><strong>Meghalaya</strong></td>
+            <td>Superintendent of Police (CID)</td>
+            <td>CID Meghalaya Police HQ, Shillong</td>
+            <td><a href="mailto:cid-meg@gov.in" style="color:var(--gov-navy); font-weight:600;">cid-meg@gov.in</a></td>
+            <td>0364-2503204</td>
+          </tr>
+          <tr>
+            <td><strong>Mizoram</strong></td>
+            <td>Superintendent of Police (Cyber Crime Cell)</td>
+            <td>CID Complex, Khatla, Aizawl</td>
+            <td><a href="mailto:spcybercrime-mz@gov.in" style="color:var(--gov-navy); font-weight:600;">spcybercrime-mz@gov.in</a></td>
+            <td>0389-2333062</td>
+          </tr>
+          <tr>
+            <td><strong>Nagaland</strong></td>
+            <td>Superintendent of Police (Crime / Cyber Cell)</td>
+            <td>State Police HQ, Kohima</td>
+            <td><a href="mailto:spcyber-ngl@nic.in" style="color:var(--gov-navy); font-weight:600;">spcyber-ngl@nic.in</a></td>
+            <td>0370-2244120</td>
+          </tr>
+          <tr>
+            <td><strong>Odisha</strong></td>
+            <td>Inspector General of Police (CID Cyber)</td>
+            <td>Cyber Crime Police Station, CID CB, Cuttack</td>
+            <td><a href="mailto:cyberps.odpolice@gov.in" style="color:var(--gov-navy); font-weight:600;">cyberps.odpolice@gov.in</a></td>
+            <td>0671-2305485</td>
+          </tr>
+          <tr>
+            <td><strong>Punjab</strong></td>
+            <td>Inspector General of Police (Cyber Crime)</td>
+            <td>State Cyber Crime Division, Phase 7, Mohali</td>
+            <td><a href="mailto:igp.cyber.police@punjab.gov.in" style="color:var(--gov-navy); font-weight:600;">igp.cyber.police@punjab.gov.in</a></td>
+            <td>0172-2293000</td>
+          </tr>
+          <tr>
+            <td><strong>Rajasthan</strong></td>
+            <td>ADG of Police (Cyber Crime)</td>
+            <td>Cyber Crime Police Station, Police HQ, Lal Kothi, Jaipur</td>
+            <td><a href="mailto:sp.cybercell@rajasthan.gov.in" style="color:var(--gov-navy); font-weight:600;">sp.cybercell@rajasthan.gov.in</a></td>
+            <td>0141-2609055</td>
+          </tr>
+          <tr>
+            <td><strong>Sikkim</strong></td>
+            <td>Superintendent of Police (Cyber Cell CID)</td>
+            <td>Police Headquarters, Gangtok</td>
+            <td><a href="mailto:spcyber-skm@nic.in" style="color:var(--gov-navy); font-weight:600;">spcyber-skm@nic.in</a></td>
+            <td>03592-202087</td>
+          </tr>
+          <tr>
+            <td><strong>Tamil Nadu</strong></td>
+            <td>Additional Director General of Police (Cyber Crime Wing)</td>
+            <td>Cyber Crime Wing HQ, Police Commissionerate, Chennai</td>
+            <td><a href="mailto:adgp-cyber@tn.gov.in" style="color:var(--gov-navy); font-weight:600;">adgp-cyber@tn.gov.in</a></td>
+            <td>044-28447701</td>
+          </tr>
+          <tr>
+            <td><strong>Telangana</strong></td>
+            <td>Director General (Telangana Cyber Security Bureau - TGCSB)</td>
+            <td>TGCSB Command Centre, Lakdikapool, Hyderabad</td>
+            <td><a href="mailto:tgcsb-hyd@telangana.gov.in" style="color:var(--gov-navy); font-weight:600;">tgcsb-hyd@telangana.gov.in</a></td>
+            <td>040-27852435</td>
+          </tr>
+          <tr>
+            <td><strong>Tripura</strong></td>
+            <td>Superintendent of Police (Cyber Crime Cell)</td>
+            <td>Police Headquarters, Fire Brigade Chowmuhani, Agartala</td>
+            <td><a href="mailto:spcyber-trp@nic.in" style="color:var(--gov-navy); font-weight:600;">spcyber-trp@nic.in</a></td>
+            <td>0381-2384100</td>
+          </tr>
+          <tr>
+            <td><strong>Uttar Pradesh</strong></td>
+            <td>ADG of Police (Cyber Crime)</td>
+            <td>Cyber Crime Police Station HQ, Signature Building, Lucknow</td>
+            <td><a href="mailto:sp-cyber.lu@up.gov.in" style="color:var(--gov-navy); font-weight:600;">sp-cyber.lu@up.gov.in</a></td>
+            <td>0522-2390250</td>
+          </tr>
+          <tr>
+            <td><strong>Uttarakhand</strong></td>
+            <td>Superintendent of Police (STF Cyber Crime)</td>
+            <td>Cyber Crime Police Station, Dalanwala, Dehradun</td>
+            <td><a href="mailto:ccps.dehradun@uttarakhandpolice.uk.gov.in" style="color:var(--gov-navy); font-weight:600;">ccps.dehradun@uttarakhandpolice.uk.gov.in</a></td>
+            <td>0135-2655900</td>
+          </tr>
+          <tr>
+            <td><strong>West Bengal</strong></td>
+            <td>Inspector General of Police (Cyber Crime CID)</td>
+            <td>Bhabani Bhawan, Alipore, Kolkata</td>
+            <td><a href="mailto:cidcyber@wb.gov.in" style="color:var(--gov-navy); font-weight:600;">cidcyber@wb.gov.in</a></td>
+            <td>033-24795886</td>
+          </tr>
+          <tr>
+            <td><strong>Andaman &amp; Nicobar Islands</strong></td>
+            <td>Superintendent of Police (CID Cyber Cell)</td>
+            <td>Police HQ, Atlanta Point, Port Blair</td>
+            <td><a href="mailto:spcid.and@nic.in" style="color:var(--gov-navy); font-weight:600;">spcid.and@nic.in</a></td>
+            <td>03192-233307</td>
+          </tr>
+          <tr>
+            <td><strong>Chandigarh (UT)</strong></td>
+            <td>Superintendent of Police (Cyber Crime Investigation Cell)</td>
+            <td>Cyber Cell Police Station, Sector 17, Chandigarh</td>
+            <td><a href="mailto:dsp-cyber-chd@nic.in" style="color:var(--gov-navy); font-weight:600;">dsp-cyber-chd@nic.in</a></td>
+            <td>0172-2749194</td>
+          </tr>
+          <tr>
+            <td><strong>Dadra &amp; Nagar Haveli and Daman &amp; Diu</strong></td>
+            <td>Superintendent of Police (Cyber Crime Cell)</td>
+            <td>Police Headquarters, Daman</td>
+            <td><a href="mailto:sp-dnh@nic.in" style="color:var(--gov-navy); font-weight:600;">sp-dnh@nic.in</a></td>
+            <td>0260-2230033</td>
+          </tr>
+          <tr>
+            <td><strong>Ladakh (UT)</strong></td>
+            <td>Superintendent of Police (Cyber Crime Cell)</td>
+            <td>Police Headquarters, Leh</td>
+            <td><a href="mailto:spcyber-ladakh@gov.in" style="color:var(--gov-navy); font-weight:600;">spcyber-ladakh@gov.in</a></td>
+            <td>01982-252200</td>
+          </tr>
+          <tr>
+            <td><strong>Lakshadweep (UT)</strong></td>
+            <td>Superintendent of Police (Cyber Cell)</td>
+            <td>Police Headquarters, Kavaratti</td>
+            <td><a href="mailto:lak-police@nic.in" style="color:var(--gov-navy); font-weight:600;">lak-police@nic.in</a></td>
+            <td>04896-262258</td>
+          </tr>
+          <tr>
+            <td><strong>Puducherry (UT)</strong></td>
+            <td>Senior Superintendent of Police (Cyber Crime PS)</td>
+            <td>Cyber Crime Police Station, Orleanpet, Puducherry</td>
+            <td><a href="mailto:cybercrime-police.py@gov.in" style="color:var(--gov-navy); font-weight:600;">cybercrime-police.py@gov.in</a></td>
+            <td>0413-2279188</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('nodal-state-search');
+      const rows = document.querySelectorAll('#state-nodal-table tbody tr');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const q = e.target.value.trim().toLowerCase();
+          rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(q) ? '' : 'none';
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

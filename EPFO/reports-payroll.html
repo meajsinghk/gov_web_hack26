@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EPFO Official Reports & Payroll Data Hub: Monthly formal employment additions by age cohort, audited annual accounts, and actuarial evaluation reports.">
+  <title>Reports &amp; Payroll Data Hub | EPFO | Government of India</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Banner -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government Website Verification">
+    <div class="container">
+      <div class="banner-header">
+        <div class="banner-identity">
+          <svg class="emblem-svg" viewBox="0 0 100 130" width="18" height="23" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M50 5 C43 5 38 10 38 17 C38 23 42 27 47 28 C45 32 40 37 32 37 C26 37 22 34 20 30 C18 35 21 42 27 45 C23 47 18 47 14 45 C15 51 20 56 26 57 C22 60 17 60 14 59 C17 65 24 68 31 68 C27 72 20 74 15 74 C22 79 32 80 40 77 C41 83 45 88 50 88 C55 88 59 83 60 77 C68 80 78 79 85 74 C80 74 73 72 69 68 C76 68 83 65 86 59 C83 60 78 60 74 57 C80 56 85 51 86 45 C82 47 77 47 73 45 C79 42 82 35 80 30 C78 34 74 37 68 37 C60 37 55 32 53 28 C58 27 62 23 62 17 C62 10 57 5 50 5 Z"/>
+            <rect x="25" y="92" width="50" height="7" rx="3" fill="currentColor"/>
+            <circle cx="50" cy="112" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <path fill="currentColor" d="M50 104 L50 120 M42 112 L58 112 M44 106 L56 118 M44 118 L56 106"/>
+            <rect x="18" y="125" width="64" height="4" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="banner-text">
+            <strong>भारत सरकार</strong> | Government of India — Official Portal
+          </span>
+          <button type="button" class="banner-toggle-btn" id="trust-banner-toggle" aria-expanded="false" aria-controls="gov-trust-details">
+            <span>Here’s how you know</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+          </button>
+        </div>
+
+        <div class="banner-controls">
+          <div class="font-group" role="group" aria-label="Font Resizing">
+            <button type="button" class="font-btn" id="font-dec">A-</button>
+            <button type="button" class="font-btn is-active" id="font-norm">A</button>
+            <button type="button" class="font-btn" id="font-inc">A+</button>
+          </div>
+          <button type="button" class="tool-btn" id="contrast-toggle">◐ High Contrast</button>
+          <select id="lang-selector" class="lang-select" aria-label="Language">
+            <option value="en" selected>English</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="gov-trust-details" class="trust-details-panel" hidden>
+        <div class="trust-details-grid">
+          <div class="trust-item">
+            <div class="trust-icon">🏛️</div>
+            <div>
+              <div class="trust-heading">Official domain identifier</div>
+              <p class="trust-desc">Official government portals end in <strong>.gov.in</strong> or <strong>.nic.in</strong>.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🔒</div>
+            <div>
+              <div class="trust-heading">Secure communication identifier</div>
+              <p class="trust-desc">The <strong>https://</strong> protocol ensures that your connection is encrypted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <svg viewBox="0 0 60 60" width="42" height="42" focusable="false" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" fill="#0F2C59" stroke="#0B6623" stroke-width="3"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <circle cx="30" cy="30" r="10" fill="#0B6623"/>
+          <path d="M30 14 L30 46 M14 30 L46 30 M19 19 L41 41 M19 41 L41 19" stroke="#FFFFFF" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title-hi">कर्मचारी भविष्य निधि संगठन</span>
+          <span class="brand-title-en">Employees' Provident Fund Organisation</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <div class="signin-dropdown-wrap">
+          <button type="button" class="signin-btn" id="signin-menu-btn" aria-haspopup="true" aria-expanded="false">
+            <span>Sign In ▾</span>
+          </button>
+          <div class="signin-menu" id="signin-dropdown" hidden>
+            <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="signin-item">👤 Member Login ↗</a>
+            <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer" class="signin-item">🏢 Employer Portal ↗</a>
+            <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/paymentEnquiry.jsp" target="_blank" rel="noopener noreferrer" class="signin-item">👴 Pensioner Portal ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#services-explorer" class="nav-link">Services</a></li>
+          <li><a href="schemes.html" class="nav-link">Schemes</a></li>
+          <li><a href="tools-calculators.html" class="nav-link">Tools &amp; Calculators</a></li>
+          <li><a href="reports-payroll.html" class="nav-link is-active" aria-current="page">Reports &amp; Data</a></li>
+          <li><a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" class="nav-link">Grievances ↗</a></li>
+          <li><a href="leadership.html" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    
+    <div class="subpage-hero">
+      <div class="container">
+        <h1 class="subpage-title">EPFO Reports &amp; Payroll Metrics Data Hub</h1>
+        <p class="subpage-lead">Official monthly employment statistics, age cohort payroll additions, audited financial balance sheets, and actuarial evaluation publications.</p>
+      </div>
+    </div>
+
+    <div class="container subpage-body">
+      
+      <!-- Section 1: Monthly Payroll Net Additions -->
+      <section style="margin-bottom: 2.5rem;">
+        <h2 class="subpage-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Monthly Net Payroll Additions by Age Cohort (FY 2025–26)</h2>
+        <p class="subpage-lead" style="margin-bottom: 1rem;">Tracking net formal job creations through Universal Account Number (UAN) monthly remittances.</p>
+
+        <div class="table-responsive">
+          <table class="data-table" aria-label="Monthly Payroll Additions by Age Cohort">
+            <thead>
+              <tr>
+                <th scope="col">Month / Year</th>
+                <th scope="col">Age: 18–21 Yrs</th>
+                <th scope="col">Age: 22–25 Yrs</th>
+                <th scope="col">Age: 26–28 Yrs</th>
+                <th scope="col">Age: 29–35 Yrs</th>
+                <th scope="col">Age: &gt;35 Yrs</th>
+                <th scope="col">Total Net Additions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>July 2026</strong></td>
+                <td>3,42,890</td>
+                <td>4,98,120</td>
+                <td>2,84,650</td>
+                <td>3,91,400</td>
+                <td>4,78,940</td>
+                <td><strong>19,96,000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>June 2026</strong></td>
+                <td>3,29,150</td>
+                <td>4,84,300</td>
+                <td>2,76,200</td>
+                <td>3,82,100</td>
+                <td>4,56,250</td>
+                <td><strong>19,28,000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>May 2026</strong></td>
+                <td>3,18,400</td>
+                <td>4,71,900</td>
+                <td>2,69,800</td>
+                <td>3,74,500</td>
+                <td>4,42,400</td>
+                <td><strong>18,77,000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>April 2026</strong></td>
+                <td>3,05,200</td>
+                <td>4,58,600</td>
+                <td>2,61,300</td>
+                <td>3,65,900</td>
+                <td>4,31,000</td>
+                <td><strong>18,22,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 2: Statutory Audited Reports & Actuarial Evaluations -->
+      <section>
+        <h2 class="subpage-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Audited Accounts &amp; Transparency Publications</h2>
+        <p class="subpage-lead" style="margin-bottom: 1rem;">Parliamentary reports, Comptroller &amp; Auditor General (CAG) certified financial statements, and study papers.</p>
+
+        <div class="widgets-grid" style="grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.25rem;">
+          
+          <div class="widget-card">
+            <span class="action-card-badge" style="align-self: flex-start; margin-bottom: 0.4rem;">Financial Statements</span>
+            <h3 class="widget-title" style="font-size: 0.9375rem;">EPFO Annual Accounts &amp; Balance Sheets</h3>
+            <p class="widget-desc">Audited balance sheets of EPF Scheme 1952, Pension Fund, and EDLI Insurance Fund.</p>
+            <a href="https://www.epfo.gov.in/annual-accounts/" target="_blank" rel="noopener noreferrer" class="canvas-explore-link">Download Annual Accounts (PDF) ↗</a>
+          </div>
+
+          <div class="widget-card">
+            <span class="action-card-badge" style="align-self: flex-start; margin-bottom: 0.4rem; background-color: #E0F2FE; color: #0369A1;">CAG Audit</span>
+            <h3 class="widget-title" style="font-size: 0.9375rem;">Annual Administrative Reports</h3>
+            <p class="widget-desc">Consolidated operational metrics, claim disposal turnaround time, and investment yields.</p>
+            <a href="https://www.epfo.gov.in/annual-reports/" target="_blank" rel="noopener noreferrer" class="canvas-explore-link">Download Annual Report ↗</a>
+          </div>
+
+          <div class="widget-card">
+            <span class="action-card-badge" style="align-self: flex-start; margin-bottom: 0.4rem; background-color: #DCFCE7; color: #15803D;">Actuarial</span>
+            <h3 class="widget-title" style="font-size: 0.9375rem;">EPS Actuarial Valuation Reports</h3>
+            <p class="widget-desc">Actuarial health assessments and demographic projections of the Employees' Pension Fund.</p>
+            <a href="https://www.epfo.gov.in/study-reports/" target="_blank" rel="noopener noreferrer" class="canvas-explore-link">View Actuarial Studies ↗</a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">National Directory</div>
+          <ul class="footer-links">
+            <li><a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">National Portal of India ↗</a></li>
+            <li><a href="https://labour.gov.in/" target="_blank" rel="noopener noreferrer">Ministry of Labour &amp; Employment ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Statutory Subpages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">EPFO Landing Portal</a></li>
+            <li><a href="tools-calculators.html">Financial Calculators</a></li>
+            <li><a href="schemes.html">Statutory Schemes</a></li>
+            <li><a href="leadership.html">Leadership &amp; Governance</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Compliance</div>
+          <ul class="footer-links">
+            <li><a href="https://www.epfo.gov.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a href="https://www.epfo.gov.in/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Toll-Free 24x7</div>
+          <div style="font-size: 1rem; font-weight: 800; color: #38BDF8; font-family: var(--font-mono);">14470 / 1800 118 005</div>
+        </div>
+      </div>
+      <div class="footer-provenance-bar">
+        <div>Designed on NIC S3WaaS Framework | GIGW 3.0 Compliant</div>
+        <div>Last Updated: August 26, 2026</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

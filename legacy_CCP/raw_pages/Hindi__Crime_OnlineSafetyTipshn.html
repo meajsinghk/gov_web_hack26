@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><meta name="format-detection" content="telephone=no" /><meta name="keywords" content="ministry, department" /><meta name="description" content="Ministry/Department" /><meta name="author" content="National Informatics Center" /><title>
+	राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल
+</title><link rel="stylesheet" href="../css/bootstrap.min.css" /><link rel="stylesheet" href="../css/fractionslider.css" /><link rel="stylesheet" href="../css/style-fraction.css" /><link rel="stylesheet" type="text/css" href="../css/switcher.css" media="screen" />
+
+    <!-- CSS FILES -->
+    <link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.png" /><link rel="icon" href="../assets/images/favicon/favicon.png" /><link href="../assets/css/all.min.css" rel="stylesheet" media="all" /><link href="../assets/css/base.css" rel="stylesheet" media="all" /><link href="../assets/css/base-responsive.css" rel="stylesheet" media="all" /><link href="../assets/css/grid.css" rel="stylesheet" media="all" /><link href="../assets/css/font.css" rel="stylesheet" media="all" /><link href="../assets/css/font-awesome.min.css" rel="stylesheet" media="all" /><link href="../assets/css/flexslider.css" rel="stylesheet" media="all" /><link href="../assets/css/megamenu.css" rel="stylesheet" media="all" /><link href="../assets/css/print.css" rel="stylesheet" media="print" />
+    <!-- Theme styles for this template -->
+    <link href="../assets/css/swiper-bundle.min.css" rel="stylesheet" media="all" /><link href="../assets/css/megamenu.css" rel="stylesheet" media="all" /><link href="../theme/css/site.css" rel="stylesheet" media="all" /><link href="../theme/css/site-responsive.css" rel="stylesheet" media="all" /><link href="../theme/css/ma5gallery.css" rel="stylesheet" type="text/css" /><link href="../theme/css/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 0rem;
+            padding-left: 0rem;
+        }
+
+        .navbar {
+            height: 150px;
+            /*padding: 0 15px;*/
+            position: fixed;
+            z-index: 1;
+            padding: 0px;
+            top: 0;
+            width: 100%;
+            border-radius: 0px;
+            display: unset;
+        }
+        /*.main {
+            margin-top: 143px;*/
+        /* Used in this example to enable scrolling */
+        /*}*/
+
+        a {
+            color: #428bca;
+            text-decoration: none;
+        }
+
+        .imgfix {
+            height: 63px;
+        }
+
+        .dividerHeading h4 span {
+            background: white;
+            position: relative;
+            line-height: 7px;
+            top: 4px;
+            display: inline-block;
+        }
+
+        .dividerHeading h4 span {
+            background: white;
+            position: relative;
+            line-height: 7px;
+            top: 4px;
+            display: inline-block;
+        }
+
+        .dividerHeading h4, .widget_title h4 {
+            font-size: 18px;
+            position: relative;
+            line-height: 0;
+            border-bottom: 1px solid #E74C3C;
+        }
+
+        .dividerHeading h4, .widget_title h4 {
+            font-size: 18px;
+            position: relative;
+            line-height: 0;
+            border-bottom: 1px solid #E74C3C;
+        }
+
+        .dividerHeading, .widget_title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .dividerHeading, .widget_title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+            .dividerHeading h4 span:before, .widget_title h4 span:before {
+                margin-right: 10px;
+            }
+
+            .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+                color: #E74C3C;
+                font-size: 10px;
+                content: "\f10c";
+                font-family: fontawesome;
+                display: inline-block;
+            }
+
+            .dividerHeading h4 span:before, .widget_title h4 span:before {
+                margin-right: 10px;
+            }
+
+            .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+                color: #E74C3C;
+                font-size: 10px;
+                content: "\f10c";
+                font-family: fontawesome;
+                display: inline-block;
+            }
+
+        :before, :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .dividerHeading h4 span:after, .widget_title h4 span:after {
+            margin-left: 10px;
+        }
+
+        .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+            color: #E74C3C;
+            font-size: 10px;
+            content: "\f10c";
+            font-family: fontawesome;
+            display: inline-block;
+        }
+
+        .dividerHeading h4 span:after, .widget_title h4 span:after {
+            margin-left: 10px;
+        }
+
+        .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+            color: #E74C3C;
+            font-size: 10px;
+            content: "\f10c";
+            font-family: fontawesome;
+            display: inline-block;
+        }
+
+        :before, :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            padding: 15px;
+            /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYV2NkIAK8ffv2PyMR6hhGFeINJXDwgAhiwhIAIyslx2i5iywAAAAASUVORK5CYII=) repeat #fff; */
+            -webkit-box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            -moz-box-shadow: 0 2px 5px hsla(0,0%,0%,.4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0,0%,0%,.5), inset 0 0 50px hsla(0,0%,0%,.5);
+            box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            border: 1px solid #eee;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .wrap {
+            padding: 15px;
+            /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYV2NkIAK8ffv2PyMR6hhGFeINJXDwgAhiwhIAIyslx2i5iywAAAAASUVORK5CYII=) repeat #fff; */
+            -webkit-box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            -moz-box-shadow: 0 2px 5px hsla(0,0%,0%,.4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0,0%,0%,.5), inset 0 0 50px hsla(0,0%,0%,.5);
+            box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            border: 1px solid #eee;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        /* By Neelam for Menu*/
+
+
+        .dropdown-content {
+            display: none !important;
+            overflow: hidden;
+            position: absolute;
+            background: #002654;
+            color: #fff !important;
+            left: 275px;
+            top: -15px;
+            width: 100%;
+            z-index: 1;
+            padding: 10px !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block !important;
+        }
+
+        .dropdown-content li a {
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .dropdown {
+            display: block;
+        }
+
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 0rem;
+            padding-left: 0rem;
+        }
+
+        .submenutop {
+            display: none !important;
+            overflow: hidden;
+            position: absolute;
+            background: #002654;
+            color: #fff !important;
+            left: 275px;
+            top: -9px;
+            width: 100%;
+            z-index: 1;
+            padding: 10px !important;
+        }
+
+        .dropdown:hover .submenutop {
+            display: block !important;
+        }
+
+        footer .testimonial-item {
+            height: 84px;
+        }
+
+        .swiper-wrapper {
+            height: auto;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $(this).bind("contextmenu", function (e) {
+                e.preventDefault();
+            });
+            $(document).keydown(function (e) {
+                return (e.which || e.keyCode) != 116;
+            });
+        });
+    </script>
+    
+    
+
+    
+         <style>
+
+.trackBx {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 2rem 1rem 0px;
+}
+h2.title{color: #673AB7;}
+
+    </style>
+
+</head>
+<body>
+    <form method="post" action="./Crime_OnlineSafetyTipshn.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="VhBr/mm3oGf2wD8OK4zp6jEX3tUepQiedZrdEQ/x4/vJKGJVnkYExK5XD+h5CgRFh93Gu5An9M+YvTmqQp2ZYkVMR9s=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="259B3092" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="BOuA17ofIXiyGxVWEpWmYNp73cOIYsOVjhVmlA1stNdLKyhJJLs9+IhFqC7HmNjyZcXfwkkFM757ARTFWOQUjEYhEIVRX0aOP/Vf8Q9aN1PvCY/4QYZXUrOoB3QBo/c9WSlAqnr1SE9CKaAHgHaAP47EB5QSaMNl/Y7LQlbO0kwt0NrdzuVh/8eg/BmAxDSklVKT/4PTcqtELYwcRDHBLRIfBpI=" />
+</div>
+        <div id="fb-root"></div>
+        <header id="header" class="clearfix">
+            <section class=" navbar">
+                <div class="region region-header-top">
+                    <div id="block-cmf-content-header-region-block" class="block block-cmf-content first last odd">
+
+                        <div class="wrapper common-wrapper">
+                            <div class="container four_content top-header">
+                                <div class="common-left clearfix">
+                                    <ul>
+                                        <li class="gov-india"><span class="responsive_go_hindi" lang="hi"><a target="_blank" href="https://india.gov.in/hi" title="भारत सरकार ( बाहरी वेबसाइट जो एक नई विंडो में खुलती है)" role="link">भारत सरकार</a></span><span class="li_eng responsive_go_eng"><a target="_blank" href="https://india.gov.in/" title="Government of india,External Link that opens in a new window" role="link">Government of india</a></span></li>
+                                        <li class="ministry">
+                                            <a href="https://mha.gov.in/hi" target="_blank" alt="Ministry Name" title="गृह मंत्रालय"><span class="responsive_minis_hi" lang="hi">गृह मंत्रालय</span></a>
+                                            <a href="https://mha.gov.in" target="_blank" alt="Ministry Name" title="Ministry of Home Affairs"><span class="li_eng responsive_minis_eng">Ministry of Home Affairs</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="common-right clearfix">
+                                    <ul id="header-nav">
+
+                                        <li class="hindi cmf_lan d-hide">
+                                            <a href="#" class="de-lag" title="Language" role="link"><b>Language</b></a>
+                                            <ul>
+                                                <li><a href="../Hindi/Defaulthn.aspx" class="cmf_lan" title="हिन्दी" role="link"><b>हिन्दी</b></a> </li>
+                                                <li><a href="../Default.aspx" class="cmf_lan" title="English" role="link"><b>English</b></a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ico-accessibility cf" style="display: none">
+                                            <a href="javascript:void(0);" id="toggleAccessibility" title="Accessibility Dropdown" role="link">
+                                                <img class="top" src="../assets/images/ico-accessibility.png" alt="Accessibility Dropdown" />
+                                            </a>
+                                            <ul>
+                                                <li><a href="javascript:void(0);" class="high-contrast dark" title="High Contrast" role="link">A</a> </li>
+                                                <li><a href="javascript:void(0);" class="high-contrast light" title="Normal Contrast" style="display: none;" role="link">A</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ico-social cf">
+                                            <a href="javascript:void(0);" id="toggleSocial" title="Social Medias" style="background: #fff;">
+                                                <img class="top" src="../assets/images/icons/colg-icon.png" alt="Social Medias" /></a>
+                                            <ul>
+                                                <li><a href="https://www.twitter.com/CyberDost" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/twitter.png" style="width: 28px;" /></a></li>
+                                                <li><a href=" https://www.facebook.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/facebook.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://www.youtube.com/c/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/youtube.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://www.instagram.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/instagram.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://t.me/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/telegram.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://in.linkedin.com/company/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/linkedin.png" style="width: 28px;" /></a></li>
+                                             
+                                                <li><a href="https://sharechat.com/profile/cyberdost?d=n" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/sharechat.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/public.png" style="width: 24px;" /></a></li>
+                                                <li><a href="https://whatsapp.com/channel/0029Va3VAOY8fewrOtXqMw1V" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/whatsapp.png" style="width: 24px;" /></a></li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="scroll" style="display: none;"><span></span></p>
+                </div>
+
+                <!--Top-Header Section end-->
+                <section class="wrapper header-wrapper">
+                    <div class="container common-container four_content header-container">
+                        <h1 class="logo">
+                            <img class="national_emblem" src="../assets/images/emblem-dark.png" alt="national emblem" />
+                            <img src="../../images/i4cpng.png" alt="I4C" class="i4cImg" />
+                            <span class="department-title">
+                                <em><a class="header__logo" id="logo" style="text-decoration: none; cursor: text;"><span>राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+                                    <span>National Cyber Crime Reporting Portal</span>
+                                </a>
+                                </em>
+                            </span>
+                        </h1>
+                        <div class="header-right clearfix">
+                            <div class="right-content clearfix">
+                                <div class="float-element">
+                                    <img src="../images/AKAM_logo.jpg" alt="amritmahotsav.nic.in" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--/.header-wrapper-->
+                <!-- LOGO bar -->
+            </section>
+            <div class="main">
+
+
+                <section class="wrapper megamenu-wraper">
+                    <h2 style="display: none;">Megamenu</h2>
+                    <div class=" four_content header-nav">
+                        <p class="showhide" id="showhide"><em></em><em></em><em></em></p>
+                        <nav class="main-menu clearfix main-menu1" id="main_menu">
+                            <ul class="nav-menu">
+                                <li><a href="Defaulthn.aspx" class="home"><span>होम</span><i class="fa fa-home"></i></a> </li>
+
+                                <li><a href="#">शिकायत दर्ज करना</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+                                            <li class="dropdown"><a href="#" style="font-weight: bold; font-size: 14px;">महिला / बाल संबंधित अपराध रिपोर्ट करें     <span class="indicator">+</span></a>
+
+                                                <ul class="submenutop">
+                                                    <li>
+                                                        <a id="btnra" href="javascript:__doPostBack(&#39;ctl00$btnra&#39;,&#39;&#39;)" style="font-size: 14px;">गुमनाम रूप से रिपोर्ट करें</a>
+
+                                                    </li>
+                                                    <li>
+                                                        <a id="btnrt" href="javascript:__doPostBack(&#39;ctl00$btnrt&#39;,&#39;&#39;)" style="font-size: 14px;">रिपोर्ट एवं ट्रैक</a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </li>
+
+                                            <li>
+                                                <a id="LinkButton1" href="javascript:__doPostBack(&#39;ctl00$LinkButton1&#39;,&#39;&#39;)" style="font-size: 14px;">वित्तीय धोखाधड़ी</a>
+                                            </li>
+                                            <li>
+                                                <a id="btnothrcrm" href="javascript:__doPostBack(&#39;ctl00$btnothrcrm&#39;,&#39;&#39;)" style="font-size: 14px;">अन्य साइबर अपराध रिपोर्ट करें</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a id="lnkchkstatus" href="javascript:__doPostBack(&#39;ctl00$lnkchkstatus&#39;,&#39;&#39;)" style="">अपनी शिकायत को ट्रैक करें</a>
+                                </li>
+
+                                <li><a href="" style="">संदिग्ध डेटा</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+
+                                            <li>
+                                                <a href="../Webform/suspect_search_repository.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध खोज <span>(मोबाइल, ईमेल, आदि)</span></a>
+
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/suspect_search_websites.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध की तलाश  <span>(वेबसाइट/ऐप)</span></a>
+
+                                            </li>
+
+                                            <li>
+                                                <a href="../Webform/cyber_suspect.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध की रिपोर्ट करें</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a id="btncybercrimevolunteers" href="javascript:__doPostBack(&#39;ctl00$btncybercrimevolunteers&#39;,&#39;&#39;)">साइबर स्वयंसेवक</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+                                            <li>
+                                                <a href="../Webform/cyber_volunteers_concept.aspx">साइबर स्वयंसेवी अवधारणा</a>
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/cyber_volunteers_TnC.aspx">नियम एवं शर्तें</a>
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/CyberVolunteerinstruction.aspx">स्वयंसेवक के रूप में पंजीकरण करें</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="../Webform/about_unlawful_content.aspx">गैरकानूनी सामग्री क्या है</a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href="../Webform/crmcondivol.aspx?vol=1">लॉग इन करें</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+
+                                <li><a href="#">संसाधन</a>
+                                    <div class="sub-nav col-1 nopading">
+                                        <ul class="sub-nav-group ">
+                                            <li><a href="FAQhn.aspx">एफ ए क्यू</a>
+
+                                            </li>
+                                            <li><a href="../Webform/Citizen_Manual.aspx">सिटिजन मैनुअल</a>
+
+                                            </li>
+                                            <li><a href="Crime_OnlineSafetyTipshn.aspx">साइबर सुरक्षा युक्तियाँ</a>
+
+                                            </li>
+
+                                            <li class="dropdown"><a href="#" style="">मीडिया गैलरी <span class="indicator">+</span></a>
+                                                <ul class="dropdown-content">
+                                                    <li><a href="../Webform/photoGallery.aspx">फोटो गैलरी</a> </li>
+                                                    <li><a href="../Webform/videoGallery.aspx">वीडियो गैलरी</a> </li>
+                                                    <li><a href="../Webform/radioGallery.aspx">रेडियो जिंगल</a> </li>
+                                                </ul>
+
+                                            </li>
+
+                                            <li><a href="../Webform/dailyDigest.aspx" style="">दैनिक खुलासा</a>
+                                            </li>
+                                            <li><a href="../Webform/training-resource.aspx" style="">प्रशिक्षण संसाधन
+                                                 <img src="../images/new.gif" style="width: 50px;" />
+                                            </a>
+                                            </li>
+                                            <li><a href="https://www.nvaccess.org/download/" target="_blank" style="text-transform: uppercase !important; font-size: 13px; font-weight: bold">स्क्रीन रीडर</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+                                <li><a href="../Webform/Crime_NodalGrivanceList.aspx" id="Alicontect">संपर्क करें</a></li>
+
+                            </ul>
+                        </nav>
+                        <nav class="main-menu clearfix" id="overflow_menu">
+                            <ul class="nav-menu clearfix">
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        
+    <section class="wrapper">
+
+        <section id="fontSize" class="wrapper body-wrapper ">
+            <div class="bg-wrapper inner-wrapper">
+                <div class="breadcam-bg breadcam">
+                    <div class="container common-container four_content">
+                        <ul>
+                            <li><a href="Defaulthn.aspx">होम </a></li>
+                            <li class="current">ऑनलाइन सुरक्षा संबंधी युक्तियाँ</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="paragraph" class="wrapper paragraph-wrapper">
+            <div class="container common-container four_content">
+                <b>ऑनलाइन सुरक्षा संबंधी युक्तियाँ</b><hr />
+            </div>
+        </section>
+
+        <section class="">
+            <div class="container">
+                   <div class="row sub_content mt-4 mb-5">
+                    <div class="trackBx" style="text-align:justify !important">
+                        <div class="col-lg-12 col-md-12 col-sm-12" >
+                            <section class="wrapper paragraph-wrapper">
+                                    <div class="align-rt">
+                                        <p style="font-size: 16px; margin: 15px 5px 5px 5px;background: #0262af;color: white;padding:10px;"><b><a href="../UploadMedia/CyberSafetyHindi.pdf" target="_blank" style="color: #fff !important;">डाउनलोड: साइबर सुरक्षा पर छात्रों के लिए एक पुस्तिका (हिंदी)</a></b></p>
+                                        
+                                        <hr />
+                                    </div>
+
+                                    <div class="post">
+
+                                        <p style="font-size: 16px; text-align: justify">
+                                            इंटरनेट हमारे दैनिक जीवन का अभिन्न अंग बन गया है। इसने हमारे संवाद करने, मित्र बनाने, अपडेट साझा करने, गेम खेलने और खरीदारी करने के तरीकों को बदल दिया है। यह हमारे दिन-प्रतिदिन के जीवन के अधिकांश पहलुओं को प्रभावित कर रहा है।
+                                        </p>
+                                        <p style="font-size: 16px; text-align: justify">
+                                            साइबरस्पेस हमें दुनिया भर में करोड़ों ऑनलाइन प्रयोक्‍ताओं के साथ जोड़ता है। साइबरस्पेस के बढ़ते उपयोग के साथ, विशेष रूप से महिलाओं और बच्चों के प्रति साइबर अपराध जैसे कि साइबर स्टैकिंग, साइबर बुलिंग, साइबर उत्पीड़न, बाल अश्‍लीलता, बलात्कार कंटेंट आदि तेजी से बढ़ रहे हैं। ऑनलाइन विश्‍व में सुरक्षित रहने के लिए, कुछ साइबर सुरक्षित प्रणालियों का अनुपालन करना आवश्‍यक है जिससे वे हमें ऑनलाइन अनुभवी और कुशल बनाने में हमारी सहायता कर सकें:
+                                        </p>
+                                         <hr />
+                                        <h2 class="title"><span>1. माता-पिता के लिए साइबर जागरूकता और स्वच्छता</span></h2>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपने बच्चों से </b>ग्रूमिंग, बुलिंग और स्‍टैकिंग जैसे संभावित ऑनलाइन खतरों के बारे में बातचीत करें और उनकी ऑनलाइन गतिविधियों पर नज़र रखें। इंटरनेट और ऑनलाइन गेम के प्रयोग के संबंध में स्पष्ट दिशानिर्देश सेट करें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>व्यवहार में परिवर्तन के संकेतों को देखें: </b>यदि आपका बच्चा ऑनलाइन अधिक समय बिताना शुरू कर देता है और अपनी ऑनलाइन गतिविधियों के बारे में डिफेन्सिव या सी‍क्रेटिव होने लगता है, तो यह साइबर ग्रूमिंग का एक संकेत हो सकता है। अपने बच्चे से बातचीत करें और उसे अन्य गतिविधियों में लगाएं।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपने बच्चे को साइबर ग्रूमिंग से बचाएं:</b>ग्रूमिंग एक ऐसी प्रणाली है जिससे कोई व्यक्ति यौन शोषण के लिए किसी बच्‍चे का विश्वास प्राप्‍त करने के उद्देश्य से सोशल मीडिया या चैट विंडो के माध्यम से उसके साथ एक भावनात्मक संबंध बनाता है।</p>
+                                        <p style="font-size: 16px; text-align: justify">हो सकता है की बच्चे सोशल मीडिया से गोपनीयता सेटिंग्स को हटाएं ताकि वे अधिक मित्र बना सकें। माता-पिता को अपने बच्‍चों से सोशल मीडिया के जिम्मेदारीपूर्ण प्रयोग के बारे में चर्चा करनी चाहिए। इसके अलावा, वे उन्हें ठोस गोपनीयता सेटिंग्स का चयन करने के लिए शिक्षित करें और इस संबंध में उनकी सहायता करें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>कभी भी संदिग्ध लिंक या अटैचमेंट पर क्लिक न करें: </b>कभी भी अनजान व्यक्ति से ई-मेल, टेक्स्ट मैसेज या सोशल मीडिया में प्राप्त लिंक या फाइलों पर क्लिक न करें। यह एक मैलवेयर से कंप्यूटर को संक्रमित करने का प्रयास हो सकता है।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपने वेबकैम को कवर करें:</b>यदि एक वेब कैमरा (लैपटॉप में डिफ़ॉल्ट) हैक/ कम्‍प्रोमाइज्‍ड हो जाए तो इसका प्रयोग दिन-प्रतिदिन की गतिविधियों का निरीक्षण करने/देखने और रिकॉर्ड करने के लिए एक माध्यम के रूप में किया जा सकता है। यह अनुशंसा की जाती है कि जब वेबकैम का प्रयोग नहीं किया जा रहा हो तब वेबकेम को कवर करके रखें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>पेरेंटल कण्ट्रोल सॉफ्टवेयर के साथ एंटी-वायरस सॉफ़्टवेयर लगाएं:</b> बच्चों द्वारा प्रयोग किए जाने वाले उपकरणों पर पेरेंटल कण्ट्रोल सॉफ्टवेयर के साथ एंटी वायरस सॉफ्टवेयर लगाएं और उनके द्वारा देखि जाने वाली सोशल मीडिया साइटों की गोपनीयता सेटिंग्स की समीक्षा करें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>सॉफ्टवेयर को अपडेट रखें:</b>अपने सॉफ्टवेयर और ऑपरेटिंग सिस्टम को अपडेट रखें। आपकी निजी जानकारी तक एक्‍सेस प्राप्‍त करने और आपको जोखिम में डालने के लिए हैकर्स सॉफ़्टवेयर भेद्यता को लक्षित करते हैं, इसलिए अपने सभी सॉफ़्टवेयर को नवीनतम सुरक्षा पैच के साथ अपडेट करना सुनिश्चित करें। अविश्वसनीय स्रोतों से सॉफ़्टवेयर, गेम, संगीत और एप्लिकेशन कभी भी इंस्टॉल न करें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>सुरक्षित ब्राउज़र सेटिंग्स सेट करें:</b>हमेशा ब्राउज़र का अपडेट किया गया संस्करण चुनें और हैकर्स तथा मैलवेयर से सुरक्षा के लिए सुरक्षित ब्राउज़िंग टूल इंस्टॉल करें।</p>
+                                         <hr />
+                                        <h2 class="title"><span>2. किशोरों और युवा वयस्कों के लिए साइबर जागरूकता और स्वच्छता</span></h2>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपनी ऑनलाइन मौजूदगी को उसी तरह सुरक्षित करें जैसे आप स्‍वयं को सुरक्षित करते हैं:</b>यदि आपने अपने सोशल मीडिया अकाउंट्स पर सही सेटिंग्स का चयन नहीं किया है, तो पोस्ट की गई तस्वीरों और वीडियो को आपकी जानकारी के बिना दूसरों द्वारा देखा, डाउनलोड और प्रयोग किया जा सकता है।</p>
+                                        <p style="font-size: 16px; text-align: justify">सोशल मीडिया पर उपयुक्‍त प्राइवेसी सेटिंग्स और कंटेंट शेयरिंग फिल्टर का चयन करें ताकि आपकी अपनी जानकारी, फोटो और वीडियो अपने विश्वसनीय लोगों के साथ ही साझा हो।</p>
+                                        <p style="font-size: 16px; text-align: justify">सोशल मीडिया पर अनजान लोगों के फ्रेंड रिक्वेस्ट को स्वीकार करने के बारे में सेलेक्टिव रहें।</p>
+                                        <p style="font-size: 16px; text-align: justify">ऐसे किसी भी व्यक्ति को ब्लॉक करना सीखें जो आपको असहज बना रहा है।</p>
+                                        <p style="font-size: 16px; text-align: justify">यह सीखे कि अपनी मित्र सूची से किसी को किस प्रकार रिमूव किया जाए।</p>
+                                        <p style="font-size: 16px; text-align: justify">
+                                            प्रयोग के बाद सोशल मीडिया वेबसाइटों से लॉगआउट करना याद रखें। अपने फोन को पासवर्ड से सुरक्षित करें।
+                                        </p>
+                                        <p style="font-size: 16px; text-align: justify">यदि आपको लगता है कि आपका फर्जी अकाउंट बनाया गया है, तो आप तुरंत सोशल मीडिया सेवा प्रदाता को सूचित करे ताकि अकाउंट को ब्‍लॉक किया जा सके।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>वीडियो चैट और वीडियो कॉल पर अपनी मौजूदगी पर ध्यान दें।</b></p>
+                                        <p style="font-size: 16px; text-align: justify">सोशल मीडिया साइट्स पर आपका वीडियो चैट दूसरी तरफ के व्यक्ति द्वारा रिकॉर्ड किया जा सकता है।</p>
+                                        <p style="font-size: 16px; text-align: justify">ऐसी घटनाएं हुई हैं, जहां वीडियो चैट जो निजी प्रकृति की होने वाली थी, को सोशल मीडिया समूहों और वेबसाइटों पर रिकॉर्ड और साझा कर लिया गया।</p>
+                                        <p style="font-size: 16px; text-align: justify">अनजान व्‍यक्तियों से चैट अनुरोध स्वीकार करते समय सावधान रहें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>संवेदनशील व्यक्तिगत तस्वीरों और वीडियो लेने के लिए स्मार्टफ़ोन का प्रयोग न करें</b></p>
+                                        <p style="font-size: 16px; text-align: justify">संवेदनशील व्यक्तिगत तस्वीरों और वीडियो लेने के लिए स्मार्टफ़ोन का उपयोग न करें। अधिकांश स्मार्टफोन इंटरनेट और क्लाउड स्टोरेज से जुड़े होते हैं। यदि कोई चित्र या वीडियो क्लाउड से जुड़े स्मार्टफ़ोन का प्रयोग करके क्लिक/रिकॉर्ड किया गया है, तो यह स्‍वत: ही क्लाउड में सेव हो सकता है। भले ही प्रयोक्‍ता अपने फोन से अपने फ़ोटो या वीडियो को हटा दें, उसी फ़ोटो या वीडियो को क्लाउड एकाउंट या उसी एकाउंट का उपयोग करके क्लाउड से जुड़े किसी अन्य डिवाइस/पीसी से पुन: प्राप्‍त किया जा सकता है।</p>
+                                        <p style="font-size: 16px; text-align: justify">यदि किसी ने स्मार्टफ़ोन का प्रयोग करते हुए ऐसी तस्वीर ली है, तो इसे गंभीरता से लें और अपने स्मार्टफोन, क्लाउड और किसी अन्य डिवाइस से उसी एकाउंट का प्रयोग करके इसे हटा देना सुनिश्चित करें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपने आप को साइबर स्टॉकिंग से बचाएं:</b>साइबर स्टॉकर किसी व्यक्ति द्वारा उसकी अनिच्‍छा के स्पष्ट संकेत देने के बावजूद भी, उस व्यक्ति पर बार-बार संपर्क साधते हैं। वे स्‍टेकिंग के लिए इंटरनेट, ईमेल, सोशल मीडिया या अन्य किसी भी प्रकार के इलेक्ट्रॉनिक संचार का प्रयोग करते हैं।</p>
+                                        <p style="font-size: 16px; text-align: justify">सोशल मीडिया साइटों, मोबाइल उपकरणों आदि के लिए लोकेशन सेवाओं को डिसेबल करें।</p>
+                                        <p style="font-size: 16px; text-align: justify">अपनी व्यक्तिगत जानकारी जैसे फोन नंबर, ई-मेल पता, तस्वीरें अज्ञात व्यक्तियों के साथ साझा करने से बचें।</p>
+                                        <p style="font-size: 16px; text-align: justify">यदि आपको लगता है कि आप साइबर स्टैकिंग के शिकार हो गए हैं तो अपने रिश्तेदारों और दोस्तों से सलाह लें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>नकली सोशल मीडिया अकाउंट से बचें- सभी अकाउंट वास्तविक नहीं होते हैं और न ही अकाउंट पर दी गई सभी जानकारी ठीक होती हैं</b></p>
+                                        <p style="font-size: 16px; text-align: justify">अनजान व्‍यक्तियों से फ्रेंड रिक्वेस्ट स्वीकार करते समय सतर्क रहें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>संवेदनशील ब्राउजिंग से सतर्क रहें</b></p>
+                                        <p style="font-size: 16px; text-align: justify">किसी व्यक्ति को केवल अपने डिवाइस से खरीदारी या बैंकिंग वेबसाइट या एप्‍प को ब्राउज़ करना चाहिए जो किसी विश्वसनीय नेटवर्क पर हो। संवेदनशील ब्राउज़िंग के लिए मित्र के फोन, सार्वजनिक कंप्यूटर, साइबर कैफे या मुफ्त वाई-फाई का प्रयोग करने से बचें क्योंकि इससे डाटा चोरी या कॉपी किया जा सकता है।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>आपके संचार उपकरणों से हटाए गए डाटा को पुन: प्राप्‍त किया जा सकता है</b></p>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपने मोबाइल उपकरणों, पीसी को सर्विसिंग/मरम्मत/बिक्री के लिए देते समय सावधान रहें:</b>निजी कम्‍प्‍यूटरों और मोबाइल उपकरणों में निजी जानकारी होती है, इसलिए उपकरणों को मरम्मत, सर्विसिंग या बिक्री के लिए भेजने से पहले इसे हटाने की आवश्यकता होती है।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>अपने संचार उपकरणों को सुरक्षित रखें:</b>पासवर्ड, पिन, पैटर्न या बायोमेट्रिक जानकारी प्रदान करके अपने उपकरणों तक एक्‍सेस होने से दूसरों को रोकें। हमेशा प्ले स्टोर, ऐप स्टोर या आधिकारिक कंपनी की वेबसाइटों जैसे विश्वसनीय स्रोत से ही अपने मोबाइल फोन, कंप्यूटर आदि पर एप्लिकेशन इंस्टॉल करें।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>यदि आपको बाल यौन शोषण और दुर्व्यवहार सामग्री (सीएसईएएम) या यौनोत्‍तेजक कंटेंट मिले तो इस संबंध में रिपोर्ट करें।</b></p>
+                                        <p style="font-size: 16px; text-align: justify">बाल यौन शोषण और दुर्व्यवहार सामग्री (सीएसईएएम) या यौनोत्‍तेजक कंटेंट जैसे कि बलात्कार/सामूहिक बलात्‍कार (सीपी/आरजीआर) से संबंधित किसी भी कंटेंट के बारे में संबंधित सोशल मीडिया वेबसाइट पर रिपोर्ट करें।</p>
+                                        <p style="font-size: 16px; text-align: justify">यदि आपके किसी परिचित व्‍यक्ति ने आपके साथ बाल यौन शोषण और दुर्व्यवहार सामग्री (सीएसईएएम) या यौनोत्‍तेजक कंटेंट साझा की है, तो यह आपका कर्तव्य है कि आप एक जिम्मेदार नागरिक के नाते संबंधित व्यक्ति को सूचित करें कि बाल अश्‍लीलता का प्रकाशन, संग्रह और वितरण/बाल यौन शोषण कंटेंट (सीएसईएएम) या यौनोत्‍तेजक कंटेंट गैर-कानूनी होती है और उसे इस तरह की गतिविधियों को करने से बचना चाहिए।</p>
+                                        <p style="font-size: 16px; text-align: justify">आप इसे राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल <a href="http://www.cybercrime.gov.in" style="color: #428bca !important;">(www.cybercrime.gov.in)</a> पर भी रिपोर्ट कर सकते हैं।</p>
+
+                                        <hr />
+                                        <h2 class="title"><span>3. संगठनों के लिए साइबर जागरूकता और स्वच्छता</span></h2>
+                                        <p style="font-size: 16px; text-align: justify"><b>कार्यस्थल में बाल यौन शोषण और दुर्व्यवहार सामग्री (सीएसईएएम) या यौनोत्‍तेजक कंटेंट से कैसे निपटें?</b></p>
+                                        <p style="font-size: 16px; text-align: justify">सभी संगठनों के पास स्पष्ट और ठोस एचआर नीतियां होनी चाहिए कि बाल यौन शोषण और दुर्व्यवहार सामग्री (सीएसईएएम) या यौनोत्‍तेजक कंटेंट से कैसे निपटें।</p>
+                                        <p style="font-size: 16px; text-align: justify">संगठनों के पास उसके द्वारा प्रदान किए गए इलेक्ट्रॉनिक उपकरणों के प्रयोग के लिए स्पष्ट नियम होने चाहिएं।</p>
+                                        <p style="font-size: 16px; text-align: justify">यदि कोई कर्मचारी अश्लील या अशोभनीय कंटेंट रखता हुआ पाया जाता है, तो उसके विरुद्ध उचित जांच और कार्रवाई की जानी चाहिए।</p>
+                                        <p style="font-size: 16px; text-align: justify">संगठन के भीतर अश्लील कंटेंट के आदान-प्रदान और स्‍टोरेज की किसी भी घटना के बारे में संगठन द्वारा पुलिस को रिपोर्ट की जानी चाहिए। कंटेंट की प्रतिलिपि प्रतिबंधित एक्‍सेस के साक्ष्य के रूप में बचाकर रखी जानी चाहिए।</p>
+                                        <p style="font-size: 16px; text-align: justify">कंटेंट की अन्य सभी प्रतियां हटा दी जानी चाहिए।</p>
+                                        <p style="font-size: 16px; text-align: justify">वे राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल <a href="http://www.cybercrime.gov.in" style="color: #428bca !important;">(www.cybercrime.gov.in)</a> के माध्यम से भी इसकी रिपोर्ट कर सकते हैं। </p>
+                                        <p style="font-size: 16px; text-align: justify"><b>बाल यौन शोषण और दुर्व्यवहार सामग्री (सीएसईएएम) या यौनोत्‍तेजक कंटेंट का प्रकाशन, संग्रह और पारेषण गैर कानूनी है</b></p>
+                                        <p style="font-size: 16px; text-align: justify">सूचना प्रौद्योगिकी अधिनियम, 2000 की धारा 67 और 67क के तहत, यौनोत्‍तेजक क्रियाओं या आचरण से संबंधित किसी भी कंटेंट का इलेक्ट्रॉनिक रूप में प्रकाशन और पारेषण दंडनीय अपराध है।</p>
+                                        <p style="font-size: 16px; text-align: justify">सूचना प्रौद्योगिकी (आईटी) अधिनियम की धारा 67 ख, के अनुसार  बाल अश्‍लीलता की ब्राउज़िंग, डाउनलोडिंग, निर्माण, प्रकाशन और वितरण करना अपराध है।</p>
+                                        <p style="font-size: 16px; text-align: justify"><b>सुरक्ष��त रहें, सुरक्षित ब्राउज़ करें!</b></p>
+                                       <hr />
+                                        <p style="font-size: 16px; margin: 15px 5px 15px 5px;background: #0262af;color: white;padding:10px;"><b><a href="../UploadMedia/CyberSafetyHindi.pdf" target="_blank" style="color: #fff !important;">डाउनलोड: साइबर सुरक्षा पर छात्रों के लिए एक पुस्तिका (हिंदी)</a></b></p>
+                                        
+                                    </div>
+
+                                
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- TESTIMONIALS END -->
+            </div>
+
+        </section>
+    </section>
+
+
+        <footer class="footer" style="background: #f2f3f5!important">
+           
+        </footer>
+        <!--end footer-->
+        <div style="position: relative;">
+            <div class="footer-top-wrapper">
+                <div class="container footer-top-container text-start">
+                    <ul class="menu">
+                        <li><a href="../Webform/Crime_Feedback.aspx">प्रतिक्रिया</a></li>
+                        <li><a href="FAQhn.aspx">सामान्य प्रश्न</a></li>
+                        <li><a href="../Webform/Crime_NodalGrivanceList.aspx">संपर्क करें</a></li>
+                        <li><a href="Wbsitepolicehn.aspx">वेबसाइट नीतियां</a></li>
+                        <li><a href="Disclaimerhn.aspx">डिस्क्लेमर</a></li>
+
+                        <li><a href="https://www.twitter.com/CyberDost" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/twitter.png" style="width: 28px;" /></a></li>
+                        <li><a href=" https://www.facebook.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/facebook.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://www.youtube.com/c/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/youtube.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://www.instagram.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/instagram.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://t.me/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/telegram.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://in.linkedin.com/company/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/linkedin.png" style="width: 28px;" /></a></li>
+                       
+                        <li><a href="https://sharechat.com/profile/cyberdost?d=n" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/sharechat.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/public.png" style="width: 24px;" /></a></li>
+                        <li><a href="https://whatsapp.com/channel/0029Va3VAOY8fewrOtXqMw1V" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/whatsapp.png" style="width: 24px;" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="footer_bottom">
+            <div class="footer-bottom-wrapper">
+                <div class="container">
+                    <div class="copyright-content" style="font-size: 13px !important; width: 100%;">
+
+                        <div class="row">
+                            <div class="col-lg-9 col-md-8 col-sm-12 col-12 text-start">
+                                वेबसाइट कंटेंट भारत सरकार के गृह मंत्रालय द्वारा प्रबंधित। मोज़िला फ़ायरफ़ॉक्स, गूगल क्रोम में सबसे अच्छा चित्रण            
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-12 col-12 text-start">
+
+                                <span id="Label1" style="font-weight:bold;display: inline-block;">Visitor Count:</span>
+                                <span id="Label2" style="font-weight:bold;display: inline-block;"></span>
+
+                                <div class="d-block">
+                                    <b>Last Updated: 02/02/2024  </b>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </form>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/retina-1.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <!-- jQuery cookie -->
+    
+    <!-- Style Colors Switcher -->
+    
+
+    
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-accessibleMegaMenu.js"></script>
+    <script src="../assets/js/framework.js"></script>
+    <script src="../assets/js/jquery.flexslider.js"></script>
+    <script src="../assets/js/font-size.js"></script>
+    <script src="../assets/js/swithcer.js"></script>
+    <script src="../theme/js/ma5gallery.js"></script>
+    <script src="../assets/js/megamenu.js"></script>
+    <script src="../theme/js/easyResponsiveTabs.js"></script>
+    <script src="../theme/js/custom.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <script>
+        new Swiper('.testimonials-slider', {
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+
+                1200: {
+                    slidesPerView: 7,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>

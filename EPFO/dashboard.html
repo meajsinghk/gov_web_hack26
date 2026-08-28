@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Official Member Workspace & Edge Pre-Flight Verification Dashboard for EPFO Contributing Employees. Withdrawable EPF Balance, Smart Claim Ingestion, and Transfer Engine.">
+  <meta name="theme-color" content="#0F2C59">
+  
+  <title>Member Dashboard &amp; Pre-Flight Workspace | EPFO</title>
+  
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Skip Navigation -->
+  <a href="#dashboard-main-content" class="sr-only">Skip to main dashboard content</a>
+
+  <!-- ========================================================================= -->
+  <!-- 1. SOVEREIGN TOP STRIP                                                    -->
+  <!-- ========================================================================= -->
+  <div class="sovereign-top-strip" role="region" aria-label="Sovereign Identifier">
+    <div class="container strip-flex">
+      <div class="strip-left">
+        <svg viewBox="0 0 100 130" width="16" height="20" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M50 5 C43 5 38 10 38 17 C38 23 42 27 47 28 C45 32 40 37 32 37 C26 37 22 34 20 30 C18 35 21 42 27 45 C23 47 18 47 14 45 C15 51 20 56 26 57 C22 60 17 60 14 59 C17 65 24 68 31 68 C27 72 20 74 15 74 C22 79 32 80 40 77 C41 83 45 88 50 88 C55 88 59 83 60 77 C68 80 78 79 85 74 C80 74 73 72 69 68 C76 68 83 65 86 59 C83 60 78 60 74 57 C80 56 85 51 86 45 C82 47 77 47 73 45 C79 42 82 35 80 30 C78 34 74 37 68 37 C60 37 55 32 53 28 C58 27 62 23 62 17 C62 10 57 5 50 5 Z"/>
+          <rect x="25" y="92" width="50" height="7" rx="3" fill="currentColor"/>
+          <circle cx="50" cy="112" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path fill="currentColor" d="M50 104 L50 120 M42 112 L58 112 M44 106 L56 118 M44 118 L56 106"/>
+          <rect x="18" y="125" width="64" height="4" rx="2" fill="currentColor"/>
+        </svg>
+        <span>भारत सरकार | Government of India — EPFO Member Services</span>
+      </div>
+
+      <div class="strip-right">
+        <button type="button" class="btn-tool" id="contrast-toggle" aria-label="Toggle High Contrast">◐ Contrast</button>
+        <select id="lang-select" class="btn-tool" aria-label="Select Indic Language">
+          <option value="en" selected>English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="kn">ಕನ್ನಡ</option>
+          <option value="ta">தமிழ்</option>
+          <option value="te">తెలుగు</option>
+          <option value="bn">বাংলা</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. DASHBOARD UTILITY HEADER                                               -->
+  <!-- ========================================================================= -->
+  <header class="dashboard-header" role="banner">
+    <div class="container header-inner">
+      
+      <a href="dashboard.html" class="header-brand" aria-label="EPFO Member Dashboard">
+        <svg viewBox="0 0 60 60" class="brand-emblem" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" fill="#0F2C59" stroke="#0B6623" stroke-width="3"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <circle cx="30" cy="30" r="10" fill="#0B6623"/>
+          <path d="M30 14 L30 46 M14 30 L46 30 M19 19 L41 41 M19 41 L41 19" stroke="#FFFFFF" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-info">
+          <span class="brand-name">EPFO Member Portal</span>
+          <span class="brand-tag">⚡ Edge Pre-Flight Verification Engine</span>
+        </div>
+      </a>
+
+      <div class="header-user-controls">
+        
+        <!-- User Profile Pill -->
+        <div class="user-profile-pill" id="user-profile-pill">
+          <div class="user-avatar-circle" id="user-avatar-initials">RK</div>
+          <div class="user-meta">
+            <span class="user-name-title" id="profile-user-name">Ramesh Kumar</span>
+            <span class="user-uan-sub" id="profile-user-uan">UAN: 1009 2837 4651</span>
+          </div>
+        </div>
+
+        <!-- Notification Bell with Counter -->
+        <div class="notif-btn-wrap">
+          <button type="button" class="notif-bell-btn touch-target" id="btn-notifications" aria-label="View notifications">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
+            <span class="notif-unread-badge" id="notif-badge-count">1</span>
+          </button>
+        </div>
+
+        <!-- Emergency Sign Out -->
+        <a href="login.html" class="btn-signout touch-target" id="btn-signout" aria-label="Sign out of member portal">
+          <span>Sign Out</span> ↗
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MAIN DASHBOARD CONTENT AREA                                            -->
+  <!-- ========================================================================= -->
+  <main class="container" id="dashboard-main-content" role="main" style="flex: 1;">
+    
+    <!-- A. IDENTITY & KYC HEALTH DIAGNOSTIC BANNER -->
+    <section class="kyc-health-section" aria-labelledby="kyc-health-heading">
+      <div class="kyc-health-card">
+        
+        <div class="kyc-bar-header">
+          <span id="kyc-health-heading">Identity &amp; KYC Diagnostic Health</span>
+          <span style="color: var(--color-accent); font-weight: 700;">● 100% Pre-Flight Ready</span>
+        </div>
+
+        <div class="kyc-points-grid" id="kyc-diagnostic-grid">
+          
+          <!-- Point 1: Aadhaar -->
+          <div class="kyc-point-item">
+            <div class="kyc-check-icon" aria-hidden="true">✓</div>
+            <div class="kyc-point-text">
+              <div class="kyc-point-title">Aadhaar Status</div>
+              <div class="kyc-point-status" id="kyc-aadhaar-status">Verified &amp; Linked (UIDAI)</div>
+            </div>
+          </div>
+
+          <!-- Point 2: NPCI Bank -->
+          <div class="kyc-point-item">
+            <div class="kyc-check-icon" aria-hidden="true">✓</div>
+            <div class="kyc-point-text">
+              <div class="kyc-point-title">Bank KYC (NPCI Mapped)</div>
+              <div class="kyc-point-status" id="kyc-bank-status">HDFC Bank ****1023</div>
+            </div>
+          </div>
+
+          <!-- Point 3: PAN -->
+          <div class="kyc-point-item">
+            <div class="kyc-check-icon" aria-hidden="true">✓</div>
+            <div class="kyc-point-text">
+              <div class="kyc-point-title">PAN Seeding</div>
+              <div class="kyc-point-status" id="kyc-pan-status">Seeded &amp; Verified</div>
+            </div>
+          </div>
+
+          <!-- Point 4: Employment / Exit Date -->
+          <div class="kyc-point-item">
+            <div class="kyc-check-icon" style="background-color: var(--color-primary);" aria-hidden="true">🏢</div>
+            <div class="kyc-point-text">
+              <div class="kyc-point-title">Employment Status</div>
+              <div class="kyc-point-status" id="kyc-employment-status" style="color: var(--color-primary);">Active Service</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B. FINANCIAL CORPUS SUMMARY CARD -->
+    <section class="corpus-section" aria-labelledby="corpus-heading">
+      <div class="corpus-card">
+        
+        <div class="corpus-left">
+          <span class="corpus-label" id="corpus-heading">Total Withdrawable EPF Balance</span>
+          <div class="corpus-balance-hero" id="corpus-total-balance" aria-live="polite">₹ 1,85,700</div>
+          <div class="corpus-est-sub">
+            Interest @ 8.25% p.a. credited for FY 2024–25 | Member ID: <strong id="corpus-member-id" style="font-family: var(--font-mono);">DLCPM0019283000/0048291</strong>
+          </div>
+
+          <div class="corpus-actions-row">
+            <button type="button" class="btn btn-primary touch-target" id="btn-open-claim-drawer">
+              ⚡ File Smart Claim (Advance / Settle)
+            </button>
+            <button type="button" class="btn btn-outline touch-target" id="btn-view-passbook">
+              📥 View / Download Passbook
+            </button>
+          </div>
+        </div>
+
+        <div class="corpus-right-grid">
+          
+          <div class="corpus-mini-box">
+            <div class="mini-box-label">Employee Share (12%)</div>
+            <div class="mini-box-val" id="val-employee-share">₹ 1,42,500</div>
+          </div>
+
+          <div class="corpus-mini-box">
+            <div class="mini-box-label">Employer Share (3.67%)</div>
+            <div class="mini-box-val" id="val-employer-share">₹ 43,200</div>
+          </div>
+
+          <div class="corpus-mini-box">
+            <div class="mini-box-label">Pension Corpus (EPS)</div>
+            <div class="mini-box-val" id="val-pension-share">₹ 38,100</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- C. 3-TILE PRIMARY ACTION CANVAS -->
+    <section class="action-canvas-section" aria-labelledby="action-canvas-title">
+      <h2 id="action-canvas-title" class="sr-only">Primary Operational Citizen Actions</h2>
+
+      <div class="action-tiles-grid">
+        
+        <!-- Tile 1: File Instant Pre-Verified Claim -->
+        <div class="action-tile-card">
+          <div class="tile-icon">⚡</div>
+          <h3 class="tile-title">File Instant Pre-Verified Claim</h3>
+          <p class="tile-desc">
+            Submit illness advance (Form 31 Para 68J), housing withdrawal (68B), or final retirement settlement with zero document upload.
+          </p>
+          <button type="button" class="btn btn-primary tile-btn touch-target" id="btn-tile-claim">
+            Start Smart Claim →
+          </button>
+        </div>
+
+        <!-- Tile 2: Transfer PF (One Member One EPF) -->
+        <div class="action-tile-card">
+          <div class="tile-icon">🔄</div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h3 class="tile-title">Transfer PF (One EPF Account)</h3>
+            <span class="badge-warning" id="transfer-badge-detected">1 Unmerged ID</span>
+          </div>
+          <p class="tile-desc">
+            Consolidate your previous employer account (Apex Precision Tools - ₹64,200) into your active UAN with one-click approval.
+          </p>
+          <button type="button" class="btn btn-outline tile-btn touch-target" id="btn-tile-transfer">
+            Consolidate Account →
+          </button>
+        </div>
+
+        <!-- Tile 3: Manage KYC & Joint Declaration -->
+        <div class="action-tile-card">
+          <div class="tile-icon">👤</div>
+          <h3 class="tile-title">Manage KYC &amp; Nominee</h3>
+          <p class="tile-desc">
+            Verify registered e-Nomination, update secondary bank account IFSC, or initiate joint demographic corrections with employer.
+          </p>
+          <button type="button" class="btn btn-outline tile-btn touch-target" id="btn-tile-kyc">
+            Manage Nominee &amp; KYC →
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- D. ACTIVE CLAIM MILESTONE TIMELINE -->
+    <section class="claims-timeline-section" aria-labelledby="claims-timeline-title">
+      <div class="timeline-card">
+        
+        <div class="timeline-header">
+          <div>
+            <h3 id="claims-timeline-title" class="timeline-title">Active Claim Status &amp; Milestone Timeline</h3>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted);" id="active-claim-meta">
+              Tracking Ref: <strong style="font-family: var(--font-mono); color: var(--color-primary);" id="active-claim-id">CLM-2026-8942-1029</strong> | Form 31 (Medical Emergency)
+            </div>
+          </div>
+          <span class="badge-success" style="font-size: 0.75rem;" id="active-claim-fasttrack">
+            ⚡ 48 Hours Fast-Track Eligible
+          </span>
+        </div>
+
+        <div class="timeline-steps-grid" id="timeline-steps-container">
+          
+          <div class="step-item is-completed">
+            <div class="step-circle">✓</div>
+            <div class="step-title">Claim Ingested &amp; Pre-Flight Verified</div>
+            <div class="step-date">20 Aug 2026, 11:20 AM</div>
+          </div>
+
+          <div class="step-item is-active">
+            <div class="step-circle">2</div>
+            <div class="step-title">Field Office Processing (RO Bengaluru)</div>
+            <div class="step-date">In Progress (Section Officer)</div>
+          </div>
+
+          <div class="step-item is-pending">
+            <div class="step-circle">3</div>
+            <div class="step-title">Bank Sanctioned (NPCI NACH / NEFT)</div>
+            <div class="step-date">Expected 23 Aug</div>
+          </div>
+
+          <div class="step-item is-pending">
+            <div class="step-circle">4</div>
+            <div class="step-title">Funds Credited to Account ****1023</div>
+            <div class="step-date">Estimated 24 Aug</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 4. ACCESSIBLE MODAL DIALOGS                                               -->
+  <!-- ========================================================================= -->
+
+  <!-- Modal 1: Smart Claim Drawer Dialog -->
+  <dialog id="claim-drawer-modal" aria-labelledby="drawer-step-title" aria-modal="true">
+    <div class="modal-content-card">
+      <div class="modal-header">
+        <div>
+          <h3 id="drawer-step-title" class="modal-title">Step 1: Select Claim Intent</h3>
+          <div id="drawer-step-indicator" style="font-size: 0.6875rem; color: var(--color-text-muted);">Step 1 of 3</div>
+        </div>
+        <button type="button" class="modal-close-btn touch-target" aria-label="Close Claim Drawer" onclick="window.EpfoClaimEngine.closeClaimDrawer()">✕</button>
+      </div>
+
+      <div class="modal-body" id="drawer-body-content" aria-live="polite">
+        <!-- Dynamically populated by claim-engine.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Passbook Viewer Dialog -->
+  <dialog id="passbook-modal" aria-labelledby="passbook-modal-title" aria-modal="true">
+    <div class="modal-content-card">
+      <div class="modal-header">
+        <h3 id="passbook-modal-title" class="modal-title">Detailed Member Passbook Statement</h3>
+        <button type="button" class="modal-close-btn touch-target" aria-label="Close Passbook" id="btn-close-passbook">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="font-size: 0.8125rem; margin-bottom: 1rem; line-height: 1.5;">
+          <strong>Establishment:</strong> Precision Engineering Works Pvt Ltd (DLCPM0019283000)<br>
+          <strong>Member Name:</strong> Ramesh Kumar | <strong>UAN:</strong> 1009 2837 4651
+        </div>
+        
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem; text-align: left;">
+          <thead>
+            <tr style="background: var(--color-surface-subtle); border-bottom: 1.5px solid var(--color-border);">
+              <th style="padding: 0.4rem;">Wage Month</th>
+              <th style="padding: 0.4rem;">EPF Wages</th>
+              <th style="padding: 0.4rem;">Employee (12%)</th>
+              <th style="padding: 0.4rem;">Employer (3.67%)</th>
+              <th style="padding: 0.4rem;">Pension (8.33%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <td style="padding: 0.4rem;">July 2026</td>
+              <td style="padding: 0.4rem;">₹ 25,000</td>
+              <td style="padding: 0.4rem; color: var(--color-accent); font-weight: 700;">₹ 3,000</td>
+              <td style="padding: 0.4rem;">₹ 918</td>
+              <td style="padding: 0.4rem;">₹ 1,250</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <td style="padding: 0.4rem;">June 2026</td>
+              <td style="padding: 0.4rem;">₹ 25,000</td>
+              <td style="padding: 0.4rem; color: var(--color-accent); font-weight: 700;">₹ 3,000</td>
+              <td style="padding: 0.4rem;">₹ 918</td>
+              <td style="padding: 0.4rem;">₹ 1,250</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <td style="padding: 0.4rem;">May 2026</td>
+              <td style="padding: 0.4rem;">₹ 25,000</td>
+              <td style="padding: 0.4rem; color: var(--color-accent); font-weight: 700;">₹ 3,000</td>
+              <td style="padding: 0.4rem;">₹ 918</td>
+              <td style="padding: 0.4rem;">₹ 1,250</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 1rem; text-align: right;">
+          <button type="button" class="btn btn-primary touch-target" id="btn-download-passbook-file">
+            📥 Download Signed PDF Statement
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 3: Account Transfer / Merge Dialog -->
+  <dialog id="transfer-modal" aria-labelledby="transfer-modal-title" aria-modal="true">
+    <div class="modal-content-card">
+      <div class="modal-header">
+        <h3 id="transfer-modal-title" class="modal-title">Consolidate Past Member Account (OICP)</h3>
+        <button type="button" class="modal-close-btn touch-target" aria-label="Close Transfer" id="btn-close-transfer">✕</button>
+      </div>
+      <div class="modal-body" id="transfer-modal-body">
+        <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">
+          One Member – One EPF Account consolidation detected an unmerged account from your previous establishment:
+        </p>
+
+        <div style="background: var(--color-surface-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem; font-size: 0.8125rem; margin-bottom: 1rem;">
+          <div><strong>Previous Member ID:</strong> MHBAN0028190000/0018273</div>
+          <div><strong>Establishment:</strong> Apex Precision Tools Ltd</div>
+          <div><strong>Service Period:</strong> 2015-08-01 to 2018-03-31</div>
+          <div style="margin-top: 0.35rem;">
+            <strong>Accumulated Balance to Transfer:</strong> <span style="color: var(--color-accent); font-weight: 800;">₹ 64,200</span>
+          </div>
+        </div>
+
+        <div id="transfer-feedback" class="alert-box alert-success" hidden>
+          ✓ Account consolidation initiated! ₹64,200 merged into your current active balance.
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-transfer">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-confirm-transfer">
+            Confirm &amp; Merge Balance Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 4: Notifications Modal -->
+  <dialog id="notifications-modal" aria-labelledby="notif-modal-title" aria-modal="true">
+    <div class="modal-content-card">
+      <div class="modal-header">
+        <h3 id="notif-modal-title" class="modal-title">Member Notifications &amp; Alerts</h3>
+        <button type="button" class="modal-close-btn touch-target" aria-label="Close Notifications" id="btn-close-notif">✕</button>
+      </div>
+      <div class="modal-body" id="notif-modal-body">
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+          <li style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+            <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-accent);">Annual Interest Credited</div>
+            <p style="font-size: 0.75rem; color: var(--color-text-muted);">Interest @ 8.25% credited to your EPF account for FY 2024–25.</p>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">15 Aug 2026</span>
+          </li>
+          <li>
+            <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-primary);">Monthly Contribution Acknowledged</div>
+            <p style="font-size: 0.75rem; color: var(--color-text-muted);">July 2026 statutory contribution credited by Precision Engineering Works.</p>
+            <span style="font-size: 0.6875rem; color: var(--color-text-muted);">10 Aug 2026</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT ARCHITECTURE                                                   -->
+  <!-- ========================================================================= -->
+  <script src="mock-backend.js"></script>
+  <script src="claim-engine.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      'use strict';
+
+      // Load Profile State & Render Dashboard
+      async function refreshDashboardState() {
+        try {
+          const res = await fetch('/api/v1/member/profile');
+          const data = await res.json();
+          if (!data.success) return;
+
+          const p = data.profile;
+          
+          // Header & Balance
+          const nameEl = document.getElementById('profile-user-name');
+          const uanEl = document.getElementById('profile-user-uan');
+          const totalBalEl = document.getElementById('corpus-total-balance');
+          const empShareEl = document.getElementById('val-employee-share');
+          const emplyrShareEl = document.getElementById('val-employer-share');
+          const pensionShareEl = document.getElementById('val-pension-share');
+          const memberIdEl = document.getElementById('corpus-member-id');
+
+          if (nameEl) nameEl.textContent = p.name;
+          if (uanEl) uanEl.textContent = `UAN: ${p.uan.replace(/(\d{4})/g, '$1 ').trim()}`;
+          if (totalBalEl) totalBalEl.textContent = `₹ ${p.balances.totalWithdrawable.toLocaleString('en-IN')}`;
+          if (empShareEl) empShareEl.textContent = `₹ ${p.balances.employeeShare.toLocaleString('en-IN')}`;
+          if (emplyrShareEl) emplyrShareEl.textContent = `₹ ${p.balances.employerShare.toLocaleString('en-IN')}`;
+          if (pensionShareEl) pensionShareEl.textContent = `₹ ${p.balances.pensionShare.toLocaleString('en-IN')}`;
+          if (memberIdEl) memberIdEl.textContent = p.memberId;
+
+          // KYC Status
+          const empStatusEl = document.getElementById('kyc-employment-status');
+          if (empStatusEl) {
+            empStatusEl.textContent = p.dateOfExit ? `Marked Exit: ${p.dateOfExit}` : `Active (${p.establishmentName.split(' ')[0]})`;
+          }
+
+          // Transfer Badge
+          const unmergedCount = p.previousAccounts.filter(a => a.status === 'UNMERGED').length;
+          const transferBadge = document.getElementById('transfer-badge-detected');
+          if (transferBadge) {
+            transferBadge.textContent = unmergedCount > 0 ? `${unmergedCount} Unmerged ID` : '✓ All Merged';
+            transferBadge.className = unmergedCount > 0 ? 'badge-warning' : 'badge-success';
+          }
+
+          // Claims Timeline
+          const claimsRes = await fetch('/api/v1/member/claims-status');
+          const claimsData = await claimsRes.json();
+          if (claimsData.success && claimsData.claims.length > 0) {
+            const activeClaim = claimsData.claims[0];
+            const claimIdEl = document.getElementById('active-claim-id');
+            const claimMetaEl = document.getElementById('active-claim-meta');
+            if (claimIdEl) claimIdEl.textContent = activeClaim.claimId;
+            if (claimMetaEl) claimMetaEl.innerHTML = `Tracking Ref: <strong style="font-family: var(--font-mono); color: var(--color-primary);">${activeClaim.claimId}</strong> | ${activeClaim.formType}`;
+
+            const stepsContainer = document.getElementById('timeline-steps-container');
+            if (stepsContainer && activeClaim.timeline) {
+              stepsContainer.innerHTML = activeClaim.timeline.map((st, idx) => {
+                let statusClass = 'is-pending';
+                let circleContent = `${st.step}`;
+                if (st.status === 'COMPLETED') {
+                  statusClass = 'is-completed';
+                  circleContent = '✓';
+                } else if (st.status === 'IN_PROGRESS') {
+                  statusClass = 'is-active';
+                }
+
+                return `
+                  <div class="step-item ${statusClass}">
+                    <div class="step-circle">${circleContent}</div>
+                    <div class="step-title">${st.title}</div>
+                    <div class="step-date">${st.date}</div>
+                  </div>
+                `;
+              }).join('');
+            }
+          }
+        } catch (e) {
+          console.error('Error refreshing dashboard:', e);
+        }
+      }
+
+      window.EpfoDashboard = { refreshDashboardState };
+      await refreshDashboardState();
+
+      // Hook Modal Buttons
+      const btnOpenClaim = document.getElementById('btn-open-claim-drawer');
+      const btnTileClaim = document.getElementById('btn-tile-claim');
+      if (btnOpenClaim) btnOpenClaim.addEventListener('click', () => window.EpfoClaimEngine.openClaimDrawer());
+      if (btnTileClaim) btnTileClaim.addEventListener('click', () => window.EpfoClaimEngine.openClaimDrawer());
+
+      // Passbook Modal
+      const passbookModal = document.getElementById('passbook-modal');
+      const btnViewPassbook = document.getElementById('btn-view-passbook');
+      const btnClosePassbook = document.getElementById('btn-close-passbook');
+      const btnDownloadPassbook = document.getElementById('btn-download-passbook-file');
+
+      if (btnViewPassbook && passbookModal) {
+        btnViewPassbook.addEventListener('click', () => passbookModal.showModal());
+      }
+      if (btnClosePassbook && passbookModal) {
+        btnClosePassbook.addEventListener('click', () => passbookModal.close());
+      }
+      if (btnDownloadPassbook) {
+        btnDownloadPassbook.addEventListener('click', () => {
+          btnDownloadPassbook.textContent = 'Generating PDF...';
+          setTimeout(() => {
+            btnDownloadPassbook.textContent = '✓ Passbook Statement Downloaded (Simulated)';
+          }, 800);
+        });
+      }
+
+      // Transfer Modal
+      const transferModal = document.getElementById('transfer-modal');
+      const btnTileTransfer = document.getElementById('btn-tile-transfer');
+      const btnCloseTransfer = document.getElementById('btn-close-transfer');
+      const btnCancelTransfer = document.getElementById('btn-cancel-transfer');
+      const btnConfirmTransfer = document.getElementById('btn-confirm-transfer');
+      const transferFeedback = document.getElementById('transfer-feedback');
+
+      if (btnTileTransfer && transferModal) {
+        btnTileTransfer.addEventListener('click', () => transferModal.showModal());
+      }
+      if (btnCloseTransfer && transferModal) {
+        btnCloseTransfer.addEventListener('click', () => transferModal.close());
+      }
+      if (btnCancelTransfer && transferModal) {
+        btnCancelTransfer.addEventListener('click', () => transferModal.close());
+      }
+      if (btnConfirmTransfer) {
+        btnConfirmTransfer.addEventListener('click', async () => {
+          btnConfirmTransfer.disabled = true;
+          btnConfirmTransfer.textContent = 'Processing Transfer...';
+          await fetch('/api/v1/member/transfer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ previousMemberId: 'MHBAN0028190000/0018273' })
+          });
+          if (transferFeedback) transferFeedback.hidden = false;
+          btnConfirmTransfer.textContent = '✓ Consolidate Complete';
+          await refreshDashboardState();
+        });
+      }
+
+      // Notifications Modal
+      const notifModal = document.getElementById('notifications-modal');
+      const btnNotifications = document.getElementById('btn-notifications');
+      const btnCloseNotif = document.getElementById('btn-close-notif');
+      const notifBadge = document.getElementById('notif-badge-count');
+
+      if (btnNotifications && notifModal) {
+        btnNotifications.addEventListener('click', () => {
+          notifModal.showModal();
+          if (notifBadge) notifBadge.style.display = 'none';
+        });
+      }
+      if (btnCloseNotif && notifModal) {
+        btnCloseNotif.addEventListener('click', () => notifModal.close());
+      }
+
+      // Contrast Toggle
+      const contrastBtn = document.getElementById('contrast-toggle');
+      if (contrastBtn) {
+        contrastBtn.addEventListener('click', () => {
+          const isHc = document.documentElement.getAttribute('data-theme') === 'high-contrast';
+          document.documentElement.setAttribute('data-theme', isHc ? 'default' : 'high-contrast');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+Role: Lead GovTech Security Auditor & Full-Stack Systems Engineer
+Review and refine the generated EPFO S3WaaS/UX4G codebase (index.html, styles.css, app.js, tools-calculators.html).
+
+Your goal is to perform a rigorous second-pass audit across four dimensions: GIGW 3.0 / WCAG 2.1 AA accessibility, S3WaaS compatibility, CSS performance budgeting, and synthetic pre-flight API integration.
+
+Task 1: GIGW 3.0 & WCAG 2.1 AA Accessibility Audit
+Sovereign Trust Accordion: Verify that the "Here’s how you know ⌄" toggle has correct aria-expanded, aria-controls, and role="region" attributes, and is fully navigable using the Tab and Enter/Space keys.
+
+Keyboard Focus Rings: Ensure every interactive element (<a>, <button>, <input>, <select>) has a visible :focus-visible ring (3px solid #0284C7; outline-offset: 2px).
+
+Contrast Verification: Confirm that all text elements meet or exceed a 4.5:1 contrast ratio against their backgrounds, and sovereign headers exceed 7:1 (AAA compliance).
+
+Semantic HTML Structure: Verify that the document strictly follows a sequential heading hierarchy (h1 -> h2 -> h3) with no skipped levels, and that all layout tables have been replaced with semantic CSS Grid/Flexbox containers.
+
+Task 2: USCIS-Style Split Pillar Interaction Verification
+In app.js, audit the left-hand navigation interaction for the 4-Pillar Service Hub:
+
+Switching between "For Employees", "For Pensioners", "For Employers", and "Grievances" must update the active panel instantly without layout shifts (CLS = 0.00).
+
+Ensure the active state is announced to screen readers using aria-selected="true" on the pillar trigger and aria-hidden="false" on the visible content panel.
+
+Task 3: Performance Budget & Asset Tree-Shaking
+Ensure the combined minified footprint of styles.css and app.js is strictly below 45 KB gzipped.
+
+Replace any external font dependencies or heavy icon font packs with inline, accessible SVG symbols (aria-hidden="true").
+
+Confirm that zero auto-scrolling <marquee> tags, auto-advancing carousels, or uncompressed raster graphics exist in the repository.
+
+Task 4: Synthetic Pre-Flight API & Validation Logic
+Implement the client-side pre-flight mock logic inside app.js for the Universal Status Checker:
+
+Input Sanitization: Validate that the input is exactly 12 continuous digits for a UAN or follows the statutory claim pattern ([A-Z]{5}[0-9]{10}).
+
+Jaro-Winkler String Distance Simulation: Implement a lightweight JavaScript helper that compares mock synthetic identity records against the input and displays one of three deterministic feedback states:
+
+✅ Success: Displays claim status with an interactive milestone progress bar.
+
+⚠️ Conditional Warning: Detects minor demographic spelling variations and offers instant demographic OTP reconciliation.
+
+🛑 Defect Prevention: Blocks invalid requests with plain-language, actionable guidance in the selected Indic language.
+
+Output the audited, fully functional, and corrected code files directly.

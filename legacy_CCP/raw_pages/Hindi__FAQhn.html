@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><meta name="format-detection" content="telephone=no" /><meta name="keywords" content="ministry, department" /><meta name="description" content="Ministry/Department" /><meta name="author" content="National Informatics Center" /><title>
+	राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल
+</title><link rel="stylesheet" href="../css/bootstrap.min.css" /><link rel="stylesheet" href="../css/fractionslider.css" /><link rel="stylesheet" href="../css/style-fraction.css" /><link rel="stylesheet" type="text/css" href="../css/switcher.css" media="screen" />
+
+    <!-- CSS FILES -->
+    <link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.png" /><link rel="icon" href="../assets/images/favicon/favicon.png" /><link href="../assets/css/all.min.css" rel="stylesheet" media="all" /><link href="../assets/css/base.css" rel="stylesheet" media="all" /><link href="../assets/css/base-responsive.css" rel="stylesheet" media="all" /><link href="../assets/css/grid.css" rel="stylesheet" media="all" /><link href="../assets/css/font.css" rel="stylesheet" media="all" /><link href="../assets/css/font-awesome.min.css" rel="stylesheet" media="all" /><link href="../assets/css/flexslider.css" rel="stylesheet" media="all" /><link href="../assets/css/megamenu.css" rel="stylesheet" media="all" /><link href="../assets/css/print.css" rel="stylesheet" media="print" />
+    <!-- Theme styles for this template -->
+    <link href="../assets/css/swiper-bundle.min.css" rel="stylesheet" media="all" /><link href="../assets/css/megamenu.css" rel="stylesheet" media="all" /><link href="../theme/css/site.css" rel="stylesheet" media="all" /><link href="../theme/css/site-responsive.css" rel="stylesheet" media="all" /><link href="../theme/css/ma5gallery.css" rel="stylesheet" type="text/css" /><link href="../theme/css/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 0rem;
+            padding-left: 0rem;
+        }
+
+        .navbar {
+            height: 150px;
+            /*padding: 0 15px;*/
+            position: fixed;
+            z-index: 1;
+            padding: 0px;
+            top: 0;
+            width: 100%;
+            border-radius: 0px;
+            display: unset;
+        }
+        /*.main {
+            margin-top: 143px;*/
+        /* Used in this example to enable scrolling */
+        /*}*/
+
+        a {
+            color: #428bca;
+            text-decoration: none;
+        }
+
+        .imgfix {
+            height: 63px;
+        }
+
+        .dividerHeading h4 span {
+            background: white;
+            position: relative;
+            line-height: 7px;
+            top: 4px;
+            display: inline-block;
+        }
+
+        .dividerHeading h4 span {
+            background: white;
+            position: relative;
+            line-height: 7px;
+            top: 4px;
+            display: inline-block;
+        }
+
+        .dividerHeading h4, .widget_title h4 {
+            font-size: 18px;
+            position: relative;
+            line-height: 0;
+            border-bottom: 1px solid #E74C3C;
+        }
+
+        .dividerHeading h4, .widget_title h4 {
+            font-size: 18px;
+            position: relative;
+            line-height: 0;
+            border-bottom: 1px solid #E74C3C;
+        }
+
+        .dividerHeading, .widget_title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .dividerHeading, .widget_title {
+            text-align: center;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+            .dividerHeading h4 span:before, .widget_title h4 span:before {
+                margin-right: 10px;
+            }
+
+            .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+                color: #E74C3C;
+                font-size: 10px;
+                content: "\f10c";
+                font-family: fontawesome;
+                display: inline-block;
+            }
+
+            .dividerHeading h4 span:before, .widget_title h4 span:before {
+                margin-right: 10px;
+            }
+
+            .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+                color: #E74C3C;
+                font-size: 10px;
+                content: "\f10c";
+                font-family: fontawesome;
+                display: inline-block;
+            }
+
+        :before, :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .dividerHeading h4 span:after, .widget_title h4 span:after {
+            margin-left: 10px;
+        }
+
+        .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+            color: #E74C3C;
+            font-size: 10px;
+            content: "\f10c";
+            font-family: fontawesome;
+            display: inline-block;
+        }
+
+        .dividerHeading h4 span:after, .widget_title h4 span:after {
+            margin-left: 10px;
+        }
+
+        .dividerHeading h4 span:before, .dividerHeading h4 span:after, .widget_title h4 span:after, .widget_title h4 span:before {
+            color: #E74C3C;
+            font-size: 10px;
+            content: "\f10c";
+            font-family: fontawesome;
+            display: inline-block;
+        }
+
+        :before, :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            padding: 15px;
+            /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYV2NkIAK8ffv2PyMR6hhGFeINJXDwgAhiwhIAIyslx2i5iywAAAAASUVORK5CYII=) repeat #fff; */
+            -webkit-box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            -moz-box-shadow: 0 2px 5px hsla(0,0%,0%,.4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0,0%,0%,.5), inset 0 0 50px hsla(0,0%,0%,.5);
+            box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            border: 1px solid #eee;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .wrap {
+            padding: 15px;
+            /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQYV2NkIAK8ffv2PyMR6hhGFeINJXDwgAhiwhIAIyslx2i5iywAAAAASUVORK5CYII=) repeat #fff; */
+            -webkit-box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            -moz-box-shadow: 0 2px 5px hsla(0,0%,0%,.4), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsla(0,0%,0%,.5), inset 0 0 50px hsla(0,0%,0%,.5);
+            box-shadow: 0 2px 5px hsl(0deg 0% 0% / 40%), inset 0 1px 0 #ccc, inset 1px 0 0 #aaa, inset 0 -1px 0 #ccc, inset -1px 0 0 #aaa, inset 0 2px 0 #c6c6c6, inset 2px 0 0 #a6a6a6, inset 0 -2px 0 #c6c6c6, inset -2px 0 0 #a6a6a6, inset 0 3px 0 #c0c0c0, inset 3px 0 0 #a0a0a0, inset 0 -3px 0 #c0c0c0, inset -3px 0 0 #a0a0a0, inset 0 4px 0 #b9b9b9, inset 4px 0 0 #999, inset 0 -4px 0 #b9b9b9, inset -4px 0 0 #999, inset 0 5px 0 #b6b6b6, inset 5px 0 0 #969696, inset 0 -5px 0 #b6b6b6, inset -5px 0 0 #969696, inset 0 6px 0 #b0b0b0, inset 6px 0 0 #909090, inset 0 -6px 0 #b0b0b0, inset -6px 0 0 #909090, inset 0 7px 0 #a9a9a9, inset 7px 0 0 #898989, inset 0 -7px 0 #a9a9a9, inset -7px 0 0 #898989, inset 0 8px 0 #a6a6a6, inset 8px 0 0 #868686, inset 0 -8px 0 #a6a6a6, inset -8px 0 0 #868686, inset 0 9px 0 #a0a0a0, inset 9px 0 0 #808080, inset 0 -9px 0 #a0a0a0, inset -9px 0 0 #808080, inset 0 10px 0 #888, inset 10px 0 0 #666, inset 0 -10px 0 #888, inset -10px 0 0 #666, inset 0 0 10px 10px hsl(0deg 0% 0% / 50%), inset 0 0 50px hsl(0deg 0% 0% / 50%);
+            border: 1px solid #eee;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        /* By Neelam for Menu*/
+
+
+        .dropdown-content {
+            display: none !important;
+            overflow: hidden;
+            position: absolute;
+            background: #002654;
+            color: #fff !important;
+            left: 275px;
+            top: -15px;
+            width: 100%;
+            z-index: 1;
+            padding: 10px !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block !important;
+        }
+
+        .dropdown-content li a {
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .dropdown {
+            display: block;
+        }
+
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 0rem;
+            padding-left: 0rem;
+        }
+
+        .submenutop {
+            display: none !important;
+            overflow: hidden;
+            position: absolute;
+            background: #002654;
+            color: #fff !important;
+            left: 275px;
+            top: -9px;
+            width: 100%;
+            z-index: 1;
+            padding: 10px !important;
+        }
+
+        .dropdown:hover .submenutop {
+            display: block !important;
+        }
+
+        footer .testimonial-item {
+            height: 84px;
+        }
+
+        .swiper-wrapper {
+            height: auto;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $(this).bind("contextmenu", function (e) {
+                e.preventDefault();
+            });
+            $(document).keydown(function (e) {
+                return (e.which || e.keyCode) != 116;
+            });
+        });
+    </script>
+    
+    
+
+         <style>
+
+.trackBx {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 2rem 1rem 0px;
+}
+h2.title{color: #673AB7;}
+
+    </style>
+
+</head>
+<body>
+    <form method="post" action="./FAQhn.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="GzOHhn9VEWGmWSPsqVneaXu/tjvXiOl87kqsfqLrqauBZ3hEDNZ9cEXzwVz09iOu2RoKXCtouZi8+0uj1p7+2paWCrA=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A97D224B" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="mwVYec7dvTWFKlQF00Kq/rBBS1xSgmHsqU9yHiNtlUBAfMYmdH9Y9d7q4G0Gba754Rs9ve2sZMMzhdfMQLHlK0EytaVugp+hDBEJ4792N76dE/XpftM2wvfLOO7Hqaq3s56SvTPNq4VcYGKvSg9EFi6hBTwXc2YjaWYxO1iwIeKHZgfhVqkgB8kBl723f2mEaaZWvtR5g/pbX5+d3ugL7vMP5B0=" />
+</div>
+        <div id="fb-root"></div>
+        <header id="header" class="clearfix">
+            <section class=" navbar">
+                <div class="region region-header-top">
+                    <div id="block-cmf-content-header-region-block" class="block block-cmf-content first last odd">
+
+                        <div class="wrapper common-wrapper">
+                            <div class="container four_content top-header">
+                                <div class="common-left clearfix">
+                                    <ul>
+                                        <li class="gov-india"><span class="responsive_go_hindi" lang="hi"><a target="_blank" href="https://india.gov.in/hi" title="भारत सरकार ( बाहरी वेबसाइट जो एक नई विंडो में खुलती है)" role="link">भारत सरकार</a></span><span class="li_eng responsive_go_eng"><a target="_blank" href="https://india.gov.in/" title="Government of india,External Link that opens in a new window" role="link">Government of india</a></span></li>
+                                        <li class="ministry">
+                                            <a href="https://mha.gov.in/hi" target="_blank" alt="Ministry Name" title="गृह मंत्रालय"><span class="responsive_minis_hi" lang="hi">गृह मंत्रालय</span></a>
+                                            <a href="https://mha.gov.in" target="_blank" alt="Ministry Name" title="Ministry of Home Affairs"><span class="li_eng responsive_minis_eng">Ministry of Home Affairs</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="common-right clearfix">
+                                    <ul id="header-nav">
+
+                                        <li class="hindi cmf_lan d-hide">
+                                            <a href="#" class="de-lag" title="Language" role="link"><b>Language</b></a>
+                                            <ul>
+                                                <li><a href="../Hindi/Defaulthn.aspx" class="cmf_lan" title="हिन्दी" role="link"><b>हिन्दी</b></a> </li>
+                                                <li><a href="../Default.aspx" class="cmf_lan" title="English" role="link"><b>English</b></a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ico-accessibility cf" style="display: none">
+                                            <a href="javascript:void(0);" id="toggleAccessibility" title="Accessibility Dropdown" role="link">
+                                                <img class="top" src="../assets/images/ico-accessibility.png" alt="Accessibility Dropdown" />
+                                            </a>
+                                            <ul>
+                                                <li><a href="javascript:void(0);" class="high-contrast dark" title="High Contrast" role="link">A</a> </li>
+                                                <li><a href="javascript:void(0);" class="high-contrast light" title="Normal Contrast" style="display: none;" role="link">A</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ico-social cf">
+                                            <a href="javascript:void(0);" id="toggleSocial" title="Social Medias" style="background: #fff;">
+                                                <img class="top" src="../assets/images/icons/colg-icon.png" alt="Social Medias" /></a>
+                                            <ul>
+                                                <li><a href="https://www.twitter.com/CyberDost" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/twitter.png" style="width: 28px;" /></a></li>
+                                                <li><a href=" https://www.facebook.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/facebook.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://www.youtube.com/c/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/youtube.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://www.instagram.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/instagram.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://t.me/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/telegram.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://in.linkedin.com/company/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/linkedin.png" style="width: 28px;" /></a></li>
+                                             
+                                                <li><a href="https://sharechat.com/profile/cyberdost?d=n" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/sharechat.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/public.png" style="width: 24px;" /></a></li>
+                                                <li><a href="https://whatsapp.com/channel/0029Va3VAOY8fewrOtXqMw1V" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/whatsapp.png" style="width: 24px;" /></a></li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="scroll" style="display: none;"><span></span></p>
+                </div>
+
+                <!--Top-Header Section end-->
+                <section class="wrapper header-wrapper">
+                    <div class="container common-container four_content header-container">
+                        <h1 class="logo">
+                            <img class="national_emblem" src="../assets/images/emblem-dark.png" alt="national emblem" />
+                            <img src="../../images/i4cpng.png" alt="I4C" class="i4cImg" />
+                            <span class="department-title">
+                                <em><a class="header__logo" id="logo" style="text-decoration: none; cursor: text;"><span>राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+                                    <span>National Cyber Crime Reporting Portal</span>
+                                </a>
+                                </em>
+                            </span>
+                        </h1>
+                        <div class="header-right clearfix">
+                            <div class="right-content clearfix">
+                                <div class="float-element">
+                                    <img src="../images/AKAM_logo.jpg" alt="amritmahotsav.nic.in" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--/.header-wrapper-->
+                <!-- LOGO bar -->
+            </section>
+            <div class="main">
+
+
+                <section class="wrapper megamenu-wraper">
+                    <h2 style="display: none;">Megamenu</h2>
+                    <div class=" four_content header-nav">
+                        <p class="showhide" id="showhide"><em></em><em></em><em></em></p>
+                        <nav class="main-menu clearfix main-menu1" id="main_menu">
+                            <ul class="nav-menu">
+                                <li><a href="Defaulthn.aspx" class="home"><span>होम</span><i class="fa fa-home"></i></a> </li>
+
+                                <li><a href="#">शिकायत दर्ज करना</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+                                            <li class="dropdown"><a href="#" style="font-weight: bold; font-size: 14px;">महिला / बाल संबंधित अपराध रिपोर्ट करें     <span class="indicator">+</span></a>
+
+                                                <ul class="submenutop">
+                                                    <li>
+                                                        <a id="btnra" href="javascript:__doPostBack(&#39;ctl00$btnra&#39;,&#39;&#39;)" style="font-size: 14px;">गुमनाम रूप से रिपोर्ट करें</a>
+
+                                                    </li>
+                                                    <li>
+                                                        <a id="btnrt" href="javascript:__doPostBack(&#39;ctl00$btnrt&#39;,&#39;&#39;)" style="font-size: 14px;">रिपोर्ट एवं ट्रैक</a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </li>
+
+                                            <li>
+                                                <a id="LinkButton1" href="javascript:__doPostBack(&#39;ctl00$LinkButton1&#39;,&#39;&#39;)" style="font-size: 14px;">वित्तीय धोखाधड़ी</a>
+                                            </li>
+                                            <li>
+                                                <a id="btnothrcrm" href="javascript:__doPostBack(&#39;ctl00$btnothrcrm&#39;,&#39;&#39;)" style="font-size: 14px;">अन्य साइबर अपराध रिपोर्ट करें</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a id="lnkchkstatus" href="javascript:__doPostBack(&#39;ctl00$lnkchkstatus&#39;,&#39;&#39;)" style="">अपनी शिकायत को ट्रैक करें</a>
+                                </li>
+
+                                <li><a href="" style="">संदिग्ध डेटा</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+
+                                            <li>
+                                                <a href="../Webform/suspect_search_repository.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध खोज <span>(मोबाइल, ईमेल, आदि)</span></a>
+
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/suspect_search_websites.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध की तलाश  <span>(वेबसाइट/ऐप)</span></a>
+
+                                            </li>
+
+                                            <li>
+                                                <a href="../Webform/cyber_suspect.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध की रिपोर्ट करें</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a id="btncybercrimevolunteers" href="javascript:__doPostBack(&#39;ctl00$btncybercrimevolunteers&#39;,&#39;&#39;)">साइबर स्वयंसेवक</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+                                            <li>
+                                                <a href="../Webform/cyber_volunteers_concept.aspx">साइबर स्वयंसेवी अवधारणा</a>
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/cyber_volunteers_TnC.aspx">नियम एवं शर्तें</a>
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/CyberVolunteerinstruction.aspx">स्वयंसेवक के रूप में पंजीकरण करें</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="../Webform/about_unlawful_content.aspx">गैरकानूनी सामग्री क्या है</a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href="../Webform/crmcondivol.aspx?vol=1">लॉग इन करें</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+
+                                <li><a href="#">संसाधन</a>
+                                    <div class="sub-nav col-1 nopading">
+                                        <ul class="sub-nav-group ">
+                                            <li><a href="FAQhn.aspx">एफ ए क्यू</a>
+
+                                            </li>
+                                            <li><a href="../Webform/Citizen_Manual.aspx">सिटिजन मैनुअल</a>
+
+                                            </li>
+                                            <li><a href="Crime_OnlineSafetyTipshn.aspx">साइबर सुरक्षा युक्तियाँ</a>
+
+                                            </li>
+
+                                            <li class="dropdown"><a href="#" style="">मीड��या गैलरी <span class="indicator">+</span></a>
+                                                <ul class="dropdown-content">
+                                                    <li><a href="../Webform/photoGallery.aspx">फोटो गैलरी</a> </li>
+                                                    <li><a href="../Webform/videoGallery.aspx">वीडियो गैलरी</a> </li>
+                                                    <li><a href="../Webform/radioGallery.aspx">रेडियो जिंगल</a> </li>
+                                                </ul>
+
+                                            </li>
+
+                                            <li><a href="../Webform/dailyDigest.aspx" style="">दैनिक खुलासा</a>
+                                            </li>
+                                            <li><a href="../Webform/training-resource.aspx" style="">प्रशिक्षण संसाधन
+                                                 <img src="../images/new.gif" style="width: 50px;" />
+                                            </a>
+                                            </li>
+                                            <li><a href="https://www.nvaccess.org/download/" target="_blank" style="text-transform: uppercase !important; font-size: 13px; font-weight: bold">स्क्रीन रीडर</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+                                <li><a href="../Webform/Crime_NodalGrivanceList.aspx" id="Alicontect">संपर्क करें</a></li>
+
+                            </ul>
+                        </nav>
+                        <nav class="main-menu clearfix" id="overflow_menu">
+                            <ul class="nav-menu clearfix">
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        
+    <section class="wrapper">
+
+        <section id="fontSize" class="wrapper body-wrapper ">
+            <div class="bg-wrapper inner-wrapper">
+                <div class="breadcam-bg breadcam">
+                    <div class="container common-container four_content">
+                        <ul>
+                            <li><a href="Defaulthn.aspx">होम </a></li>
+                            <li class="current">सामान्य प्रश्न (लगातार पूछे जाने वाले प्रश्न)</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+       <section class="">
+            <div class="container">
+                <div class="row sub_content mt-4 mb-5">
+                    <div class="trackBx" style="text-align:justify !important">
+                        <div class="col-lg-12 col-md-12 col-sm-12" >
+                            <section class="wrapper paragraph-wrapper">
+                                <div class="">
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>साइबर अपराध रिपोर्टिंग पोर्टल का उद्देश्‍य क्‍या है ?</span></h2>
+                                        <p>
+                                            यह पोर्टल, पीडितों/ शिकायतकर्ता को ऑनलाइन साइबर अपराध शिकायतों की सूचना देने की सुविधा प्रदान करने हेतु भारत सरकार की एक पहल है। 
+                                यह पोर्टल, ऑन लाइन बाल-अश्‍लीलता, बाल यौन शोषण कंटेंट अथवा यौनोत्‍तेजक कंटेंट जैसे बलात्‍कार/सामूहिक बलात्‍कार के अंश तथा अन्‍य साइबर अपराध जैसे मोबाइल अपराध, 
+                                आनलाइन एवं सोशल मीडिया अपराध, ऑनलाइन वित्‍तीय धोखाधड़ी, रैंसमवेअर, हैकिंग, क्रिप्‍टोकरेंसी अपराध तथा ऑनलाईन साइबर दुर्व्‍यापार से संबंधित शिकायतों को व्‍यवस्थित करता है।
+                                                                        
+                                        </p>
+                                        <p>
+                                            यह पोर्टल, ऑनलाइन बाल-अश्‍लीलता अथवा यौनोत्‍तेजक कंटेंट जैसे बलात्‍कार/सामूहिक बलात्‍कार संबंधी कंटेंट की रिपोर्टिंग हेतु गुमनाम शिकायत करने का एक विकल्‍प भी मुहैया कराता है।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>सीएसईएएम क्‍या है?</span></h2>
+                                        <p>
+                                            बाल यौन शोषण कंटेंट का तात्‍पर्य उस कंटेंट से है जिसमें किसी बच्‍चे, जिसके साथ दुर्व्‍यवहार किया गया है अथवा जिसका यौन शोषण किया गया है, का किसी भी रूप में यौनाचार संबंधी चित्र समाहित हो। सूचना प्रौद्योगिकी अधिनियम की धारा 67 (ख) में यह उल्‍लेख है कि “बच्‍चों को यौनाचार के सुस्‍पष्‍ट कृत्‍य आदि के साथ दर्शाती कंटेंट का इलेक्‍ट्रॅानिक्‍स प्रारूप में प्रकाशन अथवा इसका पारेषण दण्‍डनीय है”।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>इस पोर्टल के अलावा, सोशल मीडिया वेबसाइटों से आपत्तिजनक कंटेंट को हटाने के लिए क्‍या कोई और विकल्‍प मौजूद है?</span></h2>
+                                        <p>
+                                            जी हां, अधिकांश सोशल मीडिया वेबसाइटों जैसे-फेसबुक, यू-ट्यूब, ट्विटर और इंस्‍टाग्राम आदि पर आपत्तिजनक कंटेंट की रिपोर्टिंग अथवा फ्लैगिंग करने का विकल्‍प होता है। सोशल मीडिया प्‍लेटफार्म्‍स अपनी-अपनी विषयगत नीति (कंटेंट पॉलिसी) के अनुसार उन्‍हें सूचित कंटेंट (विषयों) के आधार पर समुचित कार्रवाई कर सकते हैं।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>इस पोर्टल पर मैं किस प्रकार के साइबर अपराध की सूचना दे सकता हॅू?</span></h2>
+                                        <p>इस पोर्टल पर साइबर अपराधों की सूचना देने के लिए दो विकल्‍प उपलब्‍ध हैं:</p>
+
+                                        <p>
+                                            महिलाओं/बच्‍चों से जुड़ी अपराध सूचना – इस खण्‍ड के तहत आप बाल-अश्‍लीलता, बाल यौन शोषण कंटेंट अथवा यौनाचार स्‍पष्‍ट अंश जैसे बलात्‍कार/सामूहिक बलात्‍कार के कंटेंट से संबंधित शिकायतों की सूचना दे सकते हैं।
+                                        </p>
+                                        <p>
+                                            अन्‍य साइबर अपराधों की सूचना-इस विकल्‍प के तहत आप मोबाइल क्राइम्‍स, ऑनलाइन एवं सोशल मीडिया क्राइम्‍स, ऑनलाइन वित्‍तीय धोखाधड़ी, रैंसमवेअर, हैकिंग, क्रिप्‍टोकरेंसी क्राइम्‍स और ऑनलाइन साइबर दुर्व्‍यापार जैसे साइबर अपराधों से संबंधित शिकायतों की सूचना दे सकते हैं।
+                                        </p>
+                                        <hr />
+                                    </div>
+
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>मुझे अपनी शिकायत की सूचना देने के लिए किस प्रकार की सूचना मुहैया करानी होगी?</span></h2>
+                                        <p>
+                                            www.cybercrime.gov.in पर कोई भी रिपोर्ट दर्ज करने के दो विकल्‍प है: 
+                                (i) महिलाओं/बच्‍चों से जुडे अपराध की सूचना और  
+                                (ii) अन्‍य साइबर अपराधों की सूचना। “महिलाओं/बच्‍चों से जुड़े अपराध की सूचना” के मामले में अपनी शिकायत दर्ज कराने के दो तरीके हैं:
+                                        </p>
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <ul>
+                                                    <li>
+                                                        <p>
+                                                            क)	गुमनाम सूचना – आप ऑनलाइन बाल अश्‍लीलता/बलात्‍कार अथवा सामूहिक बलात्‍कार के कंटेंट से जुडे़ अपराधों की सूचना अपना नाम गुप्‍त रखते हुए कर सकते हैं। आपको कोई निजी सूचना मुहैया कराने की आवश्‍यकता नही हैं। तथापि, पुलिस प्राधिकारियों द्वारा आवश्‍यक कार्रवाई किए जाने के लिए शिकायत से जुड़ी सूचना सटीक और पूरी होनी चाहिए।.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            ख)	रिपोर्ट एवं ट्रैक- इस विकल्‍प के तहत लाल तारक (*) से चिन्हित फिल्ड अनिवार्य है। यह महत्‍वपूर्ण है कि पुलिस  प्राधिकारियों को शिकायत से जुड़ी सटीक एवं पूरी सूचना प्राप्‍त हो। इसलिए, आपको अपेक्षित सूचना जैसे- अपना नाम, फोन नंबर, ई-मेल पता, शिकायत का ब्‍यौरा तथा शिकायत के समर्थन में आवश्‍यक सूचना मुहैया करानी चाहिए।
+                                                      
+                                                        </p>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            शुरूआत में, आपको अपने नाम और वैध भारतीय मोबाइल नंबर का उपयोग करते हुए स्‍वयं को पंजीकृत कराना आवश्‍यक है, आपको आपके मोबाइल नंबर पर एक वन टाइम पासवर्ड (ओटीपी) प्राप्‍त होगा। यह ओटीपी केवल 30 मिनट तक मान्‍य रहता है। जैसे ही आप पोर्टल पर सफलतापूर्वक अपना मोबाइल नंबर पंजीकृत करा लेते हैं, आप शिकायत की रिपोर्ट करने के लिए सक्षम हो जाएंगे।
+                                         
+                                        </p>
+                                        <p>
+                                            आप अन्‍य साइबर अपराधों जैसे- मोबाइल क्राइम्‍स, ऑनलाइन एंड सोशल मीडिया क्राइम्‍स, आनलाइन वित्‍तीय धोखाधड़ी, रैंसमवेअर, हैकिंग, क्रिप्‍टोकरेंसी क्राइम्‍स तथा ऑनलाइन साइबर दुर्व्‍यापार की सूचना देने हेतु इस पोर्टल पर उपलब्‍ध “रिपोर्ट अदर साइबर क्राइम्‍स” विकल्‍प का प्रयोग कर सकते हैं। आपको अपने नाम और वैध भारतीय मोबाइल नंबर का उपयोग करते हुए स्वयं को पंजीकृत कराना आवश्‍यक है। आपको आपके मोबाइल नंबर पर एक वन टाइम पासवर्ड (ओटीपी) प्राप्‍त होगा। यह ओटीपी केवल 30 मिनट तक मान्‍य रहता है। जैसे ही आप पोर्टल पर सफलतापूर्वक अपना मोबाइल नंबर पंजीकृत करा लेते हैं, आप समुचित श्रेणी का चयन करते हुए शिकायत की रिपोर्ट करने के लिए सक्षम हो जाएंगे।
+
+                                        </p>
+                                        <hr />
+                                    </div>
+
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>किसी शिकायत की सूचना देते समय मुझे किस राज्‍य/संघ राज्‍य क्षेत्र का चयन करना चाहिए?</span></h2>
+                                        <p>
+                                            “गुप्‍त नाम से रिपोर्ट” के विकल्‍प का प्रयोग करते हुए “महिलाओं/बच्‍चों से जुडे अपराध की रिपोर्ट” खण्‍ड के तहत कोई शिकायत दर्ज कराने के मामले में पीडि़त के अवस्‍थान/राज्‍य/संघ राज्‍य क्षेत्र, जहां उक्‍त घटना घटित हुई हो, का चयन किया जाना चाहिए। यदि यह बाल अश्‍लीलता/बलात्‍कार अथवा सामूहिक बलात्‍कार सामाग्री का प्रसार करने वाली वेबसाइट से संबंधित रिपोर्ट है, तो शिकायतकर्ता अपने राज्‍य/संघ राज्‍य क्षेत्र का चयन कर सकते हैं।
+                                        </p>
+                                        <p>
+                                            एक जिम्‍मेदार नागरिक होने के नाते, आपको अपराध की रिपोर्टिंग के लिए रिपोर्ट एवं ट्रैक विकल्‍प का प्रयोग करना चाहिए, क्‍योंकि  इससे आगे के विवरण प्राप्‍त करने के लिए विधि प्रवर्तन एजेंसियों को आपसे संपर्क करने में मदद मिलेगी।
+                                        </p>
+                                        </hr>
+                                    </div>
+
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>अन्‍य साइबर अपराधों के बारे में मैं किस प्रकार शिकायतें दायर कर सकता हूं?</span></h2>
+                                        <p>
+                                            अन्‍य साइबर अपराधों के मामले में, आप “रिपोर्ट अदर साइबरक्राइम्‍स” खण्‍ड का विकल्‍प चुन सकते हैं। आपको अपने नाम और वैध मोबाइल नंबर का उपयोग करते हुए स्‍वयं को पंजीकृत कराना आवश्‍यक है। आपको आपके मोबाइल नंबर पर एक वन टाइम पासवर्ड (ओटीपी) प्राप्‍त होगा। 
+
+यह ओटीपी केवल 30 मिनट तक मान्‍य होगा। जैसे ही आप पोर्टल पर सफलतापूर्वक अपना मोबाइल नंबर पंजीकृत करा लेते हैं, आप समुचित श्रेणी एवं उप श्रेणी का चयन करके शिकायत की रिपोर्ट करने के लिए सक्षम हो जाएंगे।
+                                        </p>
+                                        <p>
+                                            इस खण्‍ड के तहत, लाल तारक (*) से चिन्हित फिल्ड अनिवार्य है। यह महत्‍वपूर्ण है कि पुलिस प्राधिकारियों को शिकायत से जुड़ी सटीक एवं पूरी सूचना प्राप्‍त हो। इसलिए, आपको अपेक्षित सूचना जैसे- अपना नाम, फोन नंबर, ई-मेल पता, शिकायत का ब्‍यौरा तथा शिकायत के समर्थन में आवश्‍यक सूचना मुहैया करानी चाहिए।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>साइबर अपराध से जुडी अपनी शिकायत दायर करते समय किस प्रकार की सूचना को साक्ष्‍य स्‍वरूप माना जाएगा?</span></h2>
+                                        <p>आपकी शिकायत से जुड़ा कोई भी साक्ष्‍य, जो आपके पास हो, महत्‍वपूर्ण है। साक्ष्‍य में निम्‍नलिखित शामिल किया जा सकता है:</p>
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <ul>
+                                                    <li>
+                                                        <p>क्रेडिट कार्ड रसीद</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>बैंक स्टेटमेंट</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>लिफाफा (प्राप्‍त पत्र अथवा मेल/ कुरिअर के माध्‍यम से कोई वस्तु प्राप्‍त हुआ हो)</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>ब्रोशर/पैम्‍फलेट</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>आनलाइन धन-अंतरण की रसीद</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>ई-मेल की प्रति</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>वेबपेज का यूआरएल</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>बातचीत की प्रतिलेख</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>संदिग्‍ध मोबाइल नंबर स्‍क्रीनशॉट</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>वीडियो</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>चित्र</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>किसी प्रकार के दस्‍तावेज</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <hr />
+                                    </div>
+
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>यदि शिकायतकर्ता कोई झूठी शिकायत/सूचना की रिपोर्ट देता है, तो क्‍या कार्रवाई की जाएगी?</span></h2>
+                                        <p>झूठी शिकायत देने से शिकायतकर्ता भारतीय कानून के अनुसार दांडिक कार्रवाई का भागी होगा।.</p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>क्‍या मैं कोई सूचना अपलोड किए बिना किसी शिकायत की रिपोर्ट कर सकता हॅू?</span></h2>
+                                        <p>
+                                            इसकी सलाह दी जाती है कि, आप शिकायत के बारे में जितनी अधिक सूचना संभव हो, मुहैया कराएं, ताकि शिकायत पर कार्य कर रहे पुलिस अधिकारी समुचित एवं शीघ्र कार्रवाई करने में सक्षम हो सकें।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>मेरे द्वारा शिकायत की सूचना दिए जाने के बाद क्‍या होगा?</span></h2>
+                                        <p>
+                                            शिकायत की रिपोर्ट करते समय आपके द्वारा किए गए राज्‍य/संघ राज्‍य क्षेत्र के चयन के आधार पर संबंधित राज्‍य/संघ एक क्षेत्र के पुलिस प्राधिकारियों द्वारा पोर्टल पर रिपोर्ट की गई शिकायतों पर कार्रवाई की जाएगी।.
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>क्‍या मुझे इस बारे में सूचित किया जाएगा कि मेरी शिकायत सफलतापूर्वक दर्ज हो गई है?</span></h2>
+                                        <p>
+                                            जी हां, जैसे ही आपकी शिकायत दर्ज की जाती है, आपको पोर्टल ही पर एक पुष्टिकरण संदेश प्राप्‍त हो जाएगा। यदि आपने पोर्टल पर उपलब्‍ध “रिपोर्ट एवं ट्रैक” विकल्‍प अथवा “रिपोर्ट अदर साइबर क्राइम” खण्‍ड के माध्‍यम से शिकायत दायर की है, तो आपके पंजीकृत मोबाइल नंबर और मुहैया कराए गए ईमेल आईडी  पर आपको एक शिकायत-संदर्भ-संख्‍या सहित एक एसएमएस और एक ई-मेल प्राप्‍त होगा।
+
+                                        </p>
+                                        <hr />
+                                    </div>
+
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>क्‍या मैं अपनी शिकायत के स्‍टेटस की जांच कर सकता हॅू?</span></h2>
+                                        <p>
+                                            यदि आपने पोर्टल पर उपलब्‍ध ‘रिपोर्ट एवं ट्रैक’ विकल्‍प अथवा ‘रिपोर्ट अदर साइबर क्राइम’ खण्‍ड का प्रयोग करके शिकायत की सूचना भेजी है, तो आप अपनी शिकायत के स्‍टेटस की जांच कर सकेंगे। शिकायतकर्ता को एक शिकायत संदर्भ संख्‍या प्राप्‍त होगी, जिसे पोर्टल पर लॉगिंग करके तथा ‘चेक स्‍टेटस’ आप्‍शन को क्लिक करके शिकायत की प्रगति जानने के लिए इस्‍तेमाल किया जा सकता है।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>क्‍या मैं पोर्टल पर दायर की गई अपनी शिकायत को निरस्‍त कर सकता हॅू?</span></h2>
+                                        <p>
+                                            महिला/ब��ल सम्‍बद्ध अपराध रिपोर्ट खण्‍ड के तहत दायर की गई किसी भी शिकायत को निरस्‍त नहीं किया जा सकता है। रिपोर्ट अदर साइबर क्राइम खण्‍ड के तहत दायर की गई शिकायत को FIR(प्राथमिकी) में तब्दील होने से पहले तक निरस्‍त किया जा सकता है।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>हैश वैल्‍यू क्‍या है और इसका उद्देश्‍य क्‍या है?</span></h2>
+                                        <p>
+                                            हैश वैल्‍यू एक निर्धारित लंबाई का अल्‍फा संख्‍यात्‍मक मान है जो अनोखे ढंग से डाटा (उदाहरण के लिए 00800fc577294c34e0b28ad2839435945) की पहचान करता है। हैश वैल्‍यू किसी डिजिटल फाइल, जिसे आप पोर्टल में साक्ष्‍य (अर्थात चित्र, वीडियो, दस्‍तावेज आदि) के रूप में अपलोड करते हैं, के एक अनोखे फिंगर प्रिंट/संख्‍या के रूप में कार्य करता है। आपको प्राप्‍त हैश वैल्‍यू से पोर्टल पर अपलोड किए गए डिजिटल साक्ष्‍य की सत्‍यनिष्‍ठा की परख सुनिश्चित होगी।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>यदि मै एक भारतीय नागरिक हॅू लेकिन किसी विदेशी राष्‍ट्रीय अथवा कंपनी द्वारा ऑनलाइन/ इन-साइबर स्‍पेस का शिकार हुआ हॅू, तो क्‍या मैं शिकायत दायर कर सकता हॅू?</span></h2>
+                                        <p>जी हां, आप पोर्टल पर साइबर अपराध से संबद्ध शिकायत दर्ज कर सकते हैं।</p>
+                                        <hr />
+                                    </div>
+
+                                    <div class="align-rt">
+                                        <h2 class="title"><span>यदि मैं भारत में किसी व्‍यक्ति अथवा कंपनी द्वारा ऑनलाइन/ इन साइबर स्‍पेस का शिकार हुआ हॅू, तो क्‍या मैं शिकायत दायर कर सकता हॅू, लेकिन मैं भारत का नागरिक नहीं हॅू?</span></h2>
+                                        <p>
+                                            जी हां, आप साइबर अपराध से संबंधित शिकायत की रिपोर्टिंग करने के समुचित खण्‍ड और विकल्‍प का चुनाव करके पोर्टल पर शिकायत पंजीकृत करा सकते हैं।:
+                                        </p>
+                                        <p>
+                                            महिला/बाल संबद्ध अपराध की रिपोर्ट - इस खण्‍ड के तहत आप आनलाइन अश्‍लीलता, बाल यौन शोषण कंटेंट अथवा यौनोत्‍तेजक‍ कंटेंट जैसे बलात्‍कार/सामूहिक बलात्‍कार की कंटेंट से संबंधित शिकायतों की रिपोर्ट कर सकते हैं। 
+इस खण्‍ड के तहत शिकायत पंजीकृत कराने हेतु निम्‍नलिखित विकल्‍प हैं:
+
+                                        </p>
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <ul>
+                                                    <li>
+                                                        <p>
+                                                            गुमनाम रिपोर्ट - आप नाम का खुलासा किए बिना ऑनलाइन बाल अश्‍लीलता/बलात्‍कार अथवा सामूहिक बलात्‍कार कंटेंट/विषयवस्‍तु से संबंधित  अपराधों की रिपोर्ट कर सकते हैं। आपको कोई निजी जानकारी मुहैया कराने की आवश्‍यकता नहीं है। तथापि, पुलिस प्राधिकारियों द्वारा आवश्‍यक कार्रवाई करने के लिए उक्‍त शिकायत से संबद्ध सूचना यथार्थ एवं पूरी होनी चाहिए।.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            रिपोर्ट एवं ट्रैक – इस विकल्‍प के तहत आपको अपने नाम और वैध भारतीय मोबाइल नंबर का उपयोग करते हुए स्‍वयं को पंजीकृत कराना आवश्‍यक है। आपको आपके मोबाइल नंबर पर एक वन टाइम पासवर्ड (ओटीपी) प्राप्‍त होगा। यह ओटीपी केवल 30 मिनट तक मान्‍य होगा। जैसे ही आप पोर्टल पर सफलतापूर्वक अपना मोबाइल नंबर पंजीकृत करा लेते हैं, आप शिकायत की रिपोर्ट करने हेतु सक्षम हो जाएंगे।
+                                                        </p>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            रिपोर्ट अदर साइबरक्राइम्‍स – इस खण्‍ड के तहत आप मोबाइल क्राइम्‍स, आनलाइन एवं सोशल मीडिया क्राइम्‍स, ऑनलाइन एवं सोशल मीडिया क्राइम्‍स, ऑनलाइन वित्‍तीय धोखाधडी, रैंसमवेअर, हैकिंग, किप्‍टोकरेंसी क्राइम्‍स और ऑनलाइन साइबर दुर्व्‍यापार जैसे साइबर अपराधों से संबंधित शिकायतों की सूचना दे सकते हैं। आपको अपने नाम और वैध भारतीय मोबाइल नंबर का उपयोग करते हुए स्‍वयं को पंजीकृत कराना आवश्‍यक है। आपको आपके मोबाइल नंबर पर एक वन टाइम पासवर्ड (ओटीपी) प्राप्‍त होगा। यह ओटीपी केवल 30 मिनट तक मान्‍य होगा। जैसे ही आप पोर्टल पर सफलतापूर्वक अपना मोबाइल नंबर पंजीकृत करा लेते हैं, आप शिकायत की रिपोर्ट करने हेतु सक्षम हो जाएंगे।
+                                        </p>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIALS END -->
+            </div>
+        </section>
+    </section>
+
+
+        <footer class="footer" style="background: #f2f3f5!important">
+           
+        </footer>
+        <!--end footer-->
+        <div style="position: relative;">
+            <div class="footer-top-wrapper">
+                <div class="container footer-top-container text-start">
+                    <ul class="menu">
+                        <li><a href="../Webform/Crime_Feedback.aspx">प्रतिक्रिया</a></li>
+                        <li><a href="FAQhn.aspx">सामान्य प्रश्न</a></li>
+                        <li><a href="../Webform/Crime_NodalGrivanceList.aspx">संपर्क करें</a></li>
+                        <li><a href="Wbsitepolicehn.aspx">वेबसाइट नीतियां</a></li>
+                        <li><a href="Disclaimerhn.aspx">डिस्क्लेमर</a></li>
+
+                        <li><a href="https://www.twitter.com/CyberDost" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/twitter.png" style="width: 28px;" /></a></li>
+                        <li><a href=" https://www.facebook.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/facebook.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://www.youtube.com/c/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/youtube.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://www.instagram.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/instagram.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://t.me/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/telegram.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://in.linkedin.com/company/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/linkedin.png" style="width: 28px;" /></a></li>
+                       
+                        <li><a href="https://sharechat.com/profile/cyberdost?d=n" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/sharechat.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/public.png" style="width: 24px;" /></a></li>
+                        <li><a href="https://whatsapp.com/channel/0029Va3VAOY8fewrOtXqMw1V" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/whatsapp.png" style="width: 24px;" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="footer_bottom">
+            <div class="footer-bottom-wrapper">
+                <div class="container">
+                    <div class="copyright-content" style="font-size: 13px !important; width: 100%;">
+
+                        <div class="row">
+                            <div class="col-lg-9 col-md-8 col-sm-12 col-12 text-start">
+                                वेबसाइट कंटेंट भारत सरकार के गृह मंत्रालय द्वारा प्रबंधित। मोज़िला फ़ायरफ़ॉक्स, गूगल क्रोम में सबसे अच्छा चित्रण            
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-12 col-12 text-start">
+
+                                <span id="Label1" style="font-weight:bold;display: inline-block;">Visitor Count:</span>
+                                <span id="Label2" style="font-weight:bold;display: inline-block;"></span>
+
+                                <div class="d-block">
+                                    <b>Last Updated: 02/02/2024  </b>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </form>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/retina-1.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <!-- jQuery cookie -->
+    
+    <!-- Style Colors Switcher -->
+    
+
+    
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-accessibleMegaMenu.js"></script>
+    <script src="../assets/js/framework.js"></script>
+    <script src="../assets/js/jquery.flexslider.js"></script>
+    <script src="../assets/js/font-size.js"></script>
+    <script src="../assets/js/swithcer.js"></script>
+    <script src="../theme/js/ma5gallery.js"></script>
+    <script src="../assets/js/megamenu.js"></script>
+    <script src="../theme/js/easyResponsiveTabs.js"></script>
+    <script src="../theme/js/custom.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <script>
+        new Swiper('.testimonials-slider', {
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+
+                1200: {
+                    slidesPerView: 7,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "portal_metadata": {
+    "name": "National Cyber Crime Reporting Portal (NCRP)",
+    "nodal_body": "Indian Cyber Crime Coordination Centre (I4C)",
+    "ministry": "Ministry of Home Affairs, Government of India",
+    "emergency_helpline": "1930",
+    "cfcfrms_gateway": "https://cybercrime.gov.in/Webform/Index.aspx",
+    "last_scraped": "2026-08-28T00:00:00Z"
+  },
+  "crime_categories": [
+    {
+      "code": "FINANCIAL_FRAUD",
+      "title": "Financial Cyber Fraud (1930 CFCFRMS)",
+      "priority": "P0_EMERGENCY",
+      "sla_freeze_target": "60_SECONDS",
+      "statutory_act": "IT Act 2000 Section 66D / BNS Section 318",
+      "subtypes": [
+        "UPI_FRAUD",
+        "INTERNET_BANKING_HACK",
+        "CREDIT_DEBIT_CARD_FRAUD",
+        "QR_CODE_PHISHING",
+        "AEPS_BIOMETRIC_FRAUD",
+        "CRYPTO_INVESTMENT_SCAM"
+      ]
+    },
+    {
+      "code": "WOMEN_CHILD_SAFETY",
+      "title": "Cyber Crimes Against Women & Children",
+      "priority": "P0_PRIORITY",
+      "anonymous_supported": true,
+      "statutory_act": "POCSO Act / IT Act 2000 Sections 67, 67A, 67B / BNS Section 77",
+      "subtypes": [
+        "CSAM_CHILD_SEXUAL_ABUSE_MATERIAL",
+        "NON_CONSENSUAL_IMAGERY_SEXTORTION",
+        "ONLINE_CYBER_STALKING_BULLYING",
+        "IDENTITY_DEFAMATION_GROOMING"
+      ]
+    },
+    {
+      "code": "GENERAL_CYBER_OFFENCES",
+      "title": "Other Cyber Crimes",
+      "priority": "P1_STANDARD",
+      "anonymous_supported": false,
+      "statutory_act": "IT Act 2000 Sections 43, 65, 66, 66B, 66C, 66E, 66F",
+      "subtypes": [
+        "IDENTITY_THEFT_IMPERSONATION",
+        "SOCIAL_MEDIA_ACCOUNT_HIJACK",
+        "RANSOMWARE_MALWARE_ATTACK",
+        "CORPORATE_DATA_BREACH",
+        "SIM_SWAP_TELECOM_FRAUD",
+        "FAKE_GOVERNMENT_WEBSITE_SCAM"
+      ]
+    }
+  ]
+}
+

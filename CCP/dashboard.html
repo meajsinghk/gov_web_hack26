@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Citizen Cyber Case Management Dashboard — Indian Cyber Crime Coordination Centre (I4C), Ministry of Home Affairs. Track real-time bank lien progress, police investigation milestones, and upload evidence.">
+  <title>Citizen Case Dashboard | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .dash-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .dash-stat-box {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .dash-stat-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--gov-navy);
+      margin-top: 0.25rem;
+    }
+    .case-card-box {
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: var(--transition-fast);
+    }
+    .case-summary-header {
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: var(--bg-surface);
+      user-select: none;
+    }
+    .case-summary-header:hover {
+      background-color: var(--bg-surface-subtle);
+    }
+    .case-expanded-body {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      background-color: #FAFAFA;
+    }
+    [data-theme="high-contrast"] .case-card-box {
+      background-color: #121212;
+      border: 2px solid #FFFFFF;
+    }
+    [data-theme="high-contrast"] .case-summary-header:hover,
+    [data-theme="high-contrast"] .case-expanded-body {
+      background-color: #1E293B;
+    }
+    .timeline-steps-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 48rem) {
+      .timeline-steps-grid-4 { grid-template-columns: 1fr; }
+    }
+    .timeline-node {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.75rem;
+    }
+    .timeline-node-circle {
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.75rem;
+      margin-bottom: 0.35rem;
+    }
+    .timeline-node.is-done .timeline-node-circle {
+      background-color: var(--gov-green);
+      color: #FFFFFF;
+    }
+    .timeline-node.is-active .timeline-node-circle {
+      background-color: var(--gov-navy);
+      color: #FFFFFF;
+      box-shadow: 0 0 0 3px var(--gov-blue-light);
+    }
+    .timeline-node.is-pending .timeline-node-circle {
+      background-color: var(--bg-surface-subtle);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+    .dashboard-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — Secure Citizen Portal Session</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Authenticated Dashboard Header (No landing page navigation items) -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      
+      <a href="dashboard.html" class="brand-link" aria-label="Citizen Case Dashboard">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">नागरिक साइबर केस प्रबंधन पोर्टल</span>
+          <span class="brand-title-en">Citizen Case Management Dashboard</span>
+        </div>
+      </a>
+
+      <!-- Authenticated User Action Strip -->
+      <div class="header-actions-strip">
+        <div style="font-size:0.8125rem; font-weight:700; color:var(--gov-navy); background:var(--bg-surface-subtle); padding:0.4rem 0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border-color); display:flex; align-items:center; gap:0.4rem;" id="header-user-display">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Ramesh Kumar (+91 9876543210)</span>
+        </div>
+        <button type="button" class="btn btn-outline" id="btn-dashboard-signout">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>Sign Out</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Dashboard Layout (Sidebar + Main View Panels) -->
+  <main class="container dashboard-layout-wrap" id="main-content" role="main" tabindex="-1">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar" aria-label="Dashboard Navigation">
+      <nav style="display:flex; flex-direction:column; gap:0.35rem;">
+        
+        <button type="button" class="dashboard-nav-item is-active" id="tab-btn-cases" onclick="switchDashboardTab('cases')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>My Complaints</span>
+        </button>
+
+        <button type="button" class="dashboard-nav-item" id="tab-btn-overview" onclick="switchDashboardTab('overview')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Overview &amp; Recovery</span>
+        </button>
+
+        <a href="emergency-report.html" class="dashboard-nav-item" style="color:var(--gov-crimson);">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>File New Complaint</span>
+        </a>
+
+        <button type="button" class="dashboard-nav-item" id="tab-btn-rfe" onclick="switchDashboardTab('rfe')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Pending Evidence (RFE)</span>
+        </button>
+
+        <button type="button" class="dashboard-nav-item" id="tab-btn-settings" onclick="switchDashboardTab('settings')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Account Settings</span>
+        </button>
+
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div style="flex:1; min-width:0;">
+      
+      <!-- TAB PANEL 1: MY COMPLAINTS (DEFAULT) -->
+      <section id="panel-cases" aria-labelledby="heading-my-cases">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1.25rem;">
+          <div>
+            <h1 id="heading-my-cases" style="font-size:1.5rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.15rem;">Registered Incident Dockets</h1>
+            <p style="font-size:0.8125rem; color:var(--text-secondary);">Click any case to inspect timeline milestones, bank lien statuses, or download signed PDF dockets.</p>
+          </div>
+          <a href="emergency-report.html" class="btn btn-danger touch-target">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>File 60s Report</span>
+          </a>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="dashboard-filter-bar">
+          <div style="flex: 2; min-width: 14rem;">
+            <label for="case-search-input" class="sr-only">Search Cases</label>
+            <input type="search" id="case-search-input" class="form-control" placeholder="Search by Complaint ID (e.g. NCRP-2026-892103) or keyword...">
+          </div>
+          <div style="flex: 1; min-width: 10rem;">
+            <label for="case-status-filter" class="sr-only">Filter by Status</label>
+            <select id="case-status-filter" class="form-control">
+              <option value="ALL" selected>All Statuses</option>
+              <option value="LIEN_PLACED">Lien Placed</option>
+              <option value="RFE_REQUESTED">Evidence Requested</option>
+              <option value="FIR_REGISTERED">FIR Registered</option>
+              <option value="REFUND_COMPLETED">Refund Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic List of Collapsed Dockets -->
+        <div id="cases-list-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- TAB PANEL 2: OVERVIEW & RECOVERY STATS -->
+      <section id="panel-overview" aria-labelledby="heading-overview" hidden>
+        <div style="margin-bottom:1.25rem;">
+          <h1 id="heading-overview" style="font-size:1.5rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.15rem;">Incident &amp; Financial Recovery Summary</h1>
+          <p style="font-size:0.8125rem; color:var(--text-secondary);">Consolidated statistics across your filed cases.</p>
+        </div>
+
+        <div class="dash-stats-grid">
+          <div class="dash-stat-box">
+            <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Total Cases</span>
+            <div class="dash-stat-val">6</div>
+            <span style="font-size:0.6875rem; color:var(--text-secondary);">Across All Years</span>
+          </div>
+
+          <div class="dash-stat-box">
+            <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Disputed Losses</span>
+            <div class="dash-stat-val" style="color:var(--gov-crimson);">₹ 3,45,500</div>
+            <span style="font-size:0.6875rem; color:var(--text-secondary);">Total Reported</span>
+          </div>
+
+          <div class="dash-stat-box">
+            <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Funds Recovered / Frozen</div>
+            <div class="dash-stat-val" style="color:var(--gov-green);">₹ 1,48,000</div>
+            <span style="font-size:0.6875rem; color:var(--gov-green); font-weight:700;">Under Bank Lien / Refund</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB PANEL 3: EVIDENCE & RFEs -->
+      <section id="panel-rfe" aria-labelledby="heading-rfe" hidden>
+        <div style="margin-bottom:1.25rem;">
+          <h1 id="heading-rfe" style="font-size:1.5rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.15rem;">Pending Evidence Requests (RFE)</h1>
+          <p style="font-size:0.8125rem; color:var(--text-secondary);">Documents requested by Investigating Officers to advance FIR filing and intermediary takedowns.</p>
+        </div>
+
+        <div class="case-card-box" style="border-left:4px solid var(--gov-amber); padding:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+            <div>
+              <span class="status-badge status-badge--warning">Action Required</span>
+              <strong style="display:block; font-size:1.0625rem; color:var(--gov-navy); margin-top:0.25rem;">NCRP-2026-774102: Additional Evidence Requested</strong>
+              <p style="font-size:0.8125rem; color:var(--text-secondary); margin-top:0.35rem;">
+                <strong>Investigator Notice:</strong> Please provide uncompressed screenshot export and direct profile URL of the cloned social media handle for Section 69A IT Act takedown.
+              </p>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('rfe-upload-dialog').showModal()">
+              Upload Documents
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB PANEL 4: ACCOUNT SETTINGS -->
+      <section id="panel-settings" aria-labelledby="heading-settings" hidden>
+        <div style="margin-bottom:1.25rem;">
+          <h1 id="heading-settings" style="font-size:1.5rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.15rem;">Citizen Profile &amp; Security Settings</h1>
+          <p style="font-size:0.8125rem; color:var(--text-secondary);">Manage verified credentials and SMS milestone notifications.</p>
+        </div>
+
+        <div class="gateway-card" style="max-width:36rem;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+            <div>
+              <label style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Full Name:</label>
+              <input type="text" class="form-control" value="Ramesh Kumar" readonly>
+            </div>
+            <div>
+              <label style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Registered Mobile:</label>
+              <input type="tel" class="form-control" value="+91 9876543210" readonly>
+            </div>
+          </div>
+
+          <div style="margin-bottom:0.75rem;">
+            <label style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Official Communication Email:</label>
+            <input type="email" class="form-control" value="ramesh.kumar@example.gov.in">
+          </div>
+
+          <div style="margin-bottom:1rem; font-size:0.75rem; color:var(--text-secondary); background:var(--bg-surface-subtle); padding:0.65rem; border-radius:var(--radius-sm);">
+            SMS alerts for bank lien placement and magistrate refund orders are enabled by default for your verified mobile number.
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="alert('Profile settings saved successfully.')">
+            Save Preferences
+          </button>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- RFE Upload Dialog -->
+  <dialog id="rfe-upload-dialog" aria-labelledby="rfe-dialog-title" aria-modal="true">
+    <div style="background:var(--bg-surface); border:2px solid var(--border-color); border-radius:var(--radius-md); max-width:28rem; width:90vw; padding:1.5rem; box-shadow:var(--shadow-lg);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">
+        <h3 id="rfe-dialog-title" style="font-size:1rem; font-weight:800; color:var(--gov-navy);">Submit Requested Evidence (RFE)</h3>
+        <button type="button" onclick="document.getElementById('rfe-upload-dialog').close()" style="background:none; border:none; font-size:1.25rem; cursor:pointer;" aria-label="Close dialog">✕</button>
+      </div>
+
+      <p style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+        <strong>Investigator Note:</strong> Please attach uncompressed screenshots of the scam chat or profile URL for legal takedown.
+      </p>
+
+      <div style="margin-bottom:0.75rem;">
+        <label for="rfe-file-upload" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Select Evidence Files (JPG, PNG, PDF):</label>
+        <input type="file" id="rfe-file-upload" class="form-control">
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem;">
+        <button type="button" class="btn btn-outline" onclick="document.getElementById('rfe-upload-dialog').close()">Cancel</button>
+        <button type="button" class="btn btn-primary" id="btn-submit-rfe-evidence">Upload &amp; Notify Investigator</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-auth.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let user = window.CcpDB.getUserSession();
+      if (!user) {
+        user = window.CcpDB.DEFAULT_USER;
+        window.CcpDB.setUserSession(user);
+      }
+
+      const userDisplay = document.getElementById('header-user-display');
+      if (userDisplay) {
+        userDisplay.innerHTML = `
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>${user.name} (+91 ${user.mobile})</span>
+        `;
+      }
+
+      const signoutBtn = document.getElementById('btn-dashboard-signout');
+      if (signoutBtn) {
+        signoutBtn.addEventListener('click', () => {
+          window.CcpDB.clearUserSession();
+          window.location.href = 'index.html';
+        });
+      }
+
+      // Tab Switching
+      window.switchDashboardTab = function(tabId) {
+        const panels = ['cases', 'overview', 'rfe', 'settings'];
+        panels.forEach(p => {
+          const panelEl = document.getElementById(`panel-${p}`);
+          const btnEl = document.getElementById(`tab-btn-${p}`);
+          if (panelEl) panelEl.hidden = (p !== tabId);
+          if (btnEl) {
+            if (p === tabId) btnEl.classList.add('is-active');
+            else btnEl.classList.remove('is-active');
+          }
+        });
+      };
+
+      // Check URL parameters for ?track=NCRP-...
+      const urlParams = new URLSearchParams(window.location.search);
+      const trackParam = urlParams.get('track');
+      if (trackParam && document.getElementById('case-search-input')) {
+        document.getElementById('case-search-input').value = trackParam;
+      }
+
+      const searchInput = document.getElementById('case-search-input');
+      const statusFilter = document.getElementById('case-status-filter');
+
+      function getFilteredCases() {
+        const query = (searchInput?.value || '').trim().toLowerCase();
+        const status = statusFilter?.value || 'ALL';
+        let cases = window.CcpDB.getCases();
+
+        if (status !== 'ALL') {
+          cases = cases.filter(c => c.status === status);
+        }
+
+        if (query) {
+          cases = cases.filter(c => {
+            return c.caseId.toLowerCase().includes(query) ||
+                   c.categoryTitle.toLowerCase().includes(query) ||
+                   (c.suspectVpa && c.suspectVpa.toLowerCase().includes(query)) ||
+                   c.fieldStation.toLowerCase().includes(query);
+          });
+        }
+        return cases;
+      }
+
+      function renderCases() {
+        const container = document.getElementById('cases-list-container');
+        if (!container) return;
+
+        const cases = getFilteredCases();
+
+        if (cases.length === 0) {
+          container.innerHTML = `
+            <div class="gateway-card" style="text-align:center; padding:2rem;">
+              <p style="color:var(--text-muted); font-size:0.875rem;">No incident dockets match your search query or filter.</p>
+              <button type="button" class="btn btn-outline" style="margin-top:0.75rem;" onclick="resetFilters()">Reset Filters</button>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = cases.map((c, idx) => {
+          let badgeClass = 'status-badge--success';
+          if (c.status === 'RFE_REQUESTED') badgeClass = 'status-badge--warning';
+          if (c.status === 'FIR_REGISTERED') badgeClass = 'status-badge--info';
+          if (c.status === 'REFUND_COMPLETED') badgeClass = 'status-badge--success';
+
+          const isMatchedTrack = trackParam && c.caseId.toUpperCase() === trackParam.toUpperCase();
+          const isExpandedByDefault = isMatchedTrack;
+
+          let timelineHtml = (c.timeline || []).map((step, sIdx) => {
+            let nodeClass = 'is-pending';
+            let circleText = `${sIdx + 1}`;
+            if (step.status === 'COMPLETED') {
+              nodeClass = 'is-done';
+              circleText = '✓';
+            } else if (step.status === 'IN_PROGRESS') {
+              nodeClass = 'is-active';
+            }
+
+            return `
+              <div class="timeline-node ${nodeClass}">
+                <div class="timeline-node-circle">${circleText}</div>
+                <strong style="color:var(--text-primary); margin-bottom:0.1rem;">${step.title}</strong>
+                <span style="color:var(--text-muted); font-size:0.6875rem;">${step.date}</span>
+              </div>
+            `;
+          }).join('');
+
+          return `
+            <article class="case-card-box" id="card-${c.caseId}">
+              <div class="case-summary-header" onclick="toggleCaseDetails('${c.caseId}')" role="button" tabindex="0" aria-expanded="${isExpandedByDefault}">
+                <div>
+                  <strong style="font-size:1.125rem; font-family:var(--font-mono); color:var(--gov-navy);">${c.caseId}</strong>
+                  <div style="font-size:0.8125rem; color:var(--text-secondary); margin-top:0.15rem;">${c.categoryTitle}</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.75rem;">
+                  <span class="status-badge ${badgeClass}">● ${c.statusTitle}</span>
+                  ${c.amountLost > 0 ? `<span style="font-size:0.875rem; font-weight:800; color:var(--gov-crimson); font-family:var(--font-mono);">₹ ${c.amountLost.toLocaleString('en-IN')}</span>` : ''}
+                  <span id="chevron-${c.caseId}" style="font-size:0.875rem; color:var(--text-muted); font-weight:700;">${isExpandedByDefault ? '▲' : '▼'}</span>
+                </div>
+              </div>
+
+              <div class="case-expanded-body" id="details-${c.caseId}" ${isExpandedByDefault ? '' : 'hidden'}>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(13rem, 1fr)); gap:0.65rem; font-size:0.75rem; line-height:1.45; background:var(--bg-surface); padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border-color); margin-bottom:0.75rem;">
+                  <div><strong>Incident Date:</strong> ${new Date(c.incidentDate).toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
+                  <div><strong>Investigating Unit:</strong> ${c.fieldStation}</div>
+                  ${c.suspectVpa ? `<div><strong>Suspect Identifier:</strong> <code>${c.suspectVpa}</code></div>` : ''}
+                  ${c.firNumber ? `<div><strong>Police Record:</strong> <strong>${c.firNumber}</strong></div>` : ''}
+                </div>
+
+                <div style="margin-top:0.75rem;">
+                  <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-muted);">Investigation &amp; Lien Milestones</div>
+                  <div class="timeline-steps-grid-4">
+                    ${timelineHtml}
+                  </div>
+                </div>
+
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem; border-top:1px solid var(--border-color); padding-top:0.75rem;">
+                  ${c.status === 'RFE_REQUESTED' ? `
+                    <button type="button" class="btn btn-danger" style="font-size:0.75rem; padding:0.35rem 0.65rem;" onclick="document.getElementById('rfe-upload-dialog').showModal()">
+                      Upload Requested Evidence
+                    </button>
+                  ` : ''}
+                  <button type="button" class="btn btn-outline" style="font-size:0.75rem; padding:0.35rem 0.65rem;" onclick="generateSignedPdfDocket('${c.caseId}')">
+                    Download Complaint PDF
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      window.toggleCaseDetails = function(caseId) {
+        const details = document.getElementById(`details-${caseId}`);
+        const chevron = document.getElementById(`chevron-${caseId}`);
+        if (details) {
+          const isCurrentlyHidden = details.hidden;
+          details.hidden = !isCurrentlyHidden;
+          if (chevron) chevron.textContent = isCurrentlyHidden ? '▲' : '▼';
+        }
+      };
+
+      window.resetFilters = function() {
+        if (searchInput) searchInput.value = '';
+        if (statusFilter) statusFilter.value = 'ALL';
+        renderCases();
+      };
+
+      if (searchInput) searchInput.addEventListener('input', renderCases);
+      if (statusFilter) statusFilter.addEventListener('change', renderCases);
+
+      renderCases();
+
+      const btnSubmitRfe = document.getElementById('btn-submit-rfe-evidence');
+      if (btnSubmitRfe) {
+        btnSubmitRfe.addEventListener('click', () => {
+          btnSubmitRfe.textContent = 'Uploading...';
+          setTimeout(() => {
+            document.getElementById('rfe-upload-dialog').close();
+            btnSubmitRfe.textContent = 'Upload & Notify Investigator';
+            alert('Evidence uploaded successfully. The investigating officer has been notified via I4C Portal.');
+          }, 600);
+        });
+      }
+
+      window.generateSignedPdfDocket = function(caseId) {
+        const caseItem = window.CcpDB.getCaseById(caseId);
+        if (!caseItem) return;
+
+        const printWin = window.open('', '_blank');
+        printWin.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>NCRP Incident Docket - ${caseItem.caseId}</title>
+            <style>
+              body { font-family: -apple-system, sans-serif; padding: 30px; color: #0F172A; }
+              .header { text-align: center; border-bottom: 3px solid #0F2C59; padding-bottom: 12px; margin-bottom: 20px; }
+              .stamp { border: 2px solid #0B6623; color: #0B6623; font-weight: bold; padding: 6px 12px; display: inline-block; margin-top: 10px; }
+              table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+              th, td { border: 1px solid #CBD5E1; padding: 8px; font-size: 13px; text-align: left; }
+              th { background: #F1F5F9; }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h2>गृह मंत्रालय | MINISTRY OF HOME AFFAIRS</h2>
+              <h3>NATIONAL CYBER CRIME REPORTING PORTAL (I4C / 1930)</h3>
+              <p>OFFICIAL DIGITAL INCIDENT REPORT &amp; BANK LIEN DOCKET</p>
+            </div>
+            <div style="text-align:right;">
+              <span class="stamp">SHA-256 FORENSIC VERIFIED</span>
+            </div>
+            <table>
+              <tr><th>Complaint Reference</th><td><strong>${caseItem.caseId}</strong></td></tr>
+              <tr><th>Crime Category</th><td>${caseItem.categoryTitle}</td></tr>
+              <tr><th>Incident Timestamp</th><td>${caseItem.incidentDate}</td></tr>
+              <tr><th>Amount Lost / Disputed</th><td>₹ ${caseItem.amountLost.toLocaleString('en-IN')}</td></tr>
+              <tr><th>Suspect Identifier</th><td>${caseItem.suspectVpa || 'Under Investigation'}</td></tr>
+              <tr><th>Designated Cyber Police Cell</th><td>${caseItem.fieldStation}</td></tr>
+              <tr><th>Current Legal Status</th><td><strong>${caseItem.statusTitle}</strong></td></tr>
+            </table>
+            <div style="margin-top: 30px; font-size: 11px; color: #64748B; border-top: 1px solid #E2E8F0; padding-top: 10px;">
+              Generated via National Cyber Crime Reporting Portal Edge Gateway | Conforms to Section 65B of the Indian Evidence Act.
+            </div>
+          </body>
+          </html>
+        `);
+        printWin.document.close();
+        setTimeout(() => printWin.print(), 300);
+      };
+    });
+  </script>
+</body>
+</html>

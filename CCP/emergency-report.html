@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="60-Second Golden Hour Emergency Cyber Crime Reporting. Minimal, frictionless drag & drop transaction screenshot scanner with on-device OCR pre-processing and instant lien dispatch.">
+  <title>Emergency 60s Report | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .minimal-flow-container {
+      max-width: 44rem;
+      margin: 1.5rem auto 3rem auto;
+    }
+    .drop-zone-box {
+      border: 2.5px dashed var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background-color: var(--bg-surface-subtle);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+    .drop-zone-box:hover, .drop-zone-box.is-dragover {
+      border-color: var(--gov-navy);
+      background-color: #EFF6FF;
+    }
+    .flow-step-card {
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 1.5rem;
+    }
+    [data-theme="high-contrast"] .flow-step-card {
+      background-color: #121212;
+      border: 2px solid #FFFFFF;
+    }
+    .ocr-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #DCFCE7;
+      color: #15803D;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #86EFAC;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — 1930 Emergency Response Gateway</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="login.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Citizen Login</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link is-active" aria-current="page">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Minimalist Flow -->
+  <main class="container" id="main-content" role="main" tabindex="-1" style="flex:1;">
+    
+    <div class="minimal-flow-container">
+      
+      <!-- Page Title Header -->
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <span class="section-eyebrow" id="report-type-badge">60-Second Express Filing</span>
+        <h1 style="font-size:1.75rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.35rem;" id="report-heading-title">
+          Fast-Track Incident Report
+        </h1>
+        <p style="font-size:0.8125rem; color:var(--text-secondary);" id="report-heading-sub">
+          Drop your transaction screenshot, debit SMS, or scam chat. The on-device engine instantly extracts key identifiers for emergency inter-bank lien dispatch.
+        </p>
+      </div>
+
+      <!-- Type Selector Toggle -->
+      <div style="margin-bottom:1.25rem;">
+        <label for="crime-type-selector" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Crime Classification:</label>
+        <select id="crime-type-selector" class="form-control" style="font-weight:700;">
+          <option value="financial" selected>1. Financial Cyber Fraud (1930 / UPI / Bank Accounts)</option>
+          <option value="women-children">2. Cyber Crime Against Women &amp; Children</option>
+          <option value="general">3. Other Cyber Offenses (Hacking, Ransomware, Phishing)</option>
+        </select>
+      </div>
+
+      <!-- STEP 1: Minimal Drag & Drop Upload Target -->
+      <div class="drop-zone-box" id="evidence-drop-zone" role="region" aria-label="Drop zone for transaction screenshot">
+        <div style="margin-bottom:0.75rem; color:var(--gov-navy);">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <strong style="font-size:1.125rem; color:var(--gov-navy); display:block; margin-bottom:0.25rem;">
+          Drag &amp; drop transaction receipt or scam screenshot here
+        </strong>
+        <div style="font-size:0.8125rem; color:var(--text-muted); margin-bottom:1rem;">
+          Supports JPG, PNG, WebP &amp; PDF receipts (Max 10 MB)
+        </div>
+        <button type="button" class="btn btn-outline" id="btn-browse-file" style="font-size:0.8125rem;">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Browse File from Device</span>
+        </button>
+        <input type="file" id="evidence-file-input" accept="image/*,.pdf" class="sr-only">
+        
+        <div style="margin-top:1rem; font-size:0.75rem; color:var(--text-muted);">
+          Evaluated locally on your device via WebAssembly Canvas OCR. No images leave your browser without permission.
+        </div>
+      </div>
+
+      <!-- OCR Status Loading Indicator -->
+      <div id="ocr-processing-spinner" class="alert-box alert-warning" style="margin-top:1rem; text-align:center;" hidden>
+        Scanning screenshot &amp; extracting 12-digit UTR, debited amount, suspect VPA locally...
+      </div>
+
+      <!-- STEP 2: Scanned & Editable Incident Details -->
+      <div id="incident-details-step" class="flow-step-card" hidden>
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.65rem; margin-bottom:1rem;">
+          <div>
+            <div class="ocr-pill-badge" id="ocr-result-pill">✓ Evidence Scanned &amp; Extracted</div>
+            <h2 style="font-size:1.125rem; font-weight:800; color:var(--gov-navy); margin:0;">
+              Verify Incident Details
+            </h2>
+          </div>
+          <button type="button" id="btn-reupload-file" class="btn btn-outline" style="font-size:0.75rem; padding:0.25rem 0.5rem;">
+            Re-upload Image
+          </button>
+        </div>
+
+        <form id="emergency-filing-form" novalidate>
+          
+          <!-- Financial Specific Fields -->
+          <div id="section-fields-financial">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <label for="field-amount-lost" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Amount Lost (₹):</label>
+                <input type="number" id="field-amount-lost" class="form-control" placeholder="e.g. 45000" required>
+              </div>
+              <div>
+                <label for="field-transaction-utr" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">12-digit UTR / RRN / Ref No:</label>
+                <input type="text" id="field-transaction-utr" class="form-control" maxlength="12" placeholder="e.g. 428910293841" style="font-family:var(--font-mono); font-weight:700;" required>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <label for="field-suspect-vpa" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Suspect UPI VPA / Account:</label>
+                <input type="text" id="field-suspect-vpa" class="form-control" placeholder="e.g. fraudster99@ybl" required>
+              </div>
+              <div>
+                <label for="field-victim-bank" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Your Bank Name:</label>
+                <select id="field-victim-bank" class="form-control">
+                  <option value="State Bank of India" selected>State Bank of India (SBI)</option>
+                  <option value="HDFC Bank">HDFC Bank</option>
+                  <option value="ICICI Bank">ICICI Bank</option>
+                  <option value="Punjab National Bank">Punjab National Bank (PNB)</option>
+                  <option value="Bank of Baroda">Bank of Baroda</option>
+                  <option value="Axis Bank">Axis Bank</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Women/Children & General Specific Fields -->
+          <div id="section-fields-non-financial" hidden>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <label for="field-suspect-profile-url" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Suspect Social Media / Website URL:</label>
+                <input type="url" id="field-suspect-profile-url" class="form-control" placeholder="e.g. https://instagram.com/fake_account">
+              </div>
+              <div>
+                <label for="field-platform" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Incident Platform:</label>
+                <select id="field-platform" class="form-control">
+                  <option value="WhatsApp" selected>WhatsApp / Telegram</option>
+                  <option value="Instagram">Instagram / Facebook</option>
+                  <option value="Email">Email Phishing</option>
+                  <option value="Website">Malicious Website / APK</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+            <div>
+              <label for="field-incident-date" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Date &amp; Time of Incident:</label>
+              <input type="datetime-local" id="field-incident-date" class="form-control">
+            </div>
+            <div>
+              <label for="field-complainant-mobile" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Complainant Mobile (Optional for Anonymous):</label>
+              <input type="tel" id="field-complainant-mobile" class="form-control" placeholder="9876543210" maxlength="10">
+            </div>
+          </div>
+
+          <div style="margin-bottom:1.25rem;">
+            <label for="field-summary-text" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.25rem;">Brief Summary of Incident:</label>
+            <textarea id="field-summary-text" class="form-control" rows="3" placeholder="Briefly describe what happened (e.g. Scammer asked for remote screen sharing app for electricity bill update)..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-danger btn-block touch-target" id="btn-submit-emergency-claim" style="font-size:1rem; font-weight:800;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Submit &amp; Dispatch Emergency 1930 Alert Now</span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- STEP 3: Success Confirmation & Case Tracking Linkage -->
+      <div id="complaint-success-box" class="flow-step-card" style="border-color:var(--gov-green); background:#F0FDF4; text-align:center;" hidden>
+        <div style="color:var(--gov-green); margin-bottom:0.5rem;">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h2 style="font-size:1.375rem; font-weight:800; color:var(--gov-green); margin-bottom:0.25rem;">
+          Emergency Incident Dispatched
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); margin-bottom:1.25rem;">
+          Your report has been successfully ingested into the National Cyber Crime Network. Inter-bank lien signals are triggering holds on suspect beneficiary accounts.
+        </p>
+
+        <div style="background:#fff; border:1.5px solid var(--border-color); border-radius:var(--radius-sm); padding:1rem; text-align:left; font-size:0.8125rem; margin-bottom:1.25rem;">
+          <div style="margin-bottom:0.35rem;"><strong>Complaint Reference ID:</strong> <span id="success-case-id" style="font-family:var(--font-mono); color:var(--gov-navy); font-weight:800;">NCRP-2026-892103</span></div>
+          <div style="margin-bottom:0.35rem;"><strong>Flagged Entity:</strong> <span id="success-target-val" style="color:var(--gov-crimson); font-weight:700;">fraudster99@ybl</span></div>
+          <div><strong>Initial Status:</strong> <span class="status-badge status-badge--success">Lien Signal Sent to Beneficiary Bank</span></div>
+        </div>
+
+        <div style="background:var(--bg-surface-subtle); border:1px dashed var(--gov-navy); border-radius:var(--radius-sm); padding:1rem; text-align:left; margin-bottom:1.25rem;">
+          <strong style="font-size:0.8125rem; color:var(--gov-navy); display:block; margin-bottom:0.25rem;">
+            Want to track real-time bank recovery &amp; police progress?
+          </strong>
+          <p style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+            Link this complaint to your mobile number or sign in to view milestone timelines on your private citizen dashboard.
+          </p>
+          <div style="display:flex; gap:0.5rem;">
+            <a href="login.html" class="btn btn-primary" style="font-size:0.8125rem; flex:1; text-align:center;">
+              Sign In to Link &amp; Track
+            </a>
+            <a href="dashboard.html" class="btn btn-outline" style="font-size:0.8125rem; flex:1; text-align:center;">
+              Go to Dashboard
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Emergency Response SLA: <strong>&lt; 60 Seconds</strong></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-auth.js"></script>
+  <script src="js/ccp-ocr.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateField = document.getElementById('field-incident-date');
+      if (dateField) {
+        const now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        dateField.value = now.toISOString().slice(0, 16);
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const typeParam = urlParams.get('type');
+      const amountParam = urlParams.get('amount');
+      const utrParam = urlParams.get('utr');
+
+      const crimeSelector = document.getElementById('crime-type-selector');
+      if (typeParam && crimeSelector) {
+        crimeSelector.value = typeParam;
+        adjustFieldsForType(typeParam);
+      }
+
+      if (amountParam && document.getElementById('field-amount-lost')) {
+        document.getElementById('field-amount-lost').value = amountParam;
+        showIncidentForm();
+      }
+      if (utrParam && document.getElementById('field-transaction-utr')) {
+        document.getElementById('field-transaction-utr').value = utrParam;
+        showIncidentForm();
+      }
+
+      if (crimeSelector) {
+        crimeSelector.addEventListener('change', (e) => {
+          adjustFieldsForType(e.target.value);
+        });
+      }
+
+      function adjustFieldsForType(type) {
+        const finSection = document.getElementById('section-fields-financial');
+        const nonFinSection = document.getElementById('section-fields-non-financial');
+        const badge = document.getElementById('report-type-badge');
+
+        if (type === 'women-children') {
+          if (finSection) finSection.hidden = true;
+          if (nonFinSection) nonFinSection.hidden = false;
+          if (badge) badge.textContent = 'Special Women & Child Safety Unit';
+        } else if (type === 'general') {
+          if (finSection) finSection.hidden = true;
+          if (nonFinSection) nonFinSection.hidden = false;
+          if (badge) badge.textContent = 'General Cyber Offenses Intake';
+        } else {
+          if (finSection) finSection.hidden = false;
+          if (nonFinSection) nonFinSection.hidden = true;
+          if (badge) badge.textContent = '60-Second Express Filing';
+        }
+      }
+
+      // Drag & Drop Handling
+      const dropZone = document.getElementById('evidence-drop-zone');
+      const fileInput = document.getElementById('evidence-file-input');
+      const browseBtn = document.getElementById('btn-browse-file');
+      const spinner = document.getElementById('ocr-processing-spinner');
+      const reuploadBtn = document.getElementById('btn-reupload-file');
+
+      if (dropZone && fileInput) {
+        dropZone.addEventListener('click', (e) => {
+          if (e.target !== browseBtn) fileInput.click();
+        });
+        if (browseBtn) browseBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          fileInput.click();
+        });
+
+        dropZone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          dropZone.classList.add('is-dragover');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('is-dragover'));
+        dropZone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          dropZone.classList.remove('is-dragover');
+          if (e.dataTransfer.files.length > 0) {
+            handleImageUpload(e.dataTransfer.files[0]);
+          }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+          if (e.target.files.length > 0) {
+            handleImageUpload(e.target.files[0]);
+          }
+        });
+      }
+
+      if (reuploadBtn) {
+        reuploadBtn.addEventListener('click', () => {
+          fileInput.click();
+        });
+      }
+
+      async function handleImageUpload(file) {
+        if (spinner) spinner.hidden = false;
+
+        const result = await window.CcpOcr.processEvidenceFile(file);
+        if (spinner) spinner.hidden = true;
+
+        if (result.success) {
+          const ent = result.entities;
+          if (document.getElementById('field-amount-lost')) document.getElementById('field-amount-lost').value = ent.amount;
+          if (document.getElementById('field-transaction-utr')) document.getElementById('field-transaction-utr').value = ent.utr;
+          if (document.getElementById('field-suspect-vpa')) document.getElementById('field-suspect-vpa').value = ent.suspectVpa;
+          showIncidentForm();
+        }
+      }
+
+      function showIncidentForm() {
+        const formStep = document.getElementById('incident-details-step');
+        if (formStep) {
+          formStep.hidden = false;
+          formStep.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      // Submission
+      const form = document.getElementById('emergency-filing-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const category = crimeSelector.value;
+          const amount = parseFloat(document.getElementById('field-amount-lost')?.value) || 0;
+          const utr = document.getElementById('field-transaction-utr')?.value || '';
+          const suspect = document.getElementById('field-suspect-vpa')?.value || document.getElementById('field-suspect-profile-url')?.value || 'Unknown';
+          const summary = document.getElementById('field-summary-text')?.value || 'Incident reported via 60-Second Express portal';
+          const date = document.getElementById('field-incident-date')?.value || new Date().toISOString();
+
+          const newCase = window.CcpDB.addComplaint({
+            category,
+            categoryTitle: category === 'financial' ? 'Financial Cyber Fraud (1930 CFCFRMS)' : (category === 'women-children' ? 'Cyber Crime Against Women & Children' : 'Other Cyber Offenses'),
+            amountLost: amount,
+            suspectVpa: suspect,
+            summary,
+            incidentDate: date
+          });
+
+          const successBox = document.getElementById('complaint-success-box');
+          const detailsCard = document.getElementById('incident-details-step');
+          if (detailsCard) detailsCard.hidden = true;
+          if (dropZone) dropZone.hidden = true;
+
+          if (successBox) {
+            document.getElementById('success-case-id').textContent = newCase.caseId;
+            document.getElementById('success-target-val').textContent = suspect;
+            successBox.hidden = false;
+            successBox.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

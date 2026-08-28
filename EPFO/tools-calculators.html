@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official EPFO Financial Calculators: Retirement EPF Corpus Growth, EPS Monthly Pension Estimator, and EDLI Insurance Coverage Benefit.">
+  <title>Tools &amp; Calculators | Employees' Provident Fund Organisation (EPFO)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Banner -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government Website Verification">
+    <div class="container">
+      <div class="banner-header">
+        <div class="banner-identity">
+          <svg class="emblem-svg" viewBox="0 0 100 130" width="18" height="23" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M50 5 C43 5 38 10 38 17 C38 23 42 27 47 28 C45 32 40 37 32 37 C26 37 22 34 20 30 C18 35 21 42 27 45 C23 47 18 47 14 45 C15 51 20 56 26 57 C22 60 17 60 14 59 C17 65 24 68 31 68 C27 72 20 74 15 74 C22 79 32 80 40 77 C41 83 45 88 50 88 C55 88 59 83 60 77 C68 80 78 79 85 74 C80 74 73 72 69 68 C76 68 83 65 86 59 C83 60 78 60 74 57 C80 56 85 51 86 45 C82 47 77 47 73 45 C79 42 82 35 80 30 C78 34 74 37 68 37 C60 37 55 32 53 28 C58 27 62 23 62 17 C62 10 57 5 50 5 Z"/>
+            <rect x="25" y="92" width="50" height="7" rx="3" fill="currentColor"/>
+            <circle cx="50" cy="112" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <path fill="currentColor" d="M50 104 L50 120 M42 112 L58 112 M44 106 L56 118 M44 118 L56 106"/>
+            <rect x="18" y="125" width="64" height="4" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="banner-text">
+            <strong>भारत सरकार</strong> | Government of India — Official Portal
+          </span>
+          <button type="button" class="banner-toggle-btn" id="trust-banner-toggle" aria-expanded="false" aria-controls="gov-trust-details">
+            <span>Here’s how you know</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+          </button>
+        </div>
+
+        <div class="banner-controls">
+          <div class="font-group" role="group" aria-label="Font Resizing">
+            <button type="button" class="font-btn" id="font-dec" aria-label="Decrease font size">A-</button>
+            <button type="button" class="font-btn is-active" id="font-norm" aria-label="Normal font size">A</button>
+            <button type="button" class="font-btn" id="font-inc" aria-label="Increase font size">A+</button>
+          </div>
+          <button type="button" class="tool-btn" id="contrast-toggle" aria-pressed="false">◐ High Contrast</button>
+          <select id="lang-selector" class="lang-select" aria-label="Language">
+            <option value="en" selected>English</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="gov-trust-details" class="trust-details-panel" role="region" aria-label="How to identify an official government website" hidden>
+        <div class="trust-details-grid">
+          <div class="trust-item">
+            <div class="trust-icon">🏛️</div>
+            <div>
+              <div class="trust-heading">Official domain identifier</div>
+              <p class="trust-desc">Official government portals end in <strong>.gov.in</strong> or <strong>.nic.in</strong>.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🔒</div>
+            <div>
+              <div class="trust-heading">Secure communication identifier</div>
+              <p class="trust-desc">The <strong>https://</strong> protocol ensures that your connection is encrypted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <svg viewBox="0 0 60 60" width="42" height="42" focusable="false" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" fill="#0F2C59" stroke="#0B6623" stroke-width="3"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <circle cx="30" cy="30" r="10" fill="#0B6623"/>
+          <path d="M30 14 L30 46 M14 30 L46 30 M19 19 L41 41 M19 41 L41 19" stroke="#FFFFFF" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title-hi">कर्मचारी भविष्य निधि संगठन</span>
+          <span class="brand-title-en">Employees' Provident Fund Organisation</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <div class="signin-dropdown-wrap">
+          <button type="button" class="signin-btn" id="signin-menu-btn" aria-haspopup="true" aria-expanded="false">
+            <span>Sign In ▾</span>
+          </button>
+          <div class="signin-menu" id="signin-dropdown" hidden>
+            <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="signin-item">👤 Member Login ↗</a>
+            <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer" class="signin-item">🏢 Employer Portal ↗</a>
+            <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/paymentEnquiry.jsp" target="_blank" rel="noopener noreferrer" class="signin-item">👴 Pensioner Portal ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#services-explorer" class="nav-link">Services</a></li>
+          <li><a href="schemes.html" class="nav-link">Schemes</a></li>
+          <li><a href="tools-calculators.html" class="nav-link is-active" aria-current="page">Tools &amp; Calculators</a></li>
+          <li><a href="reports-payroll.html" class="nav-link">Reports &amp; Data</a></li>
+          <li><a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" class="nav-link">Grievances ↗</a></li>
+          <li><a href="leadership.html" class="nav-link">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    
+    <div class="subpage-hero">
+      <div class="container">
+        <h1 class="subpage-title">EPFO Statutory Financial Calculators</h1>
+        <p class="subpage-lead">Accurate retirement corpus simulations, monthly pension estimations, and life insurance benefits based on official EPFO Gazette rules.</p>
+      </div>
+    </div>
+
+    <div class="container subpage-body">
+      
+      <div class="widgets-grid" style="grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 1.5rem;">
+        
+        <!-- Calculator 1: EPF Corpus -->
+        <div class="widget-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+            <h2 class="widget-title" style="font-size: 1.0625rem;">Retirement EPF Corpus Calculator</h2>
+            <span class="action-card-badge" style="background-color: #DCFCE7; color: #15803D;">8.25% Assured</span>
+          </div>
+          <p class="widget-desc">Simulate total accumulated Provident Fund corpus at age 58 with compounding annual interest.</p>
+          
+          <form id="calc-epf-form" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
+            <div>
+              <label for="epf-monthly-wage" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Monthly Basic Salary + DA (₹):</label>
+              <input type="number" id="epf-monthly-wage" class="tracker-input" value="25000" min="1000" step="500">
+            </div>
+            <div>
+              <label for="epf-current-age" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Current Age (Years):</label>
+              <input type="number" id="epf-current-age" class="tracker-input" value="28" min="18" max="57">
+            </div>
+            <div>
+              <label for="epf-retirement-age" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Retirement Age (Default 58):</label>
+              <input type="number" id="epf-retirement-age" class="tracker-input" value="58" min="50" max="60">
+            </div>
+            <button type="button" id="btn-calc-epf" class="btn-track" style="width: 100%; margin-top: 0.25rem;">Calculate Corpus Balance</button>
+          </form>
+
+          <div class="office-info-box" style="text-align: center; border-color: var(--color-primary);" aria-live="polite">
+            <div style="font-size: 0.6875rem; text-transform: uppercase; color: var(--color-text-muted);">Estimated Maturity Balance:</div>
+            <div id="epf-result-val" style="font-size: 1.375rem; font-weight: 800; color: var(--color-accent); font-family: var(--font-mono); margin-block: 0.2rem;">₹ 78,45,210</div>
+            <div style="font-size: 0.6875rem; color: var(--color-text-muted);">Calculated on 12% employee + 3.67% employer EPF contribution.</div>
+          </div>
+        </div>
+
+        <!-- Calculator 2: EPS Monthly Pension -->
+        <div class="widget-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+            <h2 class="widget-title" style="font-size: 1.0625rem;">EPS Monthly Pension Estimator</h2>
+            <span class="action-card-badge" style="background-color: #E0F2FE; color: #0369A1;">EPS 1995 Rules</span>
+          </div>
+          <p class="widget-desc">Compute monthly pension payable upon superannuation under the Employees' Pension Scheme 1995.</p>
+          
+          <form id="calc-eps-form" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
+            <div>
+              <label for="eps-pension-salary" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Pensionable Salary (Cap ₹15,000) (₹):</label>
+              <input type="number" id="eps-pension-salary" class="tracker-input" value="15000" min="1000" max="15000" step="500">
+            </div>
+            <div>
+              <label for="eps-service-years" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Total Pensionable Service (Years):</label>
+              <input type="number" id="eps-service-years" class="tracker-input" value="30" min="10" max="35">
+            </div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); padding: 0.35rem 0;">
+              ✓ 2 Years Weightage automatically added for service ≥ 20 years.
+            </div>
+            <button type="button" id="btn-calc-eps" class="btn-track" style="width: 100%; margin-top: 0.25rem;">Calculate Monthly Pension</button>
+          </form>
+
+          <div class="office-info-box" style="text-align: center; border-color: var(--color-primary);" aria-live="polite">
+            <div style="font-size: 0.6875rem; text-transform: uppercase; color: var(--color-text-muted);">Estimated Monthly Pension:</div>
+            <div id="eps-result-val" style="font-size: 1.375rem; font-weight: 800; color: var(--color-accent); font-family: var(--font-mono); margin-block: 0.2rem;">₹ 6,857 / Month</div>
+            <div style="font-size: 0.6875rem; color: var(--color-text-muted);">Formula: (Pensionable Salary × (Service + 2)) ÷ 70.</div>
+          </div>
+        </div>
+
+        <!-- Calculator 3: EDLI Insurance -->
+        <div class="widget-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+            <h2 class="widget-title" style="font-size: 1.0625rem;">EDLI Life Insurance Benefit</h2>
+            <span class="action-card-badge" style="background-color: #FEF3C7; color: #92400E;">Up to ₹7 Lakhs</span>
+          </div>
+          <p class="widget-desc">Estimate life assurance payout to registered nominee in the unfortunate event of in-service demise.</p>
+          
+          <form id="calc-edli-form" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
+            <div>
+              <label for="edli-avg-salary" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Avg Monthly Wage (Last 12 Mo, Max ₹15k) (₹):</label>
+              <input type="number" id="edli-avg-salary" class="tracker-input" value="15000" min="1000" max="15000" step="500">
+            </div>
+            <div>
+              <label for="edli-avg-balance" style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.2rem;">Avg EPF Balance in Last 12 Months (₹):</label>
+              <input type="number" id="edli-avg-balance" class="tracker-input" value="350000" min="0" step="5000">
+            </div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); padding: 0.35rem 0;">
+              ✓ Minimum statutory assurance floor: ₹2,50,000.
+            </div>
+            <button type="button" id="btn-calc-edli" class="btn-track" style="width: 100%; margin-top: 0.25rem;">Calculate Insurance Payout</button>
+          </form>
+
+          <div class="office-info-box" style="text-align: center; border-color: var(--color-primary);" aria-live="polite">
+            <div style="font-size: 0.6875rem; text-transform: uppercase; color: var(--color-text-muted);">Total Insurance Assurance:</div>
+            <div id="edli-result-val" style="font-size: 1.375rem; font-weight: 800; color: var(--color-accent); font-family: var(--font-mono); margin-block: 0.2rem;">₹ 7,00,000 (Max)</div>
+            <div style="font-size: 0.6875rem; color: var(--color-text-muted);">Formula: 35 × Average Wage + 50% Average Balance.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">National Directory</div>
+          <ul class="footer-links">
+            <li><a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">National Portal of India ↗</a></li>
+            <li><a href="https://labour.gov.in/" target="_blank" rel="noopener noreferrer">Ministry of Labour &amp; Employment ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Statutory Subpages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">EPFO Landing Portal</a></li>
+            <li><a href="schemes.html">Statutory Acts &amp; Schemes</a></li>
+            <li><a href="reports-payroll.html">Monthly Payroll Data</a></li>
+            <li><a href="leadership.html">Leadership &amp; Governance</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Compliance</div>
+          <ul class="footer-links">
+            <li><a href="https://www.epfo.gov.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a href="https://www.epfo.gov.in/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Toll-Free 24x7</div>
+          <div style="font-size: 1rem; font-weight: 800; color: #38BDF8; font-family: var(--font-mono);">14470 / 1800 118 005</div>
+        </div>
+      </div>
+      <div class="footer-provenance-bar">
+        <div>Designed on NIC S3WaaS Framework | GIGW 3.0 Compliant</div>
+        <div>Last Updated: August 26, 2026</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

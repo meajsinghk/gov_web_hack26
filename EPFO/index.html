@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Official Single-Window Social Security Landing Portal for Employees' Provident Fund Organisation (EPFO), Ministry of Labour and Employment, Government of India. Access UAN, Member Passbook, Online Claims, Pensioner Jeevan Pramaan, Employer ECR, and EPFiGMS Grievances.">
+  <meta name="keywords" content="EPFO, Employees Provident Fund, UAN, Member Passbook, Claim Status, Pensioners Portal, Jeevan Pramaan, ECR Challan, EPFiGMS, GIGW 3.0, S3WaaS, India Gov">
+  <meta name="author" content="Employees' Provident Fund Organisation (EPFO), Government of India">
+  <meta name="theme-color" content="#0F2C59">
+  
+  <title>Employees' Provident Fund Organisation | EPFO | Government of India</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- 1. SOVEREIGN ACCESSIBILITY & SKIP NAVIGATION                             -->
+  <!-- ========================================================================= -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#universal-tracker" class="skip-link">Skip to Status Checker</a>
+  <a href="#pillars-section" class="skip-link">Skip to Services & Pillars</a>
+  <a href="#site-footer" class="skip-link">Skip to Footer</a>
+
+  <!-- ========================================================================= -->
+  <!-- 2. S3WaaS TOP UTILITY & SOVEREIGN TRUST BAR                               -->
+  <!-- ========================================================================= -->
+  <div class="top-utility-bar" role="region" aria-label="Sovereign Accessibility and Language Bar">
+    <div class="container utility-flex">
+      
+      <!-- Left: Sovereign Emblem Identity -->
+      <div class="sovereign-identity">
+        <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" class="sovereign-link" title="National Portal of India (External link opens in new tab)">
+          <!-- Clean Inline SVG National Emblem of India (Lion Capital of Ashoka) -->
+          <svg class="emblem-svg" viewBox="0 0 100 130" width="22" height="28" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M50 5 C43 5 38 10 38 17 C38 23 42 27 47 28 C45 32 40 37 32 37 C26 37 22 34 20 30 C18 35 21 42 27 45 C23 47 18 47 14 45 C15 51 20 56 26 57 C22 60 17 60 14 59 C17 65 24 68 31 68 C27 72 20 74 15 74 C22 79 32 80 40 77 C41 83 45 88 50 88 C55 88 59 83 60 77 C68 80 78 79 85 74 C80 74 73 72 69 68 C76 68 83 65 86 59 C83 60 78 60 74 57 C80 56 85 51 86 45 C82 47 77 47 73 45 C79 42 82 35 80 30 C78 34 74 37 68 37 C60 37 55 32 53 28 C58 27 62 23 62 17 C62 10 57 5 50 5 Z"/>
+            <rect x="25" y="92" width="50" height="7" rx="3" fill="currentColor"/>
+            <circle cx="50" cy="112" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <path fill="currentColor" d="M50 104 L50 120 M42 112 L58 112 M44 106 L56 118 M44 118 L56 106"/>
+            <rect x="18" y="125" width="64" height="4" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="sovereign-text">
+            <strong>भारत सरकार</strong> | Government of India
+          </span>
+        </a>
+      </div>
+
+      <!-- Right: Accessibility Controls & Language Selector -->
+      <div class="accessibility-toolbar" role="toolbar" aria-label="Accessibility and Display Controls">
+        
+        <!-- Screen Reader Info Dialog Trigger -->
+        <button type="button" class="tool-btn" id="btn-screen-reader" aria-haspopup="dialog" title="Screen Reader Access Information">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
+          <span class="btn-text">Screen Reader Access</span>
+        </button>
+
+        <!-- Font Size Resizing Group (A-, A, A+) -->
+        <div class="font-resizer-group" role="group" aria-label="Text Size Controls">
+          <button type="button" class="tool-btn font-btn" id="font-dec" aria-label="Decrease Font Size (A-)" title="Decrease Font Size">A-</button>
+          <button type="button" class="tool-btn font-btn is-active" id="font-norm" aria-label="Reset Normal Font Size (A)" title="Reset Font Size">A</button>
+          <button type="button" class="tool-btn font-btn" id="font-inc" aria-label="Increase Font Size (A+)" title="Increase Font Size">A+</button>
+        </div>
+
+        <!-- High Contrast Mode Toggle (UX4G Standard ◐) -->
+        <button type="button" class="tool-btn contrast-btn" id="contrast-toggle" aria-pressed="false" title="Toggle High Contrast Display Mode">
+          <span class="contrast-icon" aria-hidden="true">◐</span>
+          <span class="contrast-label">High Contrast</span>
+        </button>
+
+        <!-- 12 Scheduled Indic Languages Selector -->
+        <div class="lang-selector-wrapper">
+          <label for="lang-selector" class="sr-only">Select Official Indic Language</label>
+          <select id="lang-selector" class="lang-select" aria-label="Select Official Indic Language">
+            <option value="en" selected>English</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="bn">বাংলা (Bengali)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="mr">मराठी (Marathi)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="gu">ગુજરાતી (Gujarati)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+            <option value="or">ଓଡ଼ିଆ (Odia)</option>
+            <option value="as">অসমীয়া (Assamese)</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. INSTITUTIONAL IDENTITY & GLOBAL SEARCH STRIP                           -->
+  <!-- ========================================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      
+      <!-- Brand & Ministry Identity -->
+      <div class="brand-identity">
+        <a href="index.html" class="brand-link" aria-label="EPFO Home - Employees' Provident Fund Organisation">
+          <div class="brand-logo-emblem" aria-hidden="true">
+            <svg viewBox="0 0 60 60" width="52" height="52" focusable="false">
+              <circle cx="30" cy="30" r="28" fill="#0F2C59" stroke="#0B6623" stroke-width="3"/>
+              <circle cx="30" cy="30" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <circle cx="30" cy="30" r="10" fill="#0B6623"/>
+              <path d="M30 14 L30 46 M14 30 L46 30 M19 19 L41 41 M19 41 L41 19" stroke="#FFFFFF" stroke-width="1.5"/>
+              <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title-hi">कर्मचारी भविष्य निधि संगठन</span>
+            <span class="brand-title-en">Employees' Provident Fund Organisation</span>
+            <span class="brand-subtitle">श्रम एवं रोजगार मंत्रालय, भारत सरकार | Ministry of Labour & Employment, Govt. of India</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Global Semantic Search Bar with Dynamic Autocomplete -->
+      <div class="header-tools">
+        <div class="global-search-container" role="search">
+          <form class="search-form" id="global-search-form" action="#" method="get" onsubmit="return false;">
+            <label for="global-search-input" class="sr-only">Search EPFO Services, Forms, Circulars and FAQs</label>
+            <div class="search-input-wrapper" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-owns="search-suggestions" id="search-combobox">
+              <input 
+                type="search" 
+                id="global-search-input" 
+                class="search-input" 
+                placeholder="Search services, Form 19, Passbook, UAN, DLC..." 
+                autocomplete="off" 
+                aria-autocomplete="list" 
+                aria-controls="search-suggestions"
+              >
+              <button type="submit" class="search-submit-btn" id="search-btn" aria-label="Perform Search">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              </button>
+            </div>
+            <!-- Accessible Autocomplete Suggestions Dropdown -->
+            <ul id="search-suggestions" class="search-suggestions-list" role="listbox" aria-label="Search suggestions" hidden></ul>
+          </form>
+        </div>
+
+        <!-- Quick Direct Portal Links Dropdown -->
+        <div class="quick-portals">
+          <button type="button" class="portal-menu-btn" id="portal-menu-trigger" aria-haspopup="true" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span>Direct Portals</span>
+            <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="portal-dropdown-content" id="portal-dropdown" hidden>
+            <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer">Member Portal (UAN Login) ↗</a>
+            <a href="https://passbook.epfindia.gov.in/MemberPassBook/login" target="_blank" rel="noopener noreferrer">Member Passbook Portal ↗</a>
+            <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer">Employer Portal (ECR/Challan) ↗</a>
+            <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/paymentEnquiry.jsp" target="_blank" rel="noopener noreferrer">Pensioners' Portal (PPO) ↗</a>
+            <a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer">EPFiGMS 2.0 Grievance ↗</a>
+            <a href="https://shramsuvidha.gov.in/home" target="_blank" rel="noopener noreferrer">Shram Suvidha Portal ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- 4. PRIMARY NAVIGATION (S3WaaS Compliant Semantic Menu)                   -->
+    <!-- ========================================================================= -->
+    <nav class="main-navigation" aria-label="Primary Navigation">
+      <div class="container nav-flex">
+        
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-nav-menu" aria-label="Toggle Main Navigation Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="mobile-nav-text">Menu</span>
+        </button>
+
+        <ul class="nav-menu" id="primary-nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link is-current" aria-current="page">Home</a>
+          </li>
+
+          <!-- Dropdown: About EPFO -->
+          <li class="nav-item has-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              About Us
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/about-us/" target="_blank" rel="noopener noreferrer">About EPFO Overview</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/cbt/" target="_blank" rel="noopener noreferrer">Central Board of Trustees (CBT)</a></li>
+              <li role="none"><a role="menuitem" href="https://pmvbry-cdn.epfindia.gov.in/wp-content/uploads/2025/11/CitizenCharter.pdf" target="_blank" rel="noopener noreferrer">Citizen's Charter (PDF)</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/directory/" target="_blank" rel="noopener noreferrer">Official Directory</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/locate-epfo-office/" target="_blank" rel="noopener noreferrer">Locate EPFO Regional Offices</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/rti-epfo/" target="_blank" rel="noopener noreferrer">RTI Act &amp; Disclosures</a></li>
+            </ul>
+          </li>
+
+          <!-- Dropdown: Citizen Services -->
+          <li class="nav-item has-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none"><a role="menuitem" href="#pillar-members">Member / Employee Services</a></li>
+              <li role="none"><a role="menuitem" href="#pillar-pensioners">Pensioners (EPS) Services</a></li>
+              <li role="none"><a role="menuitem" href="#pillar-employers">Employer &amp; Establishment Services</a></li>
+              <li role="none"><a role="menuitem" href="#pillar-grievances">Grievance Redressal (EPFiGMS)</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/international-workers/" target="_blank" rel="noopener noreferrer">International Workers (SSA)</a></li>
+              <li role="none"><a role="menuitem" href="https://web.umang.gov.in/landing/department/epfo.html" target="_blank" rel="noopener noreferrer">UMANG m-Governance App</a></li>
+            </ul>
+          </li>
+
+          <!-- Dropdown: Schemes & Acts -->
+          <li class="nav-item has-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Schemes &amp; Acts
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/epf-mp-act-1952" target="_blank" rel="noopener noreferrer">EPF &amp; MP Act 1952</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/epf-scheme/" target="_blank" rel="noopener noreferrer">EPF Scheme 1952</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/pension-scheme-eps/" target="_blank" rel="noopener noreferrer">Employees' Pension Scheme (EPS 1995)</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/insurance-scheme-edli/" target="_blank" rel="noopener noreferrer">Employees' Deposit Linked Insurance (EDLI 1976)</a></li>
+              <li role="none"><a role="menuitem" href="https://pmvbry.epfindia.gov.in/" target="_blank" rel="noopener noreferrer">PMVBRY Scheme</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/employees-enrolment-campaign-2025/" target="_blank" rel="noopener noreferrer">Employees' Enrolment Campaign</a></li>
+            </ul>
+          </li>
+
+          <!-- Dropdown: Circulars & Media -->
+          <li class="nav-item has-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Resources &amp; Circulars
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <ul class="nav-dropdown" role="menu">
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/circulars/" target="_blank" rel="noopener noreferrer">Administrative Circulars</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/press-release/" target="_blank" rel="noopener noreferrer">Press Releases</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/tender-notices/" target="_blank" rel="noopener noreferrer">Tenders &amp; Notices</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/recruitments/" target="_blank" rel="noopener noreferrer">Recruitments</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/manuals-and-guidelines/" target="_blank" rel="noopener noreferrer">Manuals &amp; Guidelines</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/annual-reports/" target="_blank" rel="noopener noreferrer">Annual Reports &amp; Accounts</a></li>
+              <li role="none"><a role="menuitem" href="https://www.epfo.gov.in/data-hub/" target="_blank" rel="noopener noreferrer">Data Hub &amp; Payroll Metrics</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="https://www.epfo.gov.in/contact-us" target="_blank" rel="noopener noreferrer" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 5. MAIN CONTENT AREA                                                      -->
+  <!-- ========================================================================= -->
+  <main id="main-content" role="main" tabindex="-1">
+    
+    <!-- STATIC DISMISSIBLE STATUTORY NOTIFICATION BANNER (Replaces Marquee Bloat) -->
+    <section class="notification-region" aria-label="Statutory Announcements">
+      <div class="container">
+        <div class="alert-banner" role="alert" id="statutory-alert">
+          <div class="alert-icon-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <div class="alert-content">
+            <div class="alert-badge">Gazette Notice &amp; Compliance</div>
+            <p class="alert-text">
+              <strong>Interest Rate Declaration:</strong> Central Board of Trustees (CBT) recommends <strong>8.25%</strong> interest rate on EPF accumulations for FY 2025–26. 
+              | <strong>Nidhi Aapke Nikat 2.0:</strong> District Outreach Camps on 27th of every month across all 140+ Regional Offices.
+            </p>
+          </div>
+          <button type="button" class="alert-dismiss-btn" id="dismiss-alert-btn" aria-label="Dismiss this announcement">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO INTENT INTAKE: UNIVERSAL STATUS CHECKER -->
+    <section class="hero-intake-section" id="universal-tracker" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        
+        <!-- Hero Introduction -->
+        <div class="hero-intro">
+          <span class="hero-tag">Unified Social Security Gateway</span>
+          <h1 id="hero-title" class="hero-heading">
+            Your Gateway to Social Security — Provident Fund, Pension &amp; Insurance
+          </h1>
+          <p class="hero-lead">
+            Access statutory provident fund accounts, life certificates, electronic returns, and claim settlements without bureaucratic friction. Fully compliant with GIGW 3.0 standards.
+          </p>
+          <div class="hero-quick-badges">
+            <span class="hero-badge"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 29+ Crore Active Accounts</span>
+            <span class="hero-badge"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 78+ Lakh Pensioners</span>
+            <span class="hero-badge"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 8.25% Assured Interest</span>
+          </div>
+        </div>
+
+        <!-- Universal Single-Field Status Checker Card -->
+        <div class="hero-tracker-card" role="region" aria-labelledby="tracker-heading">
+          <div class="tracker-header">
+            <h2 id="tracker-heading" class="tracker-title">Universal Status Checker</h2>
+            <p class="tracker-desc">Instant verification without full credential login</p>
+          </div>
+
+          <!-- Service Mode Switcher Tabs -->
+          <div class="tracker-tabs" role="tablist" aria-label="Status Lookup Category">
+            <button type="button" class="tracker-tab is-active" id="tab-claim" role="tab" aria-selected="true" aria-controls="tracker-panel" data-mode="claim">
+              Track Claim
+            </button>
+            <button type="button" class="tracker-tab" id="tab-passbook" role="tab" aria-selected="false" aria-controls="tracker-panel" data-mode="passbook">
+              Passbook UAN
+            </button>
+            <button type="button" class="tracker-tab" id="tab-ppo" role="tab" aria-selected="false" aria-controls="tracker-panel" data-mode="ppo">
+              Pension PPO
+            </button>
+            <button type="button" class="tracker-tab" id="tab-est" role="tab" aria-selected="false" aria-controls="tracker-panel" data-mode="est">
+              Establishment
+            </button>
+          </div>
+
+          <!-- Interactive Form Panel -->
+          <div id="tracker-panel" class="tracker-panel" role="tabpanel" aria-labelledby="tab-claim">
+            <form id="universal-tracker-form" class="tracker-form" novalidate>
+              <div class="form-group">
+                <label for="tracker-input" id="tracker-input-label" class="form-label">
+                  Enter 12-Digit Universal Account Number (UAN) or Claim ID:
+                </label>
+                <div class="input-with-action">
+                  <input 
+                    type="text" 
+                    id="tracker-input" 
+                    class="form-control" 
+                    placeholder="e.g. 101234567890" 
+                    maxlength="12" 
+                    inputmode="numeric" 
+                    pattern="[0-9]{12}" 
+                    aria-describedby="tracker-helper tracker-error" 
+                    required
+                  >
+                  <button type="button" class="input-clear-btn" id="tracker-clear-btn" aria-label="Clear input" hidden>✕</button>
+                </div>
+                <div id="tracker-helper" class="form-helper">Enter 12 continuous digits without spaces or special characters.</div>
+                <div id="tracker-error" class="form-error" role="alert" aria-live="assertive" hidden></div>
+              </div>
+
+              <div class="tracker-actions">
+                <button type="submit" class="btn btn-primary btn-block" id="tracker-submit-btn">
+                  <span class="btn-spinner" aria-hidden="true" hidden></span>
+                  <span>Check Status Instantly</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dynamic Result Card -->
+            <div id="tracker-result-card" class="tracker-result-card" role="region" aria-label="Claim Status Result" hidden>
+              <!-- Populated via app.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. 4-PILLAR INTENT MODEL ACTION GRID                                      -->
+    <!-- ========================================================================= -->
+    <section class="pillars-section" id="pillars-section" aria-labelledby="pillars-heading">
+      <div class="container">
+        
+        <div class="section-header-row">
+          <div class="section-heading-block">
+            <span class="section-eyebrow">Digital Citizen Pathways</span>
+            <h2 id="pillars-heading" class="section-title">4-Pillar Unified Service Hub</h2>
+            <p class="section-lead">Streamlined categorization replacing scattered legacy links into direct statutory action pathways.</p>
+          </div>
+
+          <!-- Pillar Filter Filter Tabs -->
+          <div class="pillar-filter-pills" role="tablist" aria-label="Filter Services by Beneficiary Category">
+            <button type="button" class="filter-pill is-active" role="tab" aria-selected="true" data-filter="all">All Services (40+)</button>
+            <button type="button" class="filter-pill" role="tab" aria-selected="false" data-filter="members">Members &amp; Employees</button>
+            <button type="button" class="filter-pill" role="tab" aria-selected="false" data-filter="pensioners">Pensioners (EPS)</button>
+            <button type="button" class="filter-pill" role="tab" aria-selected="false" data-filter="employers">Employers &amp; Est.</button>
+            <button type="button" class="filter-pill" role="tab" aria-selected="false" data-filter="grievances">Grievances &amp; Help</button>
+          </div>
+        </div>
+
+        <!-- THE 4 PILLARS CONTAINER -->
+        <div class="pillars-container">
+
+          <!-- ======================================================= -->
+          <!-- PILLAR 1: MEMBER & EMPLOYEE SERVICES                   -->
+          <!-- ======================================================= -->
+          <article class="pillar-card" id="pillar-members" data-category="members" aria-labelledby="p1-title">
+            <div class="pillar-header pillar-header-navy">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </div>
+              <div>
+                <h3 id="p1-title" class="pillar-title">Pillar 1: Member &amp; Employee Services</h3>
+                <p class="pillar-subtitle">UAN Management, Passbook, PF Withdrawals &amp; Transfers</p>
+              </div>
+            </div>
+
+            <div class="pillar-body">
+              <ul class="service-links-list">
+                <li class="service-item">
+                  <a href="https://passbook.epfindia.gov.in/MemberPassBook/login" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Member Passbook &amp; Balance</span>
+                    <span class="service-badge">Instant Login</span>
+                  </a>
+                  <p class="service-desc">View and download your monthly PF statement, interest credits, and employer share.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Member Portal (UAN Login)</span>
+                    <span class="service-badge">Unified Portal</span>
+                  </a>
+                  <p class="service-desc">Single window login for online claims, profile update, and passbook synchronization.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Activate Universal Account Number (UAN)</span>
+                    <span class="service-badge">First Time</span>
+                  </a>
+                  <p class="service-desc">Activate your 12-digit UAN with registered Aadhaar and mobile number for online services.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Know Your UAN Status</span>
+                  </a>
+                  <p class="service-desc">Locate your active UAN using Member ID, PAN, or Aadhaar credentials.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Online Claims &amp; PF Advance (Form 19, 10C, 31, 10D)</span>
+                    <span class="service-badge">Paperless</span>
+                  </a>
+                  <p class="service-desc">File Form 19 (Final Settlement), 10C (Pension Withdrawal), 31 (Advance / Illness / Housing), and 10D (Monthly Pension).</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Transfer Request (One Member One EPF - OICP)</span>
+                  </a>
+                  <p class="service-desc">Consolidate previous PF accounts seamlessly into your current active UAN.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Update KYC &amp; Aadhaar / PAN Seeding</span>
+                  </a>
+                  <p class="service-desc">Link bank account IFSC, PAN card, and Aadhaar to prevent TDS deduction on withdrawals.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Submit e-Nomination</span>
+                  </a>
+                  <p class="service-desc">Register family nominees digitally for smooth disbursement of PF, Pension, and EDLI insurance.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">File Death Claim (Form 20 / 5IF / 10D)</span>
+                  </a>
+                  <p class="service-desc">Beneficiary / Legal heir pathway to claim accumulated PF balance and EDLI life insurance benefit.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/international-workers/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">International Workers (SSA Portal)</span>
+                  </a>
+                  <p class="service-desc">Social Security Agreements (SSA) and Certificate of Coverage (CoC) for cross-border employees.</p>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="pillar-footer">
+              <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Open Member Portal Interface ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- ======================================================= -->
+          <!-- PILLAR 2: PENSIONERS (EPS - EMPLOYEES' PENSION SCHEME) -->
+          <!-- ======================================================= -->
+          <article class="pillar-card" id="pillar-pensioners" data-category="pensioners" aria-labelledby="p2-title">
+            <div class="pillar-header pillar-header-green">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V18z"/></svg>
+              </div>
+              <div>
+                <h3 id="p2-title" class="pillar-title">Pillar 2: Pensioners (EPS Services)</h3>
+                <p class="pillar-subtitle">Life Certificates, PPO Inquiries &amp; Monthly Pension Ledger</p>
+              </div>
+            </div>
+
+            <div class="pillar-body">
+              <ul class="service-links-list">
+                <li class="service-item">
+                  <a href="https://jeevanpramaan.gov.in/v1.0/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Jeevan Pramaan (Digital Life Certificate)</span>
+                    <span class="service-badge">Face Auth / Biometric</span>
+                  </a>
+                  <p class="service-desc">Submit your annual Digital Life Certificate (DLC) online via Android mobile Face RD or biometric device.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/paymentEnquiry.jsp" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Pension Payment Enquiry &amp; PPO Details</span>
+                    <span class="service-badge">Official MIS</span>
+                  </a>
+                  <p class="service-desc">Track monthly pension credit details, disbursing bank IFSC, and life certificate validity date.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/enquiry.jsp" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Know Your Pension Payment Order (PPO) Number</span>
+                  </a>
+                  <p class="service-desc">Locate your 12-digit PPO number using Bank Account Number or Member ID.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfindia.gov.in/EP_Cal/pension.html" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">EPS Pension Entitlement Calculator</span>
+                  </a>
+                  <p class="service-desc">Calculate estimated monthly pension benefit based on pensionable service and average salary.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/pension-scheme-eps/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Scheme Certificate Guidelines</span>
+                  </a>
+                  <p class="service-desc">Retain pension service eligibility when switching jobs or before reaching 58 years of age.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://jeevanpramaan.gov.in/v1.0/misc/circular" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Pensioner Forms, Circulars &amp; Guidelines</span>
+                  </a>
+                  <p class="service-desc">Download Life Certificate forms, bank mandate forms, and administrative EPS circulars.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pillar-footer">
+              <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/paymentEnquiry.jsp" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Open Pension Payment Enquiry ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- ======================================================= -->
+          <!-- PILLAR 3: EMPLOYERS & ESTABLISHMENTS                   -->
+          <!-- ======================================================= -->
+          <article class="pillar-card" id="pillar-employers" data-category="employers" aria-labelledby="p3-title">
+            <div class="pillar-header pillar-header-navy">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+              </div>
+              <div>
+                <h3 id="p3-title" class="pillar-title">Pillar 3: Employers &amp; Establishments</h3>
+                <p class="pillar-subtitle">ECR Challan Filing, Shram Suvidha &amp; Compliance</p>
+              </div>
+            </div>
+
+            <div class="pillar-body">
+              <ul class="service-links-list">
+                <li class="service-item">
+                  <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Unified Employer Portal (ECR Login)</span>
+                    <span class="service-badge">Establishment Login</span>
+                  </a>
+                  <p class="service-desc">Single-window interface for statutory return submission, challan generation, and member management.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/revamped-ecr/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Submit Electronic Challan cum Return (Revamped ECR)</span>
+                    <span class="service-badge">Monthly Return</span>
+                  </a>
+                  <p class="service-desc">File monthly statutory contributions for EPF, EPS, EDLI, and administrative charges.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">View / Download Payment Receipts &amp; Challan TRRN</span>
+                  </a>
+                  <p class="service-desc">Track statutory payment acknowledgments and TRRN reconciliation statements.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://shramsuvidha.gov.in/home" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Shram Suvidha Portal (LIN Registration)</span>
+                    <span class="service-badge">M/o Labour Portal</span>
+                  </a>
+                  <p class="service-desc">Register new commercial establishment, apply for Labour Identification Number (LIN), and file unified annual returns.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/employees-enrolment-campaign-2025/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Employee Enrolment Campaign &amp; Exit Date Marking</span>
+                  </a>
+                  <p class="service-desc">Enrol new workforce and update Date of Exit for outgoing employees via employer DSC.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfindia.gov.in/site_en/Per_Exempted.php" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Exempted Establishments Performance Portal</span>
+                  </a>
+                  <p class="service-desc">Compliance metrics, investment returns, and trust audit reports for exempted private PF trusts.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/employer-documents/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Employer Documents &amp; Compliance Manuals</span>
+                  </a>
+                  <p class="service-desc">Download DSC registration guidelines, ECR file format specifications, and inspection checklists.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pillar-footer">
+              <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Open Employer Unified Portal ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- ======================================================= -->
+          <!-- PILLAR 4: GRIEVANCE & CITIZEN ASSISTANCE               -->
+          <!-- ======================================================= -->
+          <article class="pillar-card" id="pillar-grievances" data-category="grievances" aria-labelledby="p4-title">
+            <div class="pillar-header pillar-header-green">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+              </div>
+              <div>
+                <h3 id="p4-title" class="pillar-title">Pillar 4: Grievance &amp; Citizen Assistance</h3>
+                <p class="pillar-subtitle">EPFiGMS 2.0, Nidhi Aapke Nikat &amp; RTI Resolution</p>
+              </div>
+            </div>
+
+            <div class="pillar-body">
+              <ul class="service-links-list">
+                <li class="service-item">
+                  <a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Register Grievance on EPFiGMS 2.0</span>
+                    <span class="service-badge">Grievance Portal</span>
+                  </a>
+                  <p class="service-desc">Official redressal system for delayed PF transfers, passbook discrepancy, pension arrears, or KYC issues.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">View Grievance Status &amp; Send Reminder</span>
+                    <span class="service-badge">Track Ticket</span>
+                  </a>
+                  <p class="service-desc">Track resolution timeline using Grievance Registration Number and submit reminders for pending tickets.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/notices/venue-details-of-camps-under-nidhi-aapke-nikat-2-0-august-2026/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Nidhi Aapke Nikat 2.0 (District Outreach Camps)</span>
+                    <span class="service-badge">Monthly Camp</span>
+                  </a>
+                  <p class="service-desc">Locate monthly on-ground redressal camps conducted on the 27th of every month in every district across India.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/locate-epfo-office/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Regional Office Directory &amp; Desk Locator</span>
+                  </a>
+                  <p class="service-desc">Find address, email, jurisdiction, and Public Relations Officer (PRO) details for 140+ EPFO offices.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/rti-epfo/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">RTI Online Portal &amp; Proactive Disclosures</span>
+                  </a>
+                  <p class="service-desc">File Right to Information requests and view Central Public Information Officer (CPIO) roster.</p>
+                </li>
+
+                <li class="service-item">
+                  <a href="https://www.epfo.gov.in/faq-epfo/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <span class="service-name">Comprehensive Citizen FAQs &amp; Video Guides</span>
+                  </a>
+                  <p class="service-desc">Official step-by-step answers and video tutorials on UAN, DLC submission, and tax rules.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pillar-footer">
+              <a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">
+                Open EPFiGMS 2.0 Grievance Portal ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 7. INTERACTIVE STATUTORY BENEFIT CALCULATORS                             -->
+    <!-- ========================================================================= -->
+    <section class="calculators-section" id="calculators-section" aria-labelledby="calc-heading">
+      <div class="container">
+        
+        <div class="section-heading-center">
+          <span class="section-eyebrow">Interactive Financial Planning</span>
+          <h2 id="calc-heading" class="section-title">Plan Your Future with EPFO Calculators</h2>
+          <p class="section-lead">Estimate retirement corpus accumulation, EPS monthly pension entitlement, and EDLI insurance coverage.</p>
+        </div>
+
+        <div class="calc-grid">
+          
+          <!-- EPF Growth Calculator -->
+          <div class="calc-card" role="region" aria-labelledby="calc-epf-title">
+            <div class="calc-card-header">
+              <h3 id="calc-epf-title" class="calc-card-title">Retirement EPF Corpus Calculator</h3>
+              <span class="calc-badge">Compound 8.25% p.a.</span>
+            </div>
+            <form id="calc-epf-form" class="calc-form" onsubmit="return false;">
+              <div class="form-group-sm">
+                <label for="epf-monthly-wage" class="form-label-sm">Monthly Basic Salary + DA (₹):</label>
+                <input type="number" id="epf-monthly-wage" class="form-control-sm" value="25000" min="1000" step="500">
+              </div>
+              <div class="form-group-sm">
+                <label for="epf-current-age" class="form-label-sm">Current Age (Years):</label>
+                <input type="number" id="epf-current-age" class="form-control-sm" value="28" min="18" max="57">
+              </div>
+              <div class="form-group-sm">
+                <label for="epf-retirement-age" class="form-label-sm">Retirement Age (Default 58):</label>
+                <input type="number" id="epf-retirement-age" class="form-control-sm" value="58" min="50" max="60">
+              </div>
+              <button type="button" id="btn-calc-epf" class="btn btn-primary btn-sm btn-block">Calculate Corpus</button>
+            </form>
+            <div class="calc-result-box" id="epf-calc-output" aria-live="polite">
+              <div class="result-label">Estimated Maturity Balance at 58:</div>
+              <div class="result-value" id="epf-result-val">₹ 78,45,210</div>
+              <div class="result-subtext">Assumes statutory 12% employee + 3.67% EPF employer contribution at 8.25% interest rate.</div>
+            </div>
+          </div>
+
+          <!-- EPS Monthly Pension Calculator -->
+          <div class="calc-card" role="region" aria-labelledby="calc-eps-title">
+            <div class="calc-card-header">
+              <h3 id="calc-eps-title" class="calc-card-title">EPS Monthly Pension Estimator</h3>
+              <span class="calc-badge">EPS 1995 Rules</span>
+            </div>
+            <form id="calc-eps-form" class="calc-form" onsubmit="return false;">
+              <div class="form-group-sm">
+                <label for="eps-pension-salary" class="form-label-sm">Pensionable Salary (Max ₹15,000 Cap) (₹):</label>
+                <input type="number" id="eps-pension-salary" class="form-control-sm" value="15000" min="1000" max="15000" step="500">
+              </div>
+              <div class="form-group-sm">
+                <label for="eps-service-years" class="form-label-sm">Total Pensionable Service (Years):</label>
+                <input type="number" id="eps-service-years" class="form-control-sm" value="30" min="10" max="35">
+              </div>
+              <div class="form-group-sm">
+                <label for="eps-bonus-check" class="form-label-sm">Service &gt; 20 Years Bonus (+2 Years):</label>
+                <div class="form-check-inline">
+                  <input type="checkbox" id="eps-bonus-check" checked disabled>
+                  <span>2 Years Weightage Applied</span>
+                </div>
+              </div>
+              <button type="button" id="btn-calc-eps" class="btn btn-primary btn-sm btn-block">Calculate Monthly Pension</button>
+            </form>
+            <div class="calc-result-box" id="eps-calc-output" aria-live="polite">
+              <div class="result-label">Estimated Monthly Pension:</div>
+              <div class="result-value" id="eps-result-val">₹ 6,857 / Month</div>
+              <div class="result-subtext">Formula: (Pensionable Salary × (Service + 2 Years Bonus)) ÷ 70.</div>
+            </div>
+          </div>
+
+          <!-- EDLI Insurance Cover Calculator -->
+          <div class="calc-card" role="region" aria-labelledby="calc-edli-title">
+            <div class="calc-card-header">
+              <h3 id="calc-edli-title" class="calc-card-title">EDLI Life Insurance Benefit</h3>
+              <span class="calc-badge">Up to ₹7 Lakhs</span>
+            </div>
+            <form id="calc-edli-form" class="calc-form" onsubmit="return false;">
+              <div class="form-group-sm">
+                <label for="edli-avg-salary" class="form-label-sm">Average Monthly Wage (Last 12 Mo, Max ₹15k) (₹):</label>
+                <input type="number" id="edli-avg-salary" class="form-control-sm" value="15000" min="1000" max="15000" step="500">
+              </div>
+              <div class="form-group-sm">
+                <label for="edli-avg-balance" class="form-label-sm">Average EPF Balance in Last 12 Months (₹):</label>
+                <input type="number" id="edli-avg-balance" class="form-control-sm" value="350000" min="0" step="5000">
+              </div>
+              <div class="form-group-sm">
+                <label class="form-label-sm">Minimum Guaranteed Benefit:</label>
+                <div class="form-readonly-val">₹ 2,50,000 (Statutory Floor)</div>
+              </div>
+              <button type="button" id="btn-calc-edli" class="btn btn-primary btn-sm btn-block">Calculate EDLI Cover</button>
+            </form>
+            <div class="calc-result-box" id="edli-calc-output" aria-live="polite">
+              <div class="result-label">Total Insurance Assurance Cover:</div>
+              <div class="result-value" id="edli-result-val">₹ 7,00,000 (Maximum)</div>
+              <div class="result-subtext">Payable to registered nominee in unfortunate event of in-service demise (35x Wage + 50% Balance).</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 8. STATUTORY LEGAL FRAMEWORK & STATUTORY PUBLICATIONS                      -->
+    <!-- ========================================================================= -->
+    <section class="statutory-section" aria-labelledby="statutory-heading">
+      <div class="container">
+        
+        <div class="statutory-grid">
+          
+          <!-- Legal Framework Accordion / Box -->
+          <div class="statutory-block">
+            <h2 id="statutory-heading" class="block-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+              Statutory Schemes &amp; Legal Framework
+            </h2>
+            <p class="block-desc">Statutory provisions enacted by Parliament of India to secure formal workforce welfare.</p>
+            
+            <ul class="statutory-links-list">
+              <li>
+                <a href="https://www.epfo.gov.in/epf-mp-act-1952" target="_blank" rel="noopener noreferrer">
+                  <strong>The EPF &amp; MP Act, 1952</strong> — Core statutory enactment governing provident funds ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://www.epfo.gov.in/epf-scheme/" target="_blank" rel="noopener noreferrer">
+                  <strong>The Employees' Provident Funds Scheme, 1952</strong> — Accumulation &amp; interest framework ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://www.epfo.gov.in/pension-scheme-eps/" target="_blank" rel="noopener noreferrer">
+                  <strong>The Employees' Pension Scheme, 1995 (EPS)</strong> — Superannuation &amp; family pension ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://www.epfo.gov.in/insurance-scheme-edli/" target="_blank" rel="noopener noreferrer">
+                  <strong>The Employees' Deposit-Linked Insurance Scheme, 1976 (EDLI)</strong> — Group life assurance ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://pmvbry.epfindia.gov.in/" target="_blank" rel="noopener noreferrer">
+                  <strong>PMVBRY &amp; Aatmanirbhar Bharat Rojgar Yojana</strong> — Incentive schemes for formal jobs ↗
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Publications & Data Hub -->
+          <div class="statutory-block">
+            <h2 class="block-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+              Transparency, Reports &amp; Payroll Data
+            </h2>
+            <p class="block-desc">Monthly formal employment metrics, audited balance sheets, and administrative archives.</p>
+            
+            <div class="reports-badges-grid">
+              <a href="https://www.epfo.gov.in/data-hub/" target="_blank" rel="noopener noreferrer" class="report-badge-card">
+                <span class="report-tag">Monthly Release</span>
+                <span class="report-title">EPFO Payroll Data Hub</span>
+                <span class="report-sub">Net additions across age cohorts</span>
+              </a>
+              <a href="https://www.epfo.gov.in/annual-reports/" target="_blank" rel="noopener noreferrer" class="report-badge-card">
+                <span class="report-tag">Audited Report</span>
+                <span class="report-title">Annual Reports &amp; Accounts</span>
+                <span class="report-sub">Financial statements &amp; audits</span>
+              </a>
+              <a href="https://www.epfo.gov.in/study-reports/" target="_blank" rel="noopener noreferrer" class="report-badge-card">
+                <span class="report-tag">Actuarial</span>
+                <span class="report-title">Actuarial Study Reports</span>
+                <span class="report-sub">Pension fund health evaluations</span>
+              </a>
+              <a href="https://www.epfo.gov.in/media-centre/" target="_blank" rel="noopener noreferrer" class="report-badge-card">
+                <span class="report-tag">Media</span>
+                <span class="report-title">Media Centre &amp; Press</span>
+                <span class="report-sub">Official press releases &amp; gazettes</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 9. LEADERSHIP & GOVERNANCE STRIP                                         -->
+    <!-- ========================================================================= -->
+    <section class="leadership-section" aria-labelledby="leadership-heading">
+      <div class="container">
+        
+        <h2 id="leadership-heading" class="sr-only">Executive Leadership &amp; Governance</h2>
+        
+        <div class="leadership-grid">
+          
+          <!-- Union Minister -->
+          <div class="leader-card">
+            <div class="leader-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="36" height="36"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Dr. Mansukh Mandaviya</h3>
+              <p class="leader-role">Hon'ble Union Minister</p>
+              <p class="leader-dept">Ministry of Labour &amp; Employment, Govt. of India</p>
+            </div>
+          </div>
+
+          <!-- Minister of State -->
+          <div class="leader-card">
+            <div class="leader-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="36" height="36"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Sushri Shobha Karandlaje</h3>
+              <p class="leader-role">Hon'ble Minister of State</p>
+              <p class="leader-dept">Ministry of Labour &amp; Employment, Govt. of India</p>
+            </div>
+          </div>
+
+          <!-- CPFC Governance -->
+          <div class="leader-card">
+            <div class="leader-avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="36" height="36"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Central Board of Trustees (CBT)</h3>
+              <p class="leader-role">Tripartite Statutory Board</p>
+              <p class="leader-dept">Chaired by Union Minister with Employee &amp; Employer Reps</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 10. GIGW 3.0 VERIFIED FOOTER                                              -->
+  <!-- ========================================================================= -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      
+      <!-- Footer 4-Column Navigation -->
+      <div class="footer-columns-grid">
+        
+        <!-- Column 1: Institutional EPFO -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Employees' Provident Fund Organisation</h3>
+          <p class="footer-col-desc">
+            Head Office: Bhavishya Nidhi Bhawan, 14, Bhikaiji Cama Place, New Delhi - 110066, India.
+          </p>
+          <div class="footer-tollfree">
+            <span class="tollfree-label">National Toll-Free 24x7 Helpdesk:</span>
+            <a href="tel:14470" class="tollfree-number">14470 / 1800 118 005</a>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://x.com/officialepfo" target="_blank" rel="noopener noreferrer" aria-label="Official EPFO on X (Formerly Twitter)">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/socialepfo" target="_blank" rel="noopener noreferrer" aria-label="Official EPFO YouTube Channel">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/socialepfo/" target="_blank" rel="noopener noreferrer" aria-label="Official EPFO Facebook Page">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/social_epfo" target="_blank" rel="noopener noreferrer" aria-label="Official EPFO Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Mandatory Statutory Policies (GIGW 3.0) -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Mandatory Website Policies</h3>
+          <ul class="footer-links-list">
+            <li><a href="https://www.epfo.gov.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a href="https://www.epfo.gov.in/hyperlinking-policy" target="_blank" rel="noopener noreferrer">Hyperlinking Policy</a></li>
+            <li><a href="https://www.epfo.gov.in/copyright-policy/" target="_blank" rel="noopener noreferrer">Copyright Policy</a></li>
+            <li><a href="https://www.epfo.gov.in/terms-of-use" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a></li>
+            <li><a href="https://www.epfo.gov.in/disclaimer-epfo/" target="_blank" rel="noopener noreferrer">Disclaimer</a></li>
+            <li><a href="https://www.epfo.gov.in/epfo-sitemap/" target="_blank" rel="noopener noreferrer">Sitemap</a></li>
+            <li><a href="https://www.epfo.gov.in/rti-epfo/" target="_blank" rel="noopener noreferrer">Right to Information (RTI)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Citizen Portals & m-Gov -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Digital India &amp; Mobile App</h3>
+          <ul class="footer-links-list">
+            <li><a href="https://web.umang.gov.in/landing/department/epfo.html" target="_blank" rel="noopener noreferrer">UMANG Web Portal</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=in.gov.umang.negd.g2c&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Download UMANG for Android ↗</a></li>
+            <li><a href="https://apps.apple.com/in/app/umang/id1236448857" target="_blank" rel="noopener noreferrer">Download UMANG for iOS ↗</a></li>
+            <li><a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer">EPFiGMS 2.0 Grievance</a></li>
+            <li><a href="https://digitalindia.gov.in/" target="_blank" rel="noopener noreferrer">Digital India Initiative ↗</a></li>
+            <li><a href="https://labour.gov.in/" target="_blank" rel="noopener noreferrer">Ministry of Labour &amp; Employment ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: GIGW & STQC Compliance Badges -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Compliance &amp; Quality Certification</h3>
+          <div class="compliance-badges">
+            <div class="stqc-badge-box">
+              <span class="stqc-title">STQC Certified Quality</span>
+              <span class="stqc-sub">CQW / GIGW 3.0 Compliant</span>
+            </div>
+            <div class="s3waas-badge-box">
+              <span class="s3waas-title">NIC S3WaaS Framework</span>
+              <span class="s3waas-sub">Secure, Scalable &amp; Sugamya</span>
+            </div>
+            <div class="ux4g-badge-box">
+              <span class="ux4g-title">UX4G Design System</span>
+              <span class="ux4g-sub">High-Contrast Accessible Tokens</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Sub-Bar with Dynamic Content Freshness Date -->
+      <div class="footer-bottom-bar">
+        <div class="footer-attribution">
+          Website designed, developed and hosted by <strong>National Informatics Centre (NIC)</strong>. Contents owned and maintained by <strong>Employees' Provident Fund Organisation</strong>.
+        </div>
+        <div class="footer-freshness" id="content-freshness">
+          Content Last Updated: <time id="dynamic-date" datetime="2026-08-26">26 August 2026</time> (IST)
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 11. ACCESSIBLE DIALOG: SCREEN READER ACCESS GUIDELINES                     -->
+  <!-- ========================================================================= -->
+  <dialog id="screen-reader-dialog" class="accessible-dialog" aria-labelledby="sr-dialog-title">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h2 id="sr-dialog-title" class="dialog-title">Screen Reader Access &amp; Assistive Technologies</h2>
+        <button type="button" class="dialog-close-btn" id="close-sr-dialog" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="dialog-body">
+        <p>The EPFO Portal adheres to GIGW 3.0 and WCAG 2.1 Level AA standards. It can be navigated smoothly using modern screen readers and assistive devices.</p>
+        
+        <table class="accessible-table" aria-label="Supported Screen Readers">
+          <thead>
+            <tr>
+              <th scope="col">Screen Reader</th>
+              <th scope="col">Platform</th>
+              <th scope="col">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NVDA (NonVisual Desktop Access)</td>
+              <td>Windows</td>
+              <td>Free / Open Source</td>
+            </tr>
+            <tr>
+              <td>JAWS (Job Access With Speech)</td>
+              <td>Windows</td>
+              <td>Commercial</td>
+            </tr>
+            <tr>
+              <td>VoiceOver</td>
+              <td>macOS / iOS</td>
+              <td>Built-in</td>
+            </tr>
+            <tr>
+              <td>TalkBack</td>
+              <td>Android</td>
+              <td>Built-in</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Standard Keyboard Navigation Shortcuts:</h3>
+        <ul>
+          <li><kbd>Tab</kbd>: Move forward through interactive links, buttons, and inputs.</li>
+          <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: Move backward through interactive elements.</li>
+          <li><kbd>Enter</kbd> / <kbd>Space</kbd>: Activate buttons, accordion tabs, or links.</li>
+          <li><kbd>Esc</kbd>: Dismiss open modal dialogs or search suggestion dropdowns.</li>
+        </ul>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn btn-primary" id="confirm-sr-dialog">Close Guidelines</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC                                                          -->
+  <!-- ========================================================================= -->
+  <script src="app.js"></script>
+</body>
+</html>
+

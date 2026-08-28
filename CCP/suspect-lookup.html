@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Public Suspect Identifier Repository — Indian Cyber Crime Coordination Centre (I4C). Instant intelligence search for fraudulent UPI VPAs, phone numbers, mule accounts, emails, social handles, and phishing URLs.">
+  <title>Suspect Identifier Check | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .suspect-engine-container {
+      max-width: 50rem;
+      margin-inline: auto;
+    }
+    .suspect-result-card {
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .suspect-card-header {
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      user-select: none;
+      background-color: var(--bg-surface);
+    }
+    .suspect-card-header:hover {
+      background-color: #FEF2F2;
+    }
+    .suspect-expanded-body {
+      padding: 1.25rem;
+      border-top: 1px solid #FECACA;
+      background-color: #FFF5F5;
+    }
+    [data-theme="high-contrast"] .suspect-result-card {
+      background-color: #121212;
+      border: 2px solid #FFFFFF;
+    }
+    [data-theme="high-contrast"] .suspect-card-header:hover,
+    [data-theme="high-contrast"] .suspect-expanded-body {
+      background-color: #1E293B;
+    }
+    .filter-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+    }
+    .filter-pill {
+      background: var(--bg-surface-subtle);
+      border: 1px solid var(--border-color);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .filter-pill.is-active {
+      background-color: var(--gov-navy);
+      color: #FFFFFF;
+      border-color: var(--gov-navy);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — I4C Fraud Intelligence Registry</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="login.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Citizen Login</span>
+        </a>
+        <a href="emergency-report.html" class="btn btn-danger">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Emergency 60s Report</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link is-active" aria-current="page">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" id="main-content" role="main" tabindex="-1" style="flex:1; padding-block:2rem;">
+    
+    <div class="suspect-engine-container">
+      
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <span class="section-eyebrow">National Fraud Intelligence Registry</span>
+        <h1 style="font-size:1.75rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.35rem;">
+          Public Suspect Identifier Search
+        </h1>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">
+          Cross-reference suspicious UPI VPAs, mobile numbers, bank accounts, emails, social media handles, or phishing URLs against the I4C national registry before making payments.
+        </p>
+      </div>
+
+      <!-- Search Engine Bar -->
+      <div class="suspect-tool-card" style="padding:1.25rem;">
+        <form id="full-suspect-search-form" onsubmit="return false;">
+          <label for="search-suspect-term" class="sr-only">Enter Identifier to Verify</label>
+          <div class="suspect-input-group">
+            <input 
+              type="search" 
+              id="search-suspect-term" 
+              class="suspect-search-input" 
+              placeholder="Search UPI (fraudster@ybl), Mobile (98xxxx), Bank A/c, Email, or Phishing URL..." 
+              required
+            >
+            <button type="submit" class="btn btn-danger touch-target" style="padding-inline:1.5rem; font-weight:800;">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <span>Verify</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Category Filters -->
+        <div class="filter-pills-wrap">
+          <button type="button" class="filter-pill is-active" data-type="ALL">All Categories</button>
+          <button type="button" class="filter-pill" data-type="UPI_VPA">UPI VPAs</button>
+          <button type="button" class="filter-pill" data-type="PHONE">Phone Numbers</button>
+          <button type="button" class="filter-pill" data-type="BANK_ACCOUNT">Bank Accounts</button>
+          <button type="button" class="filter-pill" data-type="EMAIL">Emails</button>
+          <button type="button" class="filter-pill" data-type="SOCIAL_MEDIA">Social Media</button>
+          <button type="button" class="filter-pill" data-type="URL">Phishing URLs</button>
+        </div>
+      </div>
+
+      <!-- Results Header & List -->
+      <div style="margin-top:1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+          <span style="font-size:0.8125rem; font-weight:700; color:var(--text-secondary);" id="results-count-label">
+            Displaying Flagged Suspects
+          </span>
+          <span style="font-size:0.75rem; color:var(--text-muted);">
+            Updated in Real-Time via I4C &amp; NPCI Feeds
+          </span>
+        </div>
+
+        <div id="full-suspect-results-container">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchForm = document.getElementById('full-suspect-search-form');
+      const searchInput = document.getElementById('search-suspect-term');
+      const resultsContainer = document.getElementById('full-suspect-results-container');
+      const countLabel = document.getElementById('results-count-label');
+      const filterPills = document.querySelectorAll('.filter-pill');
+
+      let selectedType = 'ALL';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const qParam = urlParams.get('q');
+      if (qParam && searchInput) {
+        searchInput.value = qParam;
+      }
+
+      function executeSearch() {
+        const query = (searchInput?.value || '').trim();
+        let suspects = window.CcpDB.getSuspects();
+
+        if (selectedType !== 'ALL') {
+          suspects = suspects.filter(s => s.type === selectedType);
+        }
+
+        if (query) {
+          const q = query.toLowerCase();
+          suspects = suspects.filter(s => {
+            return s.identifier.toLowerCase().includes(q) ||
+                   s.type.toLowerCase().includes(q) ||
+                   s.remarks.toLowerCase().includes(q);
+          });
+        }
+
+        renderSuspectResults(suspects, query);
+      }
+
+      function renderSuspectResults(results, query) {
+        if (!resultsContainer) return;
+
+        if (countLabel) {
+          countLabel.textContent = `Found ${results.length} Flagged Suspect Identifier(s)`;
+        }
+
+        if (results.length === 0) {
+          resultsContainer.innerHTML = `
+            <div class="suspect-result-box" style="border-left:4px solid var(--gov-green); background:#F0FDF4; padding:1.25rem;">
+              <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+                <div style="color:var(--gov-green);">
+                  <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <strong style="font-size:1.0625rem; color:var(--gov-green);">No Prior Fraud Reports for "${query || 'Query'}"</strong>
+                  <p style="font-size:0.8125rem; color:var(--text-secondary); margin-top:0.35rem; line-height:1.45;">
+                    This identifier does not appear in the active I4C suspect database. However, always verify caller identities and never share OTPs or download unknown APKs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        resultsContainer.innerHTML = results.map((item, idx) => {
+          let typeLabel = item.type.replace('_', ' ');
+          let historyHtml = (item.history || []).map(h => `
+            <li style="margin-bottom:0.25rem;"><strong>${h.date}:</strong> ${h.modus}</li>
+          `).join('');
+
+          return `
+            <article class="suspect-result-card" id="suspect-card-${idx}">
+              <div class="suspect-card-header" onclick="toggleSuspectDetails(${idx})" role="button" tabindex="0" aria-expanded="false">
+                <div>
+                  <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem;">
+                    <span class="status-badge status-badge--danger">High Risk (${item.riskScore}/100)</span>
+                    <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">${typeLabel}</span>
+                  </div>
+                  <strong style="font-family:var(--font-mono); font-size:1.0625rem; color:var(--gov-navy);">
+                    ${item.identifier}
+                  </strong>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:0.75rem;">
+                  <span style="font-size:0.75rem; color:var(--gov-crimson); font-weight:800;">
+                    ${item.reportsCount} Complaints
+                  </span>
+                  <span id="chevron-suspect-${idx}" style="font-size:0.875rem; color:var(--text-muted); font-weight:700;">▼</span>
+                </div>
+              </div>
+
+              <!-- Collapsed Details Body -->
+              <div class="suspect-expanded-body" id="suspect-details-${idx}" hidden>
+                <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+                  <strong>Modus Operandi:</strong> ${item.remarks}
+                </p>
+
+                ${historyHtml ? `
+                  <div style="background:var(--bg-surface); padding:0.75rem; border-radius:var(--radius-sm); border:1px solid #FECACA; font-size:0.75rem; margin-bottom:0.75rem;">
+                    <strong style="color:var(--gov-navy); display:block; margin-bottom:0.35rem;">Chronological Incident Log:</strong>
+                    <ul style="padding-left:1.1rem; color:var(--text-secondary);">
+                      ${historyHtml}
+                    </ul>
+                  </div>
+                ` : ''}
+
+                <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #FECACA; padding-top:0.75rem;">
+                  <span style="font-size:0.75rem; color:var(--text-muted);">
+                    Linked to Case(s): <code>${(item.associatedCases || []).join(', ')}</code>
+                  </span>
+                  <a href="emergency-report.html" class="btn btn-danger" style="font-size:0.75rem; padding:0.35rem 0.65rem;">
+                    Report Fraud by this Suspect
+                  </a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      window.toggleSuspectDetails = function(idx) {
+        const details = document.getElementById(`suspect-details-${idx}`);
+        const chevron = document.getElementById(`chevron-suspect-${idx}`);
+        if (details) {
+          const isHidden = details.hidden;
+          details.hidden = !isHidden;
+          if (chevron) chevron.textContent = isHidden ? '▲' : '▼';
+        }
+      };
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => p.classList.remove('is-active'));
+          pill.classList.add('is-active');
+          selectedType = pill.dataset.type;
+          executeSearch();
+        });
+      });
+
+      if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          executeSearch();
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', executeSearch);
+      }
+
+      executeSearch();
+    });
+  </script>
+</body>
+</html>

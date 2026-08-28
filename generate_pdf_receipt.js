@@ -1,0 +1,229 @@
+const fs = require('fs');
+const path = require('path');
+
+/**
+ * Generates a valid standard PDF-1.4 file containing the UPI Fraud Evidence Receipt.
+ */
+function generatePdfReceipt() {
+  const pdfPath = path.resolve('CCP/public/sample_fraud_receipt.pdf');
+
+  const contentStream = `
+BT
+/F1 20 Tf
+1 0 0 rg
+50 780 Td
+(CONFIDENTIAL - FRAUD INCIDENT EVIDENCE RECORD) Tj
+ET
+
+BT
+/F2 14 Tf
+0.06 0.17 0.35 rg
+50 740 Td
+(National Cyber Crime Reporting Portal (NCRP) - Golden Hour Evidence) Tj
+ET
+
+0.8 0.8 0.8 RG
+1 w
+50 725 m 550 725 l S
+
+BT
+/F2 10 Tf
+0.4 0.45 0.5 rg
+50 695 Td
+(TRANSACTION STATUS) Tj
+ET
+
+BT
+/F1 14 Tf
+0.07 0.5 0.24 rg
+50 675 Td
+(PAYMENT SUCCESSFUL - UNAUTHORIZED DEBIT) Tj
+ET
+
+BT
+/F1 24 Tf
+0.06 0.17 0.35 rg
+50 635 Td
+(Rs. 45,000.00) Tj
+ET
+
+BT
+/F2 10 Tf
+0.2 0.2 0.2 rg
+50 610 Td
+(Debited from: State Bank of India (A/c **9821)) Tj
+ET
+
+0.8 0.8 0.8 RG
+50 590 m 550 590 l S
+
+BT
+/F2 10 Tf
+0.4 0.45 0.5 rg
+50 560 Td
+(12-DIGIT TRANSACTION UTR / RRN NUMBER) Tj
+ET
+
+BT
+/F1 16 Tf
+0.72 0.11 0.11 rg
+50 540 Td
+(428910293841) Tj
+ET
+
+BT
+/F2 10 Tf
+0.4 0.45 0.5 rg
+50 510 Td
+(BENEFICIARY UPI ID / VPA) Tj
+ET
+
+BT
+/F1 12 Tf
+0.06 0.17 0.35 rg
+50 490 Td
+(fraudster99@ybl (Electricity Discom Support)) Tj
+ET
+
+BT
+/F2 10 Tf
+0.4 0.45 0.5 rg
+50 460 Td
+(BENEFICIARY BANK & IFSC) Tj
+ET
+
+BT
+/F1 12 Tf
+0.2 0.2 0.2 rg
+50 440 Td
+(HDFC Bank - Salt Lake Branch | IFSC: HDFC0001092 | A/c: 501009823412) Tj
+ET
+
+BT
+/F2 10 Tf
+0.4 0.45 0.5 rg
+50 410 Td
+(TRANSACTION TIMESTAMP) Tj
+ET
+
+BT
+/F1 12 Tf
+0.2 0.2 0.2 rg
+50 390 Td
+(2026-08-28 10:45:00 IST) Tj
+ET
+
+0.8 0.8 0.8 RG
+50 365 m 550 365 l S
+
+BT
+/F2 10 Tf
+0.4 0.45 0.5 rg
+50 335 Td
+(MODUS OPERANDI / INCIDENT SUMMARY) Tj
+ET
+
+BT
+/F2 10 Tf
+0.2 0.2 0.2 rg
+50 315 Td
+(Scammer posed as Electricity Board officer threatening power cut.) Tj
+50 300 Td
+(Instructed victim to download malicious APK file which initiated Rs. 45,000 debit.) Tj
+ET
+
+0.9 0.95 1 rg
+50 200 500 70 re f
+0.06 0.17 0.35 RG
+1 w
+50 200 500 70 re S
+
+BT
+/F1 11 Tf
+0.06 0.17 0.35 rg
+65 245 Td
+(STATUTORY CERTIFICATION UNDER SECTION 65B EVIDENCE ACT) Tj
+ET
+
+BT
+/F2 9 Tf
+0.3 0.3 0.3 rg
+65 228 Td
+(Digitally extracted bank receipt log for emergency 1930 inter-bank lien dispatch.) Tj
+65 214 Td
+(Cryptographic Hash: 8f9a2c3e4b10887a123bcdef091234567890abcdef) Tj
+ET
+`;
+
+  const streamLength = Buffer.byteLength(contentStream, 'utf-8');
+
+  let pdf = `%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595 842]
+  /Resources <<
+    /Font <<
+      /F1 <<
+        /Type /Font
+        /Subtype /Type1
+        /BaseFont /Helvetica-Bold
+      >>
+      /F2 <<
+        /Type /Font
+        /Subtype /Type1
+        /BaseFont /Helvetica
+      >>
+    >>
+  >>
+  /Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+  /Length ${streamLength}
+>>
+stream
+${contentStream}
+endstream
+endobj
+
+xref
+0 5
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000300 00000 n 
+trailer
+<<
+  /Size 5
+  /Root 1 0 R
+>>
+startxref
+${400 + streamLength}
+%%EOF`;
+
+  fs.writeFileSync(pdfPath, pdf, 'utf-8');
+  console.log('Successfully generated sample PDF at:', pdfPath);
+}
+
+generatePdfReceipt();
+

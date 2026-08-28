@@ -1,0 +1,104 @@
+Here are the files: C:\Users\ASUS\VS\gov_web_hack26\Requirement docs
+
+System Role & Objective
+You are an expert Frontend Architect and Government Digital Experience (GovTech) Specialist specializing in India's GIGW 3.0 (Guidelines for Indian Government Websites), UX4G design tokens, and the National Informatics Centre (NIC) S3WaaS framework.
+
+Your task is to analyze two input files in the workspace:
+
+legacy_epfo.html (The raw, saved HTML DOM of the current EPFO portal).
+
+s3waas_template.html (The reference S3WaaS GIGW-compliant structural template).
+
+You will synthesize these files to generate a brand-new, production-ready, ultra-performant, accessible, and clean single-page landing portal (index.html, styles.css, and app.js).
+
+Phase 1: Comprehensive Field & Link Inventory (Legacy Extraction)
+Inspect legacy_epfo.html from top to bottom. Do not omit any citizen service or statutory pathway. Extract and catalogue:
+
+Authentication & Member Services: UAN Activation, Member Passbook, Member Web Portal (UAN Login), Online Claims (Form 19, 10C, 31, 10D), Transfer Requests (OICP).
+
+Pensioner Services: Jeevan Pramaan (Digital Life Certificate), Pensioner's Portal, PPO Inquiry/Download, Scheme Certificate.
+
+Employer & Establishment Services: Unified Employer Portal, Electronic Challan cum Return (ECR/Challan submission), Principal Employer Portal, Shram Suvidha integration.
+
+Grievance & Public Information: EPFiGMS 2.0 registration, Grievance Status tracking, Right to Information (RTI) links, CPGRAMS routing, FAQs, Citizen Charter.
+
+Dynamic / Statutory Data: Interest rate gazette notices, administrative circulars, press releases, regional office directories, international worker social security agreements.
+
+Phase 2: S3WaaS Structural Adaptation & IA Reorganization
+Rebuild the information architecture by fitting all extracted fields into the standardized S3WaaS layout hierarchy, but reorganize the chaotic link list into a clean, 4-Pillar Intent Model:
+
+Sovereign Trust Header (S3WaaS Top Utility Bar):
+
+National Emblem of India (inline clean SVG) with "भारत सरकार | Government of India".
+
+Accessibility toolbar: Skip-to-main-content (#main-content), Font Resizers (A-, A, A+), High-Contrast Mode Toggle (◐), and an Indic Language selector dropdown (12 scheduled languages).
+
+Institutional Identity Strip:
+
+Clean EPFO branding + Ministry of Labour & Employment ownership declaration.
+
+Global semantic search bar with autocomplete suggestions for frequent forms.
+
+Hero Intent Intake Section:
+
+Universal Single-Field Status Checker: "Check Claim Status / Passbook / UAN Linkage without Complex Login".
+
+4-Pillar Action Grid (Replacing 40+ Scattered Links):
+
+Pillar 1: Member & Employee Services (Passbook, File Claims, UAN Services, KYC Update).
+
+Pillar 2: Pensioners (EPS) (Digital Life Certificate, PPO Search, Pension Ledger).
+
+Pillar 3: Employers & Establishments (ECR Filing, Challans, KYC Approval, Exit Date Marking).
+
+Pillar 4: Grievance & Citizen Assistance (EPFiGMS Lodge/Track, AI Regulatory Guide, Regional Desk Locator).
+
+GIGW 3.0 Verified Footer:
+
+Mandatory statutory pages (Website Policies, Privacy Policy, Terms & Conditions, Hyperlinking Policy, Copyright Policy, Help).
+
+STQC Certified Quality Website (CQW) badge placeholder, NIC S3WaaS attribution, and dynamic "Last Updated / Content Freshness" date.
+
+Phase 3: Modernization & Radical De-Cluttering (Fixing S3WaaS Flaws)
+Many default S3WaaS implementations still suffer from heavy stock imagery, slow sliders, and visual noise. Enforce the following strict design constraints:
+
+Zero Animated Bloat & No Auto-Playing Carousels:
+
+Remove all <marquee> tags, flashing text, and rotating infinite image carousels.
+
+Replace dynamic ticker tapes with static, time-stamped, dismissible notification banners (role="alert").
+
+Minimalist, Lightweight Vector Visuals:
+
+Eliminate heavy raster background photos and non-informative stock banners.
+
+Use ultra-lightweight inline SVGs or unicode icons for visual signifiers.
+
+Strict Color Tokens (UX4G / GIGW 3.0 Contrast Compliance):
+
+Primary Sovereign Navy: #0F2C59 (Contrast ratio > 12:1 on light backgrounds).
+
+Trust/Welfare Green: #0B6623 (Contrast ratio > 4.5:1).
+
+Neutral Crisp Canvas: #F8FAFC background with #0F172A high-legibility body text.
+
+Interactive Focus Rings: Clear 3px outline on :focus-visible (#0284C7).
+
+Typography & Layout Rules:
+
+Use relative rem units exclusively for all font-size, line-height, padding, and margin.
+
+Ensure the entire page can scale to 200% zoom without horizontal scrollbars, text clipping, or layout breakage.
+
+Use standard system font stacks (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif).
+
+Phase 4: Deliverables Required
+Generate and write out the full, production-ready codebase to the workspace:
+
+index.html: Fully semantic HTML5 containing the entire restructured EPFO portal with all extracted fields categorized under the 4 pillars.
+
+styles.css: Modular, responsive CSS utilizing CSS Custom Properties (Tokens), mobile-first CSS Grid/Flexbox, full high-contrast mode rules, and sub-45KB size.
+
+app.js: Clean, dependency-free vanilla JavaScript handling accessibility toggles (font resize, contrast switch), tab navigation, live client-side validation for the 12-digit UAN input, and mock search filtering.
+
+Execute this transformation now, verify the DOM tree, and confirm that zero functional links or services from the original portal were dropped.

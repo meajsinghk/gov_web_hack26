@@ -1,0 +1,10 @@
+{
+  "totalPagesCrawled": 87,
+  "totalDiscoveredLinks": 76,
+  "timestamp": "2026-08-28T11:27:41.616Z",
+  "filesGenerated": [
+    "MASTER_SCRAPED_ALL_PAGES.json",
+    "MASTER_SCRAPED_INVENTORY.md",
+    "raw_pages/*.html"
+  ]
+}

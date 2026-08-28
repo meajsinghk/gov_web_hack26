@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Official Cyber Threat Advisories & Public Warnings — Indian Cyber Crime Coordination Centre (I4C), Ministry of Home Affairs, Government of India.">
+  <title>Advisories &amp; Threat Alerts | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .advisory-card-item {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="high-contrast"] .advisory-card-item {
+      background: #121212;
+      border: 2px solid #FFFFFF;
+    }
+    .advisory-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — I4C Threat Intelligence Grid</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C Logo" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="login.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Citizen Login</span>
+        </a>
+        <a href="emergency-report.html" class="btn btn-danger">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Emergency 60s Report</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link is-active" aria-current="page">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" id="main-content" role="main" tabindex="-1" style="flex:1; padding-block:2rem;">
+    
+    <div style="margin-bottom:1.5rem;">
+      <span class="section-eyebrow">National Cyber Defense Intelligence</span>
+      <h1 style="font-size:1.75rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+        Official Advisories &amp; Threat Alerts
+      </h1>
+      <p style="font-size:0.875rem; color:var(--text-secondary);">
+        Authoritative warning bulletins issued by the Indian Cyber Crime Coordination Centre (I4C), MHA, regarding active fraud campaigns.
+      </p>
+    </div>
+
+    <!-- Filter Search Box -->
+    <div class="suspect-tool-card" style="max-width:44rem; margin-bottom:2rem; padding:1rem;">
+      <label for="advisory-search-input" class="sr-only">Search Advisories</label>
+      <input type="search" id="advisory-search-input" class="form-control" placeholder="Search advisories (e.g. digital arrest, electricity bill, APK, CPGRAMS, fake email)...">
+    </div>
+
+    <!-- Advisories List -->
+    <div id="advisories-list-container" style="max-width:54rem;">
+      
+      <!-- Advisory 1 -->
+      <article class="advisory-card-item" data-keywords="digital arrest cbi police customs ed video call skype">
+        <div class="advisory-header-row">
+          <span class="status-badge status-badge--danger">High Severity Threat</span>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">Ref: I4C/ADV/2026/08</span>
+        </div>
+        <h2 style="font-size:1.125rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.35rem;">
+          Public Advisory on "Digital Arrest" &amp; Law Enforcement Impersonation Scams
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55; margin-bottom:0.75rem;">
+          Scammers posing as CBI, Mumbai Police, Narcotics Control Bureau (NCB), ED, or High Court officials are placing video calls over Skype/WhatsApp and threatening citizens with fabricated parcel confiscations containing illicit narcotics. Citizens are coerced into remaining on camera under "Digital Arrest" and transferring savings into fraudulent "RBI verification accounts".
+        </p>
+        <div style="background:#FEF2F2; border-left:3px solid var(--gov-crimson); padding:0.65rem 0.85rem; font-size:0.75rem; color:#991B1B;">
+          <strong>Official Stance:</strong> Indian law enforcement agencies NEVER conduct arrests over video calls nor request citizens to transfer funds to any bank account for judicial verification.
+        </div>
+      </article>
+
+      <!-- Advisory 2 -->
+      <article class="advisory-card-item" data-keywords="fake email cybercrime mha court summons summons notice">
+        <div class="advisory-header-row">
+          <span class="status-badge status-badge--danger">High Severity Threat</span>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">Ref: I4C/ADV/2026/04</span>
+        </div>
+        <h2 style="font-size:1.125rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.35rem;">
+          Advisory on Fake Summon Emails Issued in the Name of Cyber Crime Police &amp; MHA
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55; margin-bottom:0.75rem;">
+          Fraudsters are circulating forged court summon emails with headers resembling Delhi Police, CBI, or INTERPOL, alleging that the recipient's IP was implicated in child pornography offenses. The email demands a fine payment within 24 hours to avoid arrest.
+        </p>
+        <div style="background:#FEF2F2; border-left:3px solid var(--gov-crimson); padding:0.65rem 0.85rem; font-size:0.75rem; color:#991B1B;">
+          <strong>Official Stance:</strong> Do NOT reply or pay fines to such emails. Authentic police notices are never served with arbitrary QR codes or personal bank account payment links.
+        </div>
+      </article>
+
+      <!-- Advisory 3 -->
+      <article class="advisory-card-item" data-keywords="electricity power disconnection apk malware scam sms">
+        <div class="advisory-header-row">
+          <span class="status-badge status-badge--warning">Moderate Severity</span>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">Ref: I4C/ADV/2026/02</span>
+        </div>
+        <h2 style="font-size:1.125rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.35rem;">
+          Advisory on Fake Electricity Power Disconnection SMS &amp; APK Malware
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55; margin-bottom:0.75rem;">
+          SMS alerts threatening power disconnection tonight due to unpaid electricity bills are widespread. Citizens are asked to contact a mobile number where scammers guide them to install a malicious APK file (e.g. QuickSupport or ElectricityPay.apk) which hijacks banking SMS and OTPs.
+        </p>
+        <div style="background:#FFFBEB; border-left:3px solid var(--gov-amber); padding:0.65rem 0.85rem; font-size:0.75rem; color:#92400E;">
+          <strong>Official Stance:</strong> Electricity discoms never send disconnection threats from personal 10-digit mobile numbers. Always pay utility bills via official electricity board portals.
+        </div>
+      </article>
+
+      <!-- Advisory 4 -->
+      <article class="advisory-card-item" data-keywords="cpgrams portal grievance redressal darpg">
+        <div class="advisory-header-row">
+          <span class="status-badge status-badge--info">Administrative Notice</span>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">Ref: I4C/NOT/2026/01</span>
+        </div>
+        <h2 style="font-size:1.125rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.35rem;">
+          Important Public Notice regarding CPGRAMS Portal
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55; margin-bottom:0.75rem;">
+          The Centralised Public Grievance Redress and Monitoring System (CPGRAMS) is dedicated to administrative grievances against government departments. Cyber crime complaints and bank lien requests must be filed exclusively on the National Cyber Crime Reporting Portal (NCRP / 1930) for statutory police action and fast-track financial freeze.
+        </p>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('advisory-search-input');
+      const items = document.querySelectorAll('.advisory-card-item');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const q = e.target.value.trim().toLowerCase();
+          items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const keywords = item.dataset.keywords || '';
+            item.style.display = (!q || text.includes(q) || keywords.includes(q)) ? '' : 'none';
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

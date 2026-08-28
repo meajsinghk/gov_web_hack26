@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official Leadership & Governance of Employees' Provident Fund Organisation (EPFO): Union Minister, Minister of State, Central Board of Trustees (CBT), and Citizen's Charter.">
+  <title>Leadership &amp; Governance | EPFO | Government of India</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Banner -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government Website Verification">
+    <div class="container">
+      <div class="banner-header">
+        <div class="banner-identity">
+          <svg class="emblem-svg" viewBox="0 0 100 130" width="18" height="23" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M50 5 C43 5 38 10 38 17 C38 23 42 27 47 28 C45 32 40 37 32 37 C26 37 22 34 20 30 C18 35 21 42 27 45 C23 47 18 47 14 45 C15 51 20 56 26 57 C22 60 17 60 14 59 C17 65 24 68 31 68 C27 72 20 74 15 74 C22 79 32 80 40 77 C41 83 45 88 50 88 C55 88 59 83 60 77 C68 80 78 79 85 74 C80 74 73 72 69 68 C76 68 83 65 86 59 C83 60 78 60 74 57 C80 56 85 51 86 45 C82 47 77 47 73 45 C79 42 82 35 80 30 C78 34 74 37 68 37 C60 37 55 32 53 28 C58 27 62 23 62 17 C62 10 57 5 50 5 Z"/>
+            <rect x="25" y="92" width="50" height="7" rx="3" fill="currentColor"/>
+            <circle cx="50" cy="112" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <path fill="currentColor" d="M50 104 L50 120 M42 112 L58 112 M44 106 L56 118 M44 118 L56 106"/>
+            <rect x="18" y="125" width="64" height="4" rx="2" fill="currentColor"/>
+          </svg>
+          <span class="banner-text">
+            <strong>भारत सरकार</strong> | Government of India — Official Portal
+          </span>
+          <button type="button" class="banner-toggle-btn" id="trust-banner-toggle" aria-expanded="false" aria-controls="gov-trust-details">
+            <span>Here’s how you know</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+          </button>
+        </div>
+
+        <div class="banner-controls">
+          <div class="font-group" role="group" aria-label="Font Resizing">
+            <button type="button" class="font-btn" id="font-dec">A-</button>
+            <button type="button" class="font-btn is-active" id="font-norm">A</button>
+            <button type="button" class="font-btn" id="font-inc">A+</button>
+          </div>
+          <button type="button" class="tool-btn" id="contrast-toggle">◐ High Contrast</button>
+          <select id="lang-selector" class="lang-select" aria-label="Language">
+            <option value="en" selected>English</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="gov-trust-details" class="trust-details-panel" hidden>
+        <div class="trust-details-grid">
+          <div class="trust-item">
+            <div class="trust-icon">🏛️</div>
+            <div>
+              <div class="trust-heading">Official domain identifier</div>
+              <p class="trust-desc">Official government portals end in <strong>.gov.in</strong> or <strong>.nic.in</strong>.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🔒</div>
+            <div>
+              <div class="trust-heading">Secure communication identifier</div>
+              <p class="trust-desc">The <strong>https://</strong> protocol ensures that your connection is encrypted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <svg viewBox="0 0 60 60" width="42" height="42" focusable="false" aria-hidden="true">
+          <circle cx="30" cy="30" r="28" fill="#0F2C59" stroke="#0B6623" stroke-width="3"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <circle cx="30" cy="30" r="10" fill="#0B6623"/>
+          <path d="M30 14 L30 46 M14 30 L46 30 M19 19 L41 41 M19 41 L41 19" stroke="#FFFFFF" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title-hi">कर्मचारी भविष्य निधि संगठन</span>
+          <span class="brand-title-en">Employees' Provident Fund Organisation</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <div class="signin-dropdown-wrap">
+          <button type="button" class="signin-btn" id="signin-menu-btn" aria-haspopup="true" aria-expanded="false">
+            <span>Sign In ▾</span>
+          </button>
+          <div class="signin-menu" id="signin-dropdown" hidden>
+            <a href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank" rel="noopener noreferrer" class="signin-item">👤 Member Login ↗</a>
+            <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank" rel="noopener noreferrer" class="signin-item">🏢 Employer Portal ↗</a>
+            <a href="https://mis.epfindia.gov.in/PensionPaymentEnquiry/paymentEnquiry.jsp" target="_blank" rel="noopener noreferrer" class="signin-item">👴 Pensioner Portal ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#services-explorer" class="nav-link">Services</a></li>
+          <li><a href="schemes.html" class="nav-link">Schemes</a></li>
+          <li><a href="tools-calculators.html" class="nav-link">Tools &amp; Calculators</a></li>
+          <li><a href="reports-payroll.html" class="nav-link">Reports &amp; Data</a></li>
+          <li><a href="https://epfigms.gov.in/" target="_blank" rel="noopener noreferrer" class="nav-link">Grievances ↗</a></li>
+          <li><a href="leadership.html" class="nav-link is-active" aria-current="page">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    
+    <div class="subpage-hero">
+      <div class="container">
+        <h1 class="subpage-title">Executive Leadership &amp; Governance Structure</h1>
+        <p class="subpage-lead">Tripartite administration of the Central Board of Trustees (CBT), Executive Committee, and Central Provident Fund Commissioner.</p>
+      </div>
+    </div>
+
+    <div class="container subpage-body">
+      
+      <!-- Ministerial Leadership -->
+      <section style="margin-bottom: 2.5rem;">
+        <h2 class="subpage-title" style="font-size: 1.25rem; margin-bottom: 1rem;">Ministry of Labour &amp; Employment, Government of India</h2>
+
+        <div class="widgets-grid">
+          
+          <div class="widget-card" style="align-items: center; text-align: center;">
+            <div class="leader-avatar-placeholder" style="width: 4rem; height: 4rem; margin-bottom: 0.75rem;">
+              👤
+            </div>
+            <h3 class="widget-title" style="font-size: 1.0625rem; justify-content: center;">Dr. Mansukh Mandaviya</h3>
+            <p style="font-size: 0.8125rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.25rem;">Hon'ble Union Minister</p>
+            <p class="widget-desc" style="margin-bottom: 0;">Ministry of Labour &amp; Employment and Ministry of Youth Affairs &amp; Sports</p>
+          </div>
+
+          <div class="widget-card" style="align-items: center; text-align: center;">
+            <div class="leader-avatar-placeholder" style="width: 4rem; height: 4rem; margin-bottom: 0.75rem;">
+              👤
+            </div>
+            <h3 class="widget-title" style="font-size: 1.0625rem; justify-content: center;">Sushri Shobha Karandlaje</h3>
+            <p style="font-size: 0.8125rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.25rem;">Hon'ble Minister of State</p>
+            <p class="widget-desc" style="margin-bottom: 0;">Ministry of Labour &amp; Employment and Ministry of Micro, Small and Medium Enterprises</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Tripartite Governance & Central Board of Trustees -->
+      <section style="margin-bottom: 2.5rem;">
+        <h2 class="subpage-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Central Board of Trustees (CBT), EPF</h2>
+        <p class="subpage-lead" style="margin-bottom: 1rem;">The CBT is a statutory tripartite body constituted under Section 5A of the EPF &amp; MP Act, 1952.</p>
+
+        <div class="widget-card">
+          <ul style="font-size: 0.8125rem; line-height: 1.6; color: var(--color-text-muted); margin-left: 1.25rem;">
+            <li><strong>Chairman:</strong> Union Minister for Labour and Employment (Ex-Officio).</li>
+            <li><strong>Vice-Chairman:</strong> Minister of State for Labour and Employment (Ex-Officio).</li>
+            <li><strong>Government Representatives:</strong> Nominees from Central Ministries and State Labour Departments.</li>
+            <li><strong>Employers' Representatives:</strong> Nominees representing leading national trade &amp; industry associations.</li>
+            <li><strong>Employees' Representatives:</strong> Nominees representing major central trade union organizations.</li>
+            <li><strong>Chief Executive Officer:</strong> Central Provident Fund Commissioner (CPFC).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Citizen Charter & RTI Disclosures -->
+      <section>
+        <h2 class="subpage-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Transparency &amp; Citizen Commitments</h2>
+
+        <div class="widgets-grid">
+          
+          <div class="widget-card">
+            <h3 class="widget-title" style="font-size: 0.9375rem;">Citizen's Charter</h3>
+            <p class="widget-desc">Time-bound service delivery standards for claim settlement, passbook updates, and grievance redressal.</p>
+            <a href="https://pmvbry-cdn.epfindia.gov.in/wp-content/uploads/2025/11/CitizenCharter.pdf" target="_blank" rel="noopener noreferrer" class="canvas-explore-link">Download Citizen's Charter (PDF) ↗</a>
+          </div>
+
+          <div class="widget-card">
+            <h3 class="widget-title" style="font-size: 0.9375rem;">Right to Information (RTI Act)</h3>
+            <p class="widget-desc">Proactive disclosures under Section 4(1)(b) of the RTI Act and roster of Central Public Information Officers.</p>
+            <a href="https://www.epfo.gov.in/rti-epfo/" target="_blank" rel="noopener noreferrer" class="canvas-explore-link">Open RTI Portal &amp; CPIO Roster ↗</a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">National Directory</div>
+          <ul class="footer-links">
+            <li><a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">National Portal of India ↗</a></li>
+            <li><a href="https://labour.gov.in/" target="_blank" rel="noopener noreferrer">Ministry of Labour &amp; Employment ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Statutory Subpages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">EPFO Landing Portal</a></li>
+            <li><a href="tools-calculators.html">Financial Calculators</a></li>
+            <li><a href="schemes.html">Statutory Schemes</a></li>
+            <li><a href="reports-payroll.html">Monthly Payroll Data</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Compliance</div>
+          <ul class="footer-links">
+            <li><a href="https://www.epfo.gov.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a href="https://www.epfo.gov.in/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Toll-Free 24x7</div>
+          <div style="font-size: 1rem; font-weight: 800; color: #38BDF8; font-family: var(--font-mono);">14470 / 1800 118 005</div>
+        </div>
+      </div>
+      <div class="footer-provenance-bar">
+        <div>Designed on NIC S3WaaS Framework | GIGW 3.0 Compliant</div>
+        <div>Last Updated: August 26, 2026</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

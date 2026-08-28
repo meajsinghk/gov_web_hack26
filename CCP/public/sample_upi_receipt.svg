@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <style>
+      .bg { fill: #F3F4F6; }
+      .card { fill: #FFFFFF; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)); }
+      .header-bg { fill: #0B6623; }
+      .text-white { fill: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .text-dark { fill: #0F172A; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .text-muted { fill: #64748B; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .text-navy { fill: #0F2C59; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: bold; }
+      .text-mono { font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, monospace; }
+      .divider { stroke: #E2E8F0; stroke-width: 1.5; stroke-dasharray: 4 4; }
+      .solid-line { stroke: #E2E8F0; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="900" class="bg"/>
+
+  <!-- Main Receipt Card -->
+  <g transform="translate(40, 40)">
+    <rect width="520" height="820" rx="16" class="card"/>
+
+    <!-- Success Header Banner -->
+    <rect width="520" height="180" rx="16" class="header-bg"/>
+    <rect y="160" width="520" height="20" class="header-bg"/>
+
+    <!-- Green Check Circle Icon -->
+    <circle cx="260" cy="65" r="32" fill="#FFFFFF"/>
+    <circle cx="260" cy="65" r="28" fill="#15803D"/>
+    <path d="M250 65 L257 72 L272 56" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="260" y="125" text-anchor="middle" class="text-white" font-size="20" font-weight="800" letter-spacing="0.5">UPI Payment Successful</text>
+    <text x="260" y="152" text-anchor="middle" class="text-white" font-size="13" opacity="0.9">28 Aug 2026, 10:45 AM</text>
+
+    <!-- Debited Amount -->
+    <text x="260" y="240" text-anchor="middle" class="text-navy" font-size="38" font-weight="900">₹ 45,000.00</text>
+    <text x="260" y="270" text-anchor="middle" class="text-muted" font-size="13">Debited from State Bank of India (A/c **9821)</text>
+
+    <!-- Divider Line -->
+    <line x1="30" y1="300" x2="490" y2="300" class="solid-line"/>
+
+    <!-- Transaction Details Grid -->
+    <g transform="translate(40, 330)">
+      
+      <!-- Beneficiary Row -->
+      <text x="0" y="0" class="text-muted" font-size="12" font-weight="600" text-transform="uppercase">Paid To (Beneficiary)</text>
+      <text x="0" y="24" class="text-dark" font-size="16" font-weight="700">Electricity Discom Bill Support</text>
+      <text x="0" y="46" class="text-navy text-mono" font-size="14" fill="#1E40AF">fraudster99@ybl</text>
+
+      <line x1="0" y1="70" x2="440" y2="70" class="divider"/>
+
+      <!-- UTR / Reference Row -->
+      <g transform="translate(0, 95)">
+        <text x="0" y="0" class="text-muted" font-size="12" font-weight="600" text-transform="uppercase">12-Digit UTR / Bank Reference Number</text>
+        <text x="0" y="26" class="text-navy text-mono" font-size="20" font-weight="900" fill="#0F2C59" letter-spacing="1">428910293841</text>
+        <text x="0" y="48" class="text-muted" font-size="11">NPCI UPI Transaction ID: UPI/428910293841/BILLPAY</text>
+      </g>
+
+      <line x1="0" y1="165" x2="440" y2="165" class="divider"/>
+
+      <!-- Bank & IFSC Details -->
+      <g transform="translate(0, 190)">
+        <text x="0" y="0" class="text-muted" font-size="12" font-weight="600" text-transform="uppercase">Destination Account</text>
+        <text x="0" y="22" class="text-dark" font-size="14" font-weight="700">HDFC Bank — Salt Lake Branch</text>
+        <text x="0" y="42" class="text-muted text-mono" font-size="12">IFSC: HDFC0001092 | A/c: 501009823412</text>
+      </g>
+
+      <line x1="0" y1="250" x2="440" y2="250" class="divider"/>
+
+      <!-- Remarks / Mode -->
+      <g transform="translate(0, 275)">
+        <text x="0" y="0" class="text-muted" font-size="12" font-weight="600" text-transform="uppercase">Payment Method &amp; Modus</text>
+        <text x="0" y="22" class="text-dark" font-size="14" font-weight="600">UPI Instant Screen-Share APK Trigger</text>
+        <text x="0" y="42" class="text-muted" font-size="12">Electricity Power Bill Disconnection Overdue</text>
+      </g>
+
+    </g>
+
+    <!-- Footer Stamp on Receipt -->
+    <g transform="translate(40, 720)">
+      <rect width="440" height="60" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
+      <circle cx="30" cy="30" r="14" fill="#0B6623"/>
+      <path d="M25 30 L29 34 L36 26" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="56" y="27" class="text-navy" font-size="12" font-weight="700">Valid Transaction Record</text>
+      <text x="56" y="44" class="text-muted" font-size="10">Admissible Evidence for 1930 NCRP Bank Lien Filing</text>
+    </g>
+
+  </g>
+</svg>
+

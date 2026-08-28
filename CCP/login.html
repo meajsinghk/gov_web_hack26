@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Citizen Login Portal — National Cyber Crime Reporting Portal (NCRP). Secure Mobile SMS OTP Authentication.">
+  <title>Citizen Login | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .login-viewport-wrapper {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .login-card-container {
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      max-width: 28rem;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+    }
+    [data-theme="high-contrast"] .login-card-container {
+      background-color: #121212;
+      border: 2px solid #FFFFFF;
+    }
+    .login-header-logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .login-emblem-img {
+      height: 3rem;
+      width: auto;
+      object-fit: contain;
+    }
+    .login-ic4-img {
+      height: 2.75rem;
+      width: auto;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — Citizen Authentication Service</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C Logo" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="index.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Center Login Area -->
+  <main id="main-content" class="login-viewport-wrapper" role="main" tabindex="-1">
+    
+    <div class="login-card-container">
+      
+      <div class="login-header-logo-row">
+        <img src="public/emblem-dark.png" alt="Emblem" class="login-emblem-img">
+        <img src="public/ic4.png" alt="I4C Logo" class="login-ic4-img">
+      </div>
+
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <h1 style="font-size:1.375rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.25rem;">Citizen Sign In</h1>
+        <p style="font-size:0.8125rem; color:var(--text-secondary);">Access your private cyber incident dockets, bank lien updates, and police inquiry milestones.</p>
+      </div>
+
+      <!-- Step 1: Mobile Input Form -->
+      <form id="standalone-login-form">
+        
+        <div style="margin-bottom:1rem;">
+          <label for="standalone-mobile-input" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.35rem;">
+            Registered Mobile Number:
+          </label>
+          <div style="display:flex; align-items:center; border:1.5px solid var(--border-color); border-radius:var(--radius-sm); overflow:hidden; background:#fff;">
+            <span style="background:var(--bg-surface-subtle); padding:0.6rem 0.75rem; font-weight:700; font-size:0.875rem; border-right:1px solid var(--border-color); color:var(--text-secondary);">+91</span>
+            <input 
+              type="tel" 
+              id="standalone-mobile-input" 
+              class="form-control" 
+              value="9876543210"
+              placeholder="9876543210" 
+              maxlength="10" 
+              pattern="[6-9][0-9]{9}" 
+              required
+              style="border:none; box-shadow:none; font-weight:700;"
+            >
+          </div>
+          <span style="font-size:0.6875rem; color:var(--text-muted); display:block; margin-top:0.25rem;">Auto-filled for demo. Verification OTP: <code>123456</code></span>
+        </div>
+
+        <!-- Step 2: OTP Box (Hidden Initially) -->
+        <div id="standalone-otp-box" style="margin-bottom:1rem;" hidden>
+          <label for="standalone-otp-input" style="font-size:0.8125rem; font-weight:700; display:block; margin-bottom:0.35rem;">
+            Enter 6-Digit SMS OTP:
+          </label>
+          <input 
+            type="text" 
+            id="standalone-otp-input" 
+            class="form-control" 
+            value="123456"
+            placeholder="123456" 
+            maxlength="6" 
+            style="font-family:var(--font-mono); font-weight:800; letter-spacing:0.25rem; text-align:center; font-size:1.125rem;"
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block touch-target" id="btn-standalone-submit" style="font-size:0.9375rem; font-weight:700; margin-bottom:1rem;">
+          <span>Login with OTP →</span>
+        </button>
+
+      </form>
+
+      <div style="margin-top:1.25rem; text-align:center; font-size:0.75rem; color:var(--text-muted);">
+        By continuing, you agree to the <a href="resources.html" style="color:var(--gov-navy); text-decoration:underline;">Citizen Charter</a> &amp; <a href="faq.html" style="color:var(--gov-navy); text-decoration:underline;">Privacy Policy</a>.
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-auth.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('standalone-login-form');
+      const mobileInput = document.getElementById('standalone-mobile-input');
+      const otpBox = document.getElementById('standalone-otp-box');
+      const otpInput = document.getElementById('standalone-otp-input');
+      const submitBtn = document.getElementById('btn-standalone-submit');
+
+      let otpSent = false;
+
+      function performLogin() {
+        const user = (window.CcpDB && window.CcpDB.DEFAULT_USER) ? window.CcpDB.DEFAULT_USER : {
+          name: 'Ramesh Kumar',
+          mobile: '+91 9876543210',
+          email: 'ramesh.kumar@example.gov.in',
+          aadhaarLast4: '8821'
+        };
+        if (window.CcpDB && typeof window.CcpDB.setUserSession === 'function') {
+          window.CcpDB.setUserSession(user);
+        } else {
+          localStorage.setItem('ccp_user_session', JSON.stringify(user));
+        }
+        window.location.href = 'dashboard.html';
+      }
+
+      function handleAction(e) {
+        if (e) e.preventDefault();
+
+        if (!otpSent) {
+          const mob = mobileInput ? mobileInput.value.trim() : '9876543210';
+          if (mob.length !== 10) {
+            alert('Please enter a valid 10-digit mobile number.');
+            return;
+          }
+          otpSent = true;
+          if (otpBox) otpBox.hidden = false;
+          if (submitBtn) {
+            submitBtn.textContent = 'Verify OTP & Access Dashboard →';
+            submitBtn.className = 'btn btn-danger btn-block touch-target';
+          }
+          if (mobileInput) mobileInput.readOnly = true;
+          if (otpInput) {
+            otpInput.value = '123456';
+            otpInput.focus();
+          }
+        } else {
+          performLogin();
+        }
+      }
+
+      if (loginForm) {
+        loginForm.addEventListener('submit', handleAction);
+      }
+
+      if (submitBtn) {
+        submitBtn.addEventListener('click', (e) => {
+          if (otpSent) {
+            e.preventDefault();
+            performLogin();
+          }
+        });
+      }
+
+      if (otpInput) {
+        otpInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            performLogin();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

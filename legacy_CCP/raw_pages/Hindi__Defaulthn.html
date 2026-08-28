@@ -1,0 +1,1366 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Cyber Crime Portal
+</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><meta name="format-detection" content="telephone=no" /><meta name="keywords" content="ministry, department" /><meta name="description" content="Ministry/Department" /><meta name="author" content="National Informatics Center" /><link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.png" /><link rel="icon" href="../assets/images/favicon/favicon.png" /><link rel="stylesheet" href="../css/bootstrap.min.css" /><link href="../css/style_mha.css" rel="stylesheet" /><link rel="stylesheet" href="../css/layout/wide.css" data-name="layout" /><link rel="stylesheet" type="text/css" href="../../css/switcher.css" media="screen" /><link rel="stylesheet" href="../jquery.modal.css" type="text/css" media="screen" /><link href="../assets/css/swiper-bundle.min.css" rel="stylesheet" media="all" /><link href="../assets/css/base.css" rel="stylesheet" media="all" /><link href="../assets/css/base-responsive.css" rel="stylesheet" media="all" /><link href="../assets/css/grid.css" rel="stylesheet" media="all" /><link href="../assets/css/font.css" rel="stylesheet" media="all" /><link href="../assets/css/font-awesome.min.css" rel="stylesheet" media="all" /><link href="../assets/css/flexslider.css" rel="stylesheet" media="all" /><link href="../assets/css/all.min.css" rel="stylesheet" media="all" /><link href="assets/css/print.css" rel="stylesheet" media="print" />
+    <!-- Theme styles for this template -->
+    <link href="../assets/css/megamenu.css" rel="stylesheet" media="all" /><link href="../theme/css/site.css" rel="stylesheet" media="all" /><link href="../theme/css/site-responsive.css" rel="stylesheet" media="all" /><link href="theme/css/ma5gallery.css" rel="stylesheet" type="text/css" /><link href="theme/css/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    
+
+    
+
+    <style type="text/css">
+        .navbar {
+            height: 150px;
+            /*padding: 0 15px;*/
+            position: fixed;
+            z-index: 1;
+            padding: 0px;
+            top: 0;
+            width: 100%;
+            border-radius: 0px;
+            display: unset;
+        }
+
+        .shows {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgb(0 0 0 / 92%);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1050;
+            overflow-x: hidden;
+        }
+
+            .shows .overlay {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 1050;
+                margin-bottom: 56px;
+            }
+
+
+
+            .shows .img-shows {
+                width: 70%;
+                height: 100%;
+                background: #FFF;
+                position: absolute;
+                top: 3%;
+                left: 15%;
+                bottom: 10%;
+                transform: translate(0,0);
+                overflow: hidden;
+                z-index: 1050;
+            }
+
+        .img-shows span {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 99;
+            cursor: pointer;
+        }
+        /*.main {
+            margin-top: 138px;*/
+        /* Used in this example to enable scrolling */
+        /*}*/
+
+        a {
+            color: #428bca;
+            text-decoration: none;
+        }
+
+        ol, ul {
+            padding-left: 0rem;
+        }
+
+        [class*="span"] img, [class*="span"] iframe {
+            max-width: 59%;
+        }
+
+        .block {
+            padding-bottom: 0px;
+        }
+
+
+        .imgfix {
+            height: 63px;
+        }
+
+
+        .pb-35 {
+            padding-bottom: 15px;
+        }
+
+        .pr-20 {
+            padding-right: 20px;
+        }
+
+        .pl-20 {
+            padding-left: 20px;
+        }
+
+        .pb-50 {
+            padding-bottom: 20px;
+        }
+
+        .pt-50 {
+            padding-top: 20px;
+        }
+
+
+        .modal-dialog {
+            position: relative;
+            width: 475px;
+            margin: 0 auto;
+        }
+
+        .modal a.close-modal {
+            display: none !important;
+        }
+
+        button.close {
+            -webkit-appearance: none !important;
+            padding: 0 !important;
+            cursor: pointer !important;
+            background: 0 0 !important;
+            border: 0 !important;
+        }
+
+        .close {
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            filter: alpha(opacity=20);
+            opacity: .2;
+        }
+
+        .dropdown-content {
+            display: none !important;
+            overflow: hidden;
+            position: absolute;
+            background: #002654;
+            color: #fff !important;
+            left: 275px;
+            top: -15px;
+            width: 100%;
+            z-index: 1;
+            padding: 10px !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block !important;
+        }
+
+        .dropdown-content li a {
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .dropdown {
+            display: block;
+        }
+
+        .timeline-label h3 {
+            font-size: 15px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            font-weight: 700;
+            clear: both;
+            margin-bottom: 5px;
+        }
+
+        .submenutop {
+            display: none !important;
+            overflow: hidden;
+            position: absolute;
+            background: #002654;
+            color: #fff !important;
+            left: 275px;
+            top: -9px;
+            width: 100%;
+            z-index: 1;
+            padding: 10px !important;
+        }
+
+        .dropdown:hover .submenutop {
+            display: block !important;
+        }
+
+        .top_bx img {
+            height: 220px;
+            width: 100%;
+        }
+
+        .slides > li {
+            text-align: center;
+        }
+
+
+        .top_bx img {
+            height: 220px;
+            width: 100%;
+        }
+
+        .slides > li {
+            text-align: center;
+        }
+
+        .btn-info {
+            color: #000 !important;
+        }
+
+        .top_bx p {
+            margin: 10px 0px;
+        }
+
+        .logo {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif !important;
+        }
+
+        .footer-top-wrapper ul li a {
+            padding: 0px 10px;
+        }
+
+        marquee {
+            color: #000;
+        }
+
+            marquee:hover {
+                color: #3f51b5;
+            }
+
+        .medigalry .card-body {
+            height: 270px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                width: 1320px;
+            }
+        }
+
+        .fa-youtube-square:before {
+            content: "\f431" !important;
+        }
+
+        footer .testimonial-item {
+            height: 84px;
+        }
+
+        .gallery-slider .swiper-slide {
+            height: 240px;
+        }
+
+        .swiper {
+            padding: 1px;
+        }
+
+        .gallery-slider .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 26px;
+        }
+
+        video {
+            width: 100%;
+            height: 78%;
+        }
+    </style>
+
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            $(this).bind("contextmenu", function (e) {
+                e.preventDefault();
+            });
+            $(document).keydown(function (e) {
+                return (e.which || e.keyCode) != 116;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('play', function (e) {
+            var audios = document.getElementsByTagName('audio');
+            for (var i = 0, len = audios.length; i < len; i++) {
+                if (audios[i] != e.target) {
+                    this.currentTime = 0;
+                    audios[i].pause();
+                }
+            }
+        }, true);
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("#popupmodal").hide();
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    
+    
+    <div class="container">
+        <div class="row">
+            <div id="log"></div>
+            <!------ Pop-up Modal-Begin ---------->
+
+            <div class="modal fade" id="popupmodal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" style="color: white"></h4>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                        <!-- <div class="modal-footer"> -->
+                        <!-- </div> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!------ Pop-up Modal-End ---------->
+            <div id="logToSave"></div>
+            
+        </div>
+    </div>
+
+    
+    <form method="post" action="./Defaulthn.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="aq2mOTlykweixX+AVOrPR2fhvGECy4LZTjZ9U/TM1EYHx0J9Gm6yGQJ+97O20QcQEykqj90kr7XeeUeNNlQISddrPl4=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZHJF5iTS9lLqkJxlS-5l1HCy5Q1ie6pkNNMbXOn-XkbMI36Yyw2&amp;t=639191042600000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yJZJ-7Jal-GmR5b7nkNwjwDEQgxp5DGORB_qnAyK9Ip3g9y5A4fvHUExcBaJiplniolC2pq__QN0vATsS7GgGGuRxb5sBo1VqwxIcQBJ1-I2dNvlb8sInBcVzTyW46SKVqWDvyQ1&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadIDfX5fgaZHEPN3NsGc0jsvO5kQpP3VFMZLBMBG667qIr2Q39wik6doqefqZEowwOFKYO7oXUNaesL4tAsYGrp2QaOVOciYS_XRSQSQBuHaafIk2Sw5XfAmita5FioFkTuKSYG81&amp;t=ffffffffbec1863d" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="DB2B4E7F" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="j5Bov6WUNR3Ra3Fa73S3CMFdohA06dEFauxRT3iInH409DXWyY+g3ns4fmjLCftIii+SF8hHxAuuwpnpwC81lylRGa5mX2fXN2qSAefi7BcwgA5D0M0GicODeHfn5j5eKq688GKUVfCEtSXYYstPRxkslkISjTI1LGrXgiFtp4etBXx7TccwY4TrBzgyiOaIv1dLczmjIi6vLe6yX7/OjcS7RMdXzFsiAPRs0G2MV7lm5+AswSmyW56OSFQdBjlgbgzULAdPQpFDPu7xtcLFN4ziijXCe5tiejvS5W9MqH3DEmNc" />
+</div>
+        <div id="fb-root"></div>
+        <!--Start Header-->
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel1','UpdatePanel1'], [], [], 90, '');
+//]]>
+</script>
+
+
+        <header id="header" class="clearfix">
+            <section class=" navbar">
+                <div class="region region-header-top">
+                    <div id="block-cmf-content-header-region-block" class="block block-cmf-content first last odd">
+
+                        <div class="wrapper common-wrapper">
+                            <div class="container four_content top-header">
+                                <div class="common-left clearfix">
+                                    <ul>
+                                        <li class="gov-india"><span class="responsive_go_hindi" lang="hi"><a target="_blank" href="https://india.gov.in/hi" title="भारत सरकार ( बाहरी वेबसाइट जो एक नई विंडो में खुलती है)" role="link">भारत सरकार</a></span><span class="li_eng responsive_go_eng"><a target="_blank" href="https://india.gov.in/" title="Government of india,External Link that opens in a new window" role="link">Government of india</a></span></li>
+                                        <li class="ministry">
+                                            <a href="https://mha.gov.in/hi" target="_blank" alt="Ministry Name" title="गृह मंत्रालय"><span class="responsive_minis_hi" lang="hi">गृह मंत्रालय</span></a>
+                                            <a href="https://mha.gov.in" target="_blank" alt="Ministry Name" title="Ministry of Home Affairs"><span class="li_eng responsive_minis_eng">Ministry of Home Affairs</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="common-right clearfix">
+                                    <ul id="header-nav">
+                                        <li class="hindi cmf_lan d-hide">
+                                            <a href="#" class="de-lag" title="Language" role="link"><b>Language</b></a>
+                                            <ul>
+                                                <li><a href="Defaulthn.aspx" class="cmf_lan" title="हिन्दी" role="link"><b>हिन्दी</b></a> </li>
+                                                <li><a href="../Default.aspx" class="cmf_lan" title="English" role="link"><b>English</b></a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ico-accessibility cf" style="display: none">
+                                            <a href="javascript:void(0);" id="toggleAccessibility" title="Accessibility Dropdown" role="link">
+                                                <img class="top" src="assets/images/ico-accessibility.png" alt="Accessibility Dropdown" />
+                                            </a>
+                                            <ul>
+                                                <li><a href="javascript:void(0);" class="high-contrast dark" title="High Contrast" role="link">A</a> </li>
+                                                <li><a href="javascript:void(0);" class="high-contrast light" title="Normal Contrast" style="display: none;" role="link">A</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ico-social cf">
+                                            <a href="javascript:void(0);" id="toggleSocial" title="Social Medias" style="background: #fff;">
+                                                <img class="top" src="../assets/images/icons/colg-icon.png" alt="Social Medias" /></a>
+                                            <ul>
+                                                <li><a href="https://www.twitter.com/CyberDost" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/twitter.png" style="width: 28px;" /></a></li>
+                                                <li><a href=" https://www.facebook.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/facebook.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://www.youtube.com/c/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/youtube.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://www.instagram.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/instagram.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://t.me/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/telegram.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://in.linkedin.com/company/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/linkedin.png" style="width: 28px;" /></a></li>
+                                              
+                                                <li><a href="https://sharechat.com/profile/cyberdost?d=n" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/sharechat.png" style="width: 28px;" /></a></li>
+                                                <li><a href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/public.png" style="width: 24px;" /></a></li>
+                                                <li><a href="https://whatsapp.com/channel/0029Va3VAOY8fewrOtXqMw1V" target="_blank" onclick="return sitevisit();">
+                                                    <img src="../assets/images/icons/whatsapp.png" style="width: 24px;" /></a></li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="scroll" style="display: none;"><span></span></p>
+                </div>
+
+                <!--Top-Header Section end-->
+                <section class="wrapper header-wrapper">
+                    <div class="container common-container four_content header-container">
+                        <h1 class="logo">
+                            <img class="national_emblem" src="../assets/images/emblem-dark.png" alt="national emblem">
+                            <img src="../../images/i4cpng.png" alt="I4C" class="i4cImg" />
+                            <span class="department-title">
+                                <em>
+
+                                    <a class="header__logo" id="A1" style="text-decoration: none; cursor: text;">
+                                        <span>राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+                                        <span>National Cyber Crime Reporting Portal</span>
+                                    </a>
+
+                                </em>
+
+                            </span>
+                        </h1>
+                        <div class="header-right clearfix">
+                            <div class="right-content clearfix">
+                                <div class="float-element">
+
+                                    <a href="https://amritmahotsav.nic.in/" target="_blank">
+                                        <img src="../images/AKAM_logo.jpg" alt="amritmahotsav.nic.in" /></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--/.header-wrapper-->
+                <!-- LOGO bar -->
+            </section>
+            <div class="main">
+
+                <section class="wrapper megamenu-wraper">
+                    <h2 style="display: none;">Megamenu</h2>
+                    <div class=" four_content header-nav">
+                        <p class="showhide" id="showhide"><em></em><em></em><em></em></p>
+                        <nav class="main-menu clearfix main-menu1" id="main_menu">
+                            <ul class="nav-menu">
+                                <li><a href="Defaulthn.aspx" class="home"><span>होम</span><i class="fa fa-home"></i></a> </li>
+
+                                <li><a href="#">शिकायत दर्ज करना</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+                                            <li class="dropdown"><a href="#" style="font-weight: bold; font-size: 14px;">महिला / बाल संबंधित अपराध रिपोर्ट करें     <span class="indicator">+</span></a>
+
+                                                <ul class="submenutop">
+                                                    <li>
+                                                        <a id="btnra" href="javascript:__doPostBack(&#39;btnra&#39;,&#39;&#39;)" style="font-size: 14px;">गुमनाम रूप से रिपोर्ट करें</a>
+
+                                                    </li>
+                                                    <li>
+                                                        <a id="btnrt" href="javascript:__doPostBack(&#39;btnrt&#39;,&#39;&#39;)" style="font-size: 14px;">रिपोर्ट एवं ट्रैक</a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </li>
+
+                                            <li>
+                                                <a id="LinkButton1" href="javascript:__doPostBack(&#39;LinkButton1&#39;,&#39;&#39;)" style="font-size: 14px;">वित्तीय धोखाधड़ी</a>
+                                            </li>
+                                            <li>
+                                                <a id="btnothrcrm" href="javascript:__doPostBack(&#39;btnothrcrm&#39;,&#39;&#39;)" style="font-size: 14px;">अन्य साइबर अपराध रिपोर्ट करें</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a id="lnkchkstatus" href="javascript:__doPostBack(&#39;lnkchkstatus&#39;,&#39;&#39;)" style="">अपनी शिकायत को ट्रैक करें</a>
+                                </li>
+
+                                <li><a href="" style="">संदिग्ध डेटा</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+
+                                            <li>
+                                                <a href="../Webform/suspect_search_repository.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध खोज <span>(मोबाइल, ईमेल, आदि)</span></a>
+
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/suspect_search_websites.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध की तलाश  <span>(वेबसाइट/ऐप)</span></a>
+
+                                            </li>
+
+                                            <li>
+                                                <a href="../Webform/cyber_suspect.aspx" style="text-transform: uppercase !important; font-size: 14px; font-weight: bold">संदिग्ध की रिपोर्ट करें</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a id="btncybercrimevolunteers" href="javascript:__doPostBack(&#39;btncybercrimevolunteers&#39;,&#39;&#39;)">साइबर स्वयंसेवक</a>
+                                    <div class="sub-nav col-1">
+                                        <ul class="sub-nav-group ">
+                                            <li>
+                                                <a href="../Webform/cyber_volunteers_concept.aspx">साइबर स्वयंसेवी अवधारणा</a>
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/cyber_volunteers_TnC.aspx">नियम एवं शर्तें</a>
+                                            </li>
+                                            <li>
+                                                <a href="../Webform/CyberVolunteerinstruction.aspx">स्वयंसेवक के रूप में पंजीकरण करें</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="../Webform/about_unlawful_content.aspx">गैरकानूनी सामग्री क्या है</a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href="../Webform/crmcondivol.aspx?vol=1">लॉग इन करें</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+
+                                <li><a href="#">संसाधन</a>
+                                    <div class="sub-nav col-1 nopading">
+                                        <ul class="sub-nav-group ">
+                                            <li><a href="FAQhn.aspx">एफ ए क्यू</a>
+
+                                            </li>
+                                            <li><a href="../Webform/Citizen_Manual.aspx">सिटिजन मैनुअल</a>
+
+                                            </li>
+                                            <li><a href="Crime_OnlineSafetyTipshn.aspx">साइबर सुरक्षा युक्तियाँ</a>
+
+                                            </li>
+                                            <li class="dropdown"><a href="#" style="">मीडिया गैलरी <span class="indicator">+</span></a>
+                                                <ul class="dropdown-content">
+                                                    <li><a href="../Webform/photoGallery.aspx">फोटो गैलरी</a> </li>
+                                                    <li><a href="../Webform/videoGallery.aspx">वीडियो गैलरी</a> </li>
+                                                    <li><a href="../Webform/radioGallery.aspx">रेडियो जिंगल</a> </li>
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li><a href="../Webform/dailyDigest.aspx" style="">दैनिक खुलासा</a>
+                                            </li>
+                                            <li><a href="../Webform/training-resource.aspx" style="">प्रशिक्षण संसाधन
+                                                 <img src="../images/new.gif" style="width: 50px;" />
+                                            </a>
+                                            </li>
+                                            <li><a href="https://www.nvaccess.org/download/" target="_blank" style="text-transform: uppercase !important; font-size: 13px; font-weight: bold">स्क्रीन रीडर</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+                                <li><a href="../Webform/Crime_NodalGrivanceList.aspx" id="Alicontect">संपर्क करें</a></li>
+
+                            </ul>
+                        </nav>
+                        <nav class="main-menu clearfix" id="overflow_menu">
+                            <ul class="nav-menu clearfix">
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </div>
+        </header>
+        <!--End Header-->
+        <section class="wrapper banner-wrapper mobileView">
+            <div id="flexSlider" class="flexslider slider">
+                <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                    <ul class="slides" style="transition-duration: 0s; transform: translate3d(-2400px, 0px, 0px);">
+
+                        <li class="clone" aria-hidden="true" style="margin-right: 0px; float: left; display: block;">
+                            <img class="img-fluid" src="../images/fraction-slider/pmhm_mobile.png" title="" draggable="false" />
+                        </li>
+                        <li class="clone" aria-hidden="true" style="margin-right: 0px; float: left; display: block;">
+                            <img class="img-fluid" src="../images/fraction-slider/banermbl.jpg" title="" draggable="false" />
+                        </li>
+                        
+                        
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="wrapper banner-wrapper webview">
+            <div id="flexSlider1" class="flexslider slider">
+                <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                    <ul class="slides" style="width: 1200px; transition-duration: 0s; transform: translate3d(-2400px, 0px, 0px);">
+
+                        <li class="clone" aria-hidden="true" style="width: 1200px; margin-right: 0px; float: left; display: block;">
+                            <img class="img-fluid" src="../images/fraction-slider/pmhm.png" title="" draggable="false" />
+                        </li>
+                        <li class="clone" aria-hidden="true" style="width: 1200px; margin-right: 0px; float: left; display: block;">
+                            <img class="img-fluid" src="../images/fraction-slider/1930.png" title="" draggable="false" />
+                        </li>
+
+                        
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <div id="UpdatePanel1">
+	
+
+
+                <section style="overflow: hidden;">
+                    <div class="container-fluid mt-3 mb-3">
+                        <div class="col-md-12 col-sm-12 col-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-xl-3 col-md-6 col-sm-12 col-12">
+                                    <div class="top_bx text-center card bg-success-gradient" style="">
+
+
+                                        <img src="../images/childwomem.jpg" class="img-fluid">
+                                        <p>महिला/बच्चों से संबंधित अपराध</p>
+                                        <div class="report_btn mt-1">
+                                            <input type="submit" name="btnAnonymous" value="गुमनाम रूप से रिपोर्ट करें " id="btnAnonymous" class="btn btn-info" />&nbsp;&nbsp;
+                           
+                                            <input type="submit" name="btnReportAnonymous" value="रजिस्टर करें और ट्रैक करें" id="btnReportAnonymous" class="btn btn-info" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3  col-xl-3 col-md-6 col-sm-12 col-12">
+                                    <div class="top_bx text-center card l-bg-blue-dark " style="">
+
+
+                                        <img src="../images/othercybercrime.jpg" class="img-fluid">
+                                        <p>वित्तीय धोखाधड़ी</p>
+                                        <div class="report_btn mt-1">
+                                            
+                                            <input type="submit" name="btnFinancialFraud" value="शिकायत दर्ज करना" id="btnFinancialFraud" class="btn btn-info" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-lg-3 col-xl-3 col-md-6 col-sm-12 col-12">
+                                    <div class="top_bx text-center card l-bg-gray" style="">
+
+
+                                        <img src="../images/Data_security_24.jpg" class="img-fluid">
+                                        <p>अन्य साइबर अपराध</p>
+                                        <div class="report_btn mt-1">
+                                            <a href="#">
+                                                
+                                                <input type="submit" name="btnOtherCyberCrime" value="शिकायत दर्ज करना" id="btnOtherCyberCrime" class="btn btn-info" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-lg-3 col-xl-3 col-md-6 col-sm-12 col-12">
+                                    <div class=" text-center" style="">
+                                        <div class="whatsnww bg-red-gradient">
+                                            <h3 class="mt-0 text-white" style="padding: 10px;"><i></i>नया क्या है</h3>
+                                            <div class="whstanewCont">
+
+                                                <marquee width="100%" direction="up" height="100%" scrolldelay="100" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" style="font-size: 14px; text-align: justify;">
+
+                                                    <a rel="noopener noreferrer" href="../UploadMedia/PublicNotice.pdf" target="_blank"><span class="blink-soft">NEW</span>  Public Notice regarding RTI</a>
+                                                    <br />
+                                                    <br />
+
+                                                    <a rel="noopener noreferrer" href="https://indiaai.gov.in/article/ai-for-citizen-safety-join-the-indiaai-cyberguard-ai-hackathon" target="_blank">I4C and IndiaAI invite innovators,
+                   researchers, and entrepreneurs to be part of the CyberGuard AI Hackathon under the IndiaAI Application Development Initiative (IADI). </a>
+                                                    <br />
+                                                    <br />
+
+                                                    <p style="font-size: 15px;">
+                                                        The <b>‘Suspect Repository’</b> facility on the National Cybercrime Reporting Portal (NCRP)
+                   provides citizens an option to search I4C’s repository of identifiers of 
+                   cyber criminals. Citizens can now search the mobile numbers, e-mail Ids, account numbers, URLs and other identifiers for their possible
+                   linkages with the cyber criminals at: 
+                                                    </p>
+
+                                                    <a rel="noopener noreferrer" href="../Webform/suspect_search_repository.aspx" target="_blank" style="word-break: break-all;">https://cybercrime.gov.in/Webform/suspect_search_repository.aspx</a>
+                                                    <br />
+                                                    <a rel="noopener noreferrer" href="../Webform/suspect_search_websites.aspx" target="_blank" style="word-break: break-all; margin-top: 5px; margin-top: 7px; display: block;">https://cybercrime.gov.in/Webform/suspect_search_websites.aspx</a>
+
+                                                    <br />
+                                                    <p style="font-size: 15px;">
+                                                        Through the <b>‘Report Suspect’</b> facility at NCRP, citizens can report various types of suspect identifiers, viz; Website URLs, WhatsApp 
+                     numbers/Telegram handles, phone numbers, email-IDs, SMS headers/numbers, and social media URLs. Through this feature, I4C invites 
+                     citizens to be partners in securing a cyber safe world. Please report suspect identifiers at: 
+                                                    </p>
+
+                                                    <a rel="noopener noreferrer" href="../Webform/cyber_suspect.aspx" target="_blank">https://cybercrime.gov.in/Webform/cyber_suspect.aspx</a>
+                                                    <br />
+
+                                                    <br />
+                                                    <br />
+                                                    <a rel="noopener noreferrer" href="../pdf/Fake EMail Alert Content.pdf" target="_blank">Important Alert!!!! Fake mails are being sent impersonating officials of Indian Cyber Crime Coordination Centre - CEO I4C,
+Intelligence Bureau and Delhi Police. The claim is FAKE. </a>
+
+                                                </marquee>
+
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="elementor-widget-container pt-2 pb-5 mt-1 mb-4" style="background: aliceblue; overflow: hidden;">
+                    <div class="services-area">
+                        <div class="container-fluid">
+                            <h4 class="text-center pb-3">
+                                <img src="../assets/images/icons/folder.png" style="width: 58px;" /></a></li> संसाधन</h4>
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="services-wrapper text-center pt-50 pr-20  pb-50 pl-20 green-card">
+                                            <div class="service-icon pb-35">
+                                                <img loading="lazy" width="74" height="70" src="../assets/images//icons/manual.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async">
+                                            </div>
+                                            <div class="services-content">
+                                                <h5 class="service-title">नागरिक मैनुअल</h5>
+                                                <p>
+                                                    यह कार्यप्रणाली और वर्कफ़्लो का वर्णन करने वाला एक दस्तावेज़ है
+                                        जो साइबर अपराध की रिपोर्ट करने के लिए नागरिकों को साइबर क्राइम पोर्टल पर प्रदान किया जाता है।
+                                                </p>
+                                                <a class="pt-15 d-inline-block zt-underline" href="../Webform/Citizen_Manual.aspx">और पढ़ें <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="services-wrapper text-center pt-50 pr-20  pb-50 pl-20 orange-card">
+                                            <div class="service-icon pb-35">
+                                                <img width="66" height="70" src="../assets/images/icons/shield.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy">
+                                            </div>
+                                            <div class="services-content">
+                                                <h5 class="service-title">साइबर सुरक्षा युक्तियाँ</h5>
+                                                <p>ऑनलाइन दुनिया में सुरक्षित रहने के लिए, महत्वपूर्ण साइबर सुरक्षा प्रथाओं का पालन करना महत्वपूर्ण है जो हमें और हमारे परिवारों को आसन्न खतरों से बचाने में मदद कर सकता है जो हमारे डेटा और उपकरणों को नुकसान पहुंचा सकते हैं।</p>
+                                                <a class="pt-15 d-inline-block zt-underline" href="../Webform/Crime_OnlineSafetyTips.aspx">और पढ़ें <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="services-wrapper text-center pt-50 pr-20  pb-50 pl-20 green-card">
+                                            <div class="service-icon pb-35">
+                                                <img width="76" height="70" src="../assets/images/icons/security.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy">
+                                            </div>
+                                            <div class="services-content">
+                                                <h5 class="service-title">साइबर जागरूकता</h5>
+                                                <p>साइबर जागरूकता कर्मचारियों और नागरिकों को साइबर स्पेस में छिपे खतरों और जिम्मेदारी से कार्य करने के बारे में शिक्षित करने की एक सतत प्रक्रिया है।</p>
+                                                <a class="pt-15 d-inline-block zt-underline" href="../Webform/CyberAware.aspx">और पढ़ें <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="services-wrapper text-center pt-50 pr-20  pb-50 pl-20 orange-card">
+                                            <div class="service-icon pb-35">
+                                                <img width="71" height="70" src="../assets/images/icons/newspape.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy">
+                                            </div>
+                                            <div class="services-content">
+                                                <h5 class="service-title">दैनिक खुलासा</h5>
+                                                <p>साइबर धोखाधड़ी के तौर-तरीकों के बारे में कर्मचारियों और नागरिकों को जागरूक करने के लिए भारतीय साइबर अपराध समन्वय केंद्र (I4C) द्वारा तैयार किया गया व्यापक दस्तावेज़।</p>
+                                                <a class="pt-15 d-inline-block zt-underline" href="../Webform/dailyDigest.aspx">और पढ़ें <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container mt-3 mb-5 medigalry">
+                    <div class="row pt-2 pb-4">
+                        <h1 class="text-center pb-3" style="font-size: 30px; font-weight: 700;">
+                            <img src="../assets/images/icons/social-media.png" style="width: 58px;" />
+                            मीडिया गैलरी</h1>
+                        <div class="col-md-12 col-sm-12 col-12">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 col-12 mb-3">
+                                    <div class="card shadow h-100 text-center">
+                                        <div class="card-header text-primary h3 mt-0 mb-0">
+                                            <i class="fab fa-facebook-square"></i>फेसबुक
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div id="fb-root"></div>
+                                            <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" nonce="Q2tss81i"></script>
+                                            <div class="fb-page" data-href="https://www.facebook.com/CyberDostI4C" data-height="500" data-small-header="" data-adapt-container-width="1" data-hide-cover="" data-show-facepile="" data-show-posts="true" data-width="600">
+                                                <blockquote cite="https://www.facebook.com/CyberDostI4C" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CyberDostI4C">Cyber Dost</a></blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12 col-12 mb-3">
+                                    <div class="card shadow h-100 text-center">
+                                        <div class="card-header text-info h3 mt-0 mb-0">
+                                            <i class="fab fa-twitter-square"></i>ट्विटर
+                                        </div>
+
+                                        <div class="card-body">
+                                            <a class="twitter-timeline" href="https://twitter.com/Cyberdost?ref_src=twsrc%5Etfw">Tweets by Cyberdost</a>
+                                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4 col-sm-12 col-12 mb-3">
+                                    <div class="card shadow h-100 text-center">
+                                        <div class="card-header text-danger h3 mt-0 mb-0">
+                                            <i class="fab fa-youtube-square"></i>यूट्यूब 
+                                        </div>
+                                        <div class="card-body">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/1dsABODjejg?si=p6XIVf3anKBc6Teh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="container-fluid" style="background-color: floralwhite;">
+                    <div class="container mt-3 mb-5">
+                        <div class="row pt-2 pb-4">
+                            <h1 class="text-center text-dark pb-2" style="font-size: 30px; font-weight: 700;">
+                                <img src="../assets/images/icons/picture.png" style="width: 58px;" />
+                                वीडियो/छवि गैलरी</h1>
+                            <div class="gallery-slider pt-3 pb-5 swiper" data-aos="fade-up" data-aos-delay="100">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class="popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/1.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class="popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/2.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class="popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/3.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/4.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/5.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/6.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/7.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/8.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/9.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/10.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/11.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class=" popup" title="img">
+
+                                                        <video src="../UploadMedia/Videos/12.mp4" controls class="videonothight video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    
+
+                                    
+
+
+                                    
+
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+
+                                                    <a rel="noopener noreferrer" href="#" class="preview popup" title="img">
+
+                                                        <video src="UploadMedia/g20/video1.mp4" controls class="preview video"></video>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    
+
+                                    
+
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+                                                    <a rel="noopener noreferrer" href="#" class="preview popup" title="img">
+                                                        <img src="../images/photoGallery/img5.png" class="preview" alt="gallery thumbnail" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+                                                    <a rel="noopener noreferrer" href="#" class="preview popup" title="img">
+                                                        <img src="../images/photoGallery/img6.jpg" class="preview" alt="gallery thumbnail" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-item">
+                                            <div class="card shadow h-100 w-100 text-center">
+                                                <div class="card-body">
+                                                    <a rel="noopener noreferrer" href="#" class="preview popup" title="img">
+                                                        <img src="../images/photoGallery/img7.jpg" class="preview" alt="gallery thumbnail" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <span id="lbldate"></span>
+
+
+            
+</div>
+
+
+        <!--start footer-->
+        <footer class="footer" style="padding: 12px 0 !important;">
+
+
+            <script type="text/javascript">
+                function sitevisit() {
+                    if (!confirm('This is external link, Are you sure you want to continue? \n यह बाहरी लिंक है, क्या आप जारी रखना चाहते हैं?'))
+                        return false;
+                }
+            </script>
+        </footer>
+        <!--end footer-->
+        <div style="position: relative;">
+            <div class="footer-top-wrapper">
+                <div class="container footer-top-container text-start">
+                    <ul class="menu">
+                        <li><a href="../Webform/Crime_Feedback.aspx" target="_blank">प्रतिपुष्टि</a></li>
+                        <li><a href="FAQhn.aspx" target="_blank">सामान्य प्रश्न</a></li>
+                        <li><a href="../Webform/Crime_NodalGrivanceList.aspx" target="_blank">संपर्क करें</a></li>
+                        <li><a href="Wbsitepolicehn.aspx" target="_blank">वेबसाइट नीतियां</a></li>
+                        <li><a href="Disclaimerhn.aspx" target="_blank">डिस्‍कलेमर</a></li>
+
+                        <li><a href="https://www.twitter.com/CyberDost" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/twitter.png" style="width: 28px;" /></a></li>
+                        <li><a href=" https://www.facebook.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/facebook.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://www.youtube.com/c/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/youtube.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://www.instagram.com/CyberDostI4C" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/instagram.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://t.me/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/telegram.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://in.linkedin.com/company/cyberdosti4c" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/linkedin.png" style="width: 28px;" /></a></li>
+                      
+                        <li><a href="https://sharechat.com/profile/cyberdost?d=n" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/sharechat.png" style="width: 28px;" /></a></li>
+                        <li><a href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/public.png" style="width: 24px;" /></a></li>
+                        <li><a href="https://whatsapp.com/channel/0029Va3VAOY8fewrOtXqMw1V" target="_blank" onclick="return sitevisit();">
+                            <img src="../assets/images/icons/whatsapp.png" style="width: 24px;" /></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="footer_bottom">
+            <div class="footer-bottom-wrapper">
+                <div class="container">
+                    <div class="copyright-content" style="font-size: 13px !important; width: 100%;">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                वेबसाइट कंटेंट भारत सरकार के गृह मंत्रालय द्वारा प्रबंधित। मोज़िला फ़ायरफ़ॉक्स, गूगल क्रोम में सबसे अच्छा चित्रण
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                
+                                <span id="visitor" style=""></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="shows">
+            <div class="overlay">
+                <div class="img-shows">
+                    <span style="color: #000; font-size: 30px;"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    <img src="">
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/jquery.easing.1.3.js"></script>
+        <script src="../js/retina-1.1.0.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+        <!-- jQuery cookie -->
+
+        <script type="text/javascript" src="../js/jquery.jcarousel.js"></script>
+        <script type="text/javascript" src="../js/jflickrfeed.js"></script>
+        <script type="text/javascript" src="../js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="../js/swipe.js"></script>
+        <script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script>
+
+        <script src="../js/main.js"></script>
+        <script src="../jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <!-- Start Style Switcher -->
+        <!--   <div class="switcher"></div>-->
+        <!-- End Style Switcher -->
+
+    </form>
+
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/jquery-accessibleMegaMenu.js"></script>
+    <script src="../assets/js/framework.js"></script>
+    <script src="../assets/js/jquery.flexslider.js"></script>
+    <script src="../assets/js/font-size.js"></script>
+    <script src="../assets/js/swithcer.js"></script>
+    <script src="../theme/js/ma5gallery.js"></script>
+    <script src="../assets/js/megamenu.js"></script>
+    <script src="../theme/js/easyResponsiveTabs.js"></script>
+    <script src="../theme/js/custom.js"></script>
+
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+
+    <script>
+        new Swiper('.testimonials-slider', {
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+
+                1200: {
+                    slidesPerView: 6,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+        new Swiper('.gallery-slider', {
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                769: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                }
+            }
+        });
+
+
+    </script>
+
+
+    <script>
+        $(function () {
+
+            $(".popup img").click(function (e) {
+                var $src = $(this).attr("src");
+                $(".shows").show();
+                $(".img-shows img").attr("src", $src);
+                $('body').css('overflow', 'hidden');
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+
+            });
+
+            $("span").click(function (e) {
+                $(".shows").hide();
+                $('body').css('overflow', 'visible');
+
+            });
+        });
+
+
+
+
+    </script>
+</body>
+</html>

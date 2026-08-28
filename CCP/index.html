@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="National Cyber Crime Reporting Portal (NCRP), Indian Cyber Crime Coordination Centre (I4C), Ministry of Home Affairs, Government of India. 24x7 1930 Emergency Cyber Helpline and Golden Hour Financial Fraud Freeze.">
+  <meta name="theme-color" content="#0F2C59">
+  
+  <title>National Cyber Crime Reporting Portal (NCRP) | Government of India</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .metrics-ribbon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .metric-ribbon-card {
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .metric-ribbon-number {
+      font-size: 1.625rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--gov-navy);
+      margin-block: 0.2rem;
+    }
+    [data-theme="high-contrast"] .metric-ribbon-card {
+      background-color: #121212;
+      border: 2px solid #FFFFFF;
+    }
+    .gateway-illustration-svg {
+      width: 100%;
+      height: 7rem;
+      background: var(--bg-surface-subtle);
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Links -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#emergency-command-bar" class="skip-link">Skip to 60s Emergency Freeze</a>
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP SOVEREIGN TRUST BANNER                                             -->
+  <!-- ========================================================================= -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container">
+      <div class="banner-header">
+        <div class="banner-identity">
+          <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+          <span><strong>भारत सरकार</strong> | Government of India — Ministry of Home Affairs</span>
+        </div>
+        
+        <div class="banner-controls">
+          <button type="button" class="tool-btn" id="banner-accordion-btn" aria-expanded="false" aria-controls="sovereign-details-drawer">
+            <span>Official Identity</span>
+            <svg viewBox="0 0 20 20" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+          </button>
+          
+          <div class="text-resizer-cluster" role="group" aria-label="Font Scaling Controls">
+            <button type="button" class="tool-btn" id="font-dec-btn" title="Decrease font size" aria-label="Decrease font size">A-</button>
+            <button type="button" class="tool-btn" id="font-reset-btn" title="Reset default font size" aria-label="Reset font size">A</button>
+            <button type="button" class="tool-btn" id="font-inc-btn" title="Increase font size" aria-label="Increase font size">A+</button>
+          </div>
+
+          <button type="button" class="tool-btn" id="contrast-toggle" title="Switch High Contrast Mode" aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+            <span>Contrast</span>
+          </button>
+
+          <select id="global-lang-select" class="tool-btn" aria-label="Select Official Language">
+            <option value="en" selected>English</option>
+            <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+            <option value="ta" disabled title="Coming soon">தமிழ் (Coming soon)</option>
+            <option value="te" disabled title="Coming soon">తెలుగు (Coming soon)</option>
+            <option value="bn" disabled title="Coming soon">বাংলা (Coming soon)</option>
+            <option value="mr" disabled title="Coming soon">मराठी (Coming soon)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Sovereign Verification Drawer -->
+      <div id="sovereign-details-drawer" class="sovereign-drawer" hidden>
+        <div class="drawer-grid">
+          <div class="drawer-point">
+            <div class="drawer-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2l9 8H3z"/></svg>
+            </div>
+            <div>
+              <strong>Official Government Domain</strong>
+              <p>The <strong>.gov.in</strong> or <strong>.nic.in</strong> top-level domain belongs exclusively to sovereign Indian government organizations.</p>
+            </div>
+          </div>
+          <div class="drawer-point">
+            <div class="drawer-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <strong>Secure HTTPS Protocol</strong>
+              <p>Communication is protected via Indian Cyber Crime Coordination Centre (I4C) high-security encryption infrastructure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. SITE HEADER & BRANDING                                                 -->
+  <!-- ========================================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      
+      <!-- Official Logos & Sovereign Title -->
+      <a href="index.html" class="brand-link" aria-label="National Cyber Crime Reporting Portal Home">
+        <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:48px; width:auto;">
+        <img src="public/ic4.png" alt="I4C Indian Cyber Crime Coordination Centre" style="height:40px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.75rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <!-- Header Actions Strip (Helpline & Citizen Login) -->
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn" aria-label="Call 24x7 Emergency Helpline 1930">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+
+        <a href="login.html" class="btn btn-outline" style="font-weight:700;">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Citizen Login</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Primary Navigation Bar -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link is-active" aria-current="page">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MAIN CONTENT AREA                                                      -->
+  <!-- ========================================================================= -->
+  <main id="main-content" role="main" tabindex="-1">
+    
+    <!-- GOLDEN HOUR HERO SECTION -->
+    <section class="golden-hour-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-inner-flex">
+          
+          <div class="hero-content-column">
+            <span class="hero-tagline-badge">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>24x7 National Incident Response Grid</span>
+            </span>
+            
+            <h1 id="hero-title" class="hero-heading">
+              Report Cyber Fraud. <br>
+              <span style="color:#FBBF24;">Freeze Stolen Money in Minutes.</span>
+            </h1>
+            
+            <p class="hero-subtext">
+              Direct statutory gateway connecting citizens with <strong>250+ Banks, 40+ Wallets, NPCI, and State Police Command Centres</strong> under the Citizen Financial Cyber Fraud Reporting System (CFCFRMS).
+            </p>
+          </div>
+
+          <!-- Quick Triage Command Card -->
+          <div class="hero-command-column" id="emergency-command-bar">
+            <div class="emergency-command-card">
+              
+              <div class="emergency-badge-header">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <strong>60-Second Express Freeze</strong>
+              </div>
+              
+              <p class="emergency-instruction-text">
+                Transferred money to a scammer or received unauthorized debit? Enter details immediately to dispatch emergency bank liens.
+              </p>
+
+              <form id="express-triage-form" class="express-triage-form" action="emergency-report.html" method="GET">
+                <div>
+                  <label for="triage-amount" class="sr-only">Amount Lost in INR</label>
+                  <input type="number" id="triage-amount" name="amount" class="form-control triage-input" placeholder="Amount Lost (₹) e.g. 45000" min="1" required>
+                </div>
+                <div>
+                  <label for="triage-utr" class="sr-only">Transaction Reference / UTR Number</label>
+                  <input type="text" id="triage-utr" name="utr" class="form-control triage-input" placeholder="12-digit UTR / RRN (from SMS/UPI)" maxlength="12" pattern="[0-9]{12}" required>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block touch-target">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  <span>Initiate Emergency Lien Placement</span>
+                </button>
+              </form>
+
+              <div class="emergency-footer-note">
+                <span>Average Lien Dispatch: <strong>&lt; 4.2 Minutes</strong> via 1930 CFCFRMS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE SEARCH / REDIRECTION BAR (CASE TRACKER + SUSPECT LOOKUP) -->
+    <section class="live-action-strip" aria-label="Incident Tracking and Suspect Search">
+      <div class="container action-strip-grid">
+        
+        <!-- Live Suspect Check Form -->
+        <div class="action-strip-card">
+          <div class="action-card-header">
+            <div class="action-card-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <div>
+              <strong class="action-card-title">Check Suspicious Identifier</strong>
+              <div class="action-card-sub">UPI ID, Phone, Bank A/c, Email, Social Media or URL</div>
+            </div>
+          </div>
+
+          <form id="hero-suspect-search-form" class="action-input-row" action="suspect-lookup.html" method="GET">
+            <input 
+              type="search" 
+              name="q" 
+              id="hero-suspect-input" 
+              class="form-control action-input" 
+              placeholder="e.g. fraudster99@ybl, 9845012345, or SBI A/c" 
+              required
+            >
+            <button type="submit" class="btn btn-primary action-submit-btn">
+              Verify Identifier
+            </button>
+          </form>
+        </div>
+
+        <!-- Track Incident / FIR Progress Form -->
+        <div class="action-strip-card">
+          <div class="action-card-header">
+            <div class="action-card-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <strong class="action-card-title">Track Case Status / FIR</strong>
+              <div class="action-card-sub">Enter 14-Character Reference Number (e.g. NCRP-2026-892103)</div>
+            </div>
+          </div>
+
+          <form id="hero-tracker-form" class="action-input-row" action="dashboard.html" method="GET">
+            <input 
+              type="text" 
+              name="track" 
+              id="hero-tracker-input" 
+              class="form-control action-input" 
+              placeholder="e.g. NCRP-2026-892103" 
+              maxlength="16"
+              required
+            >
+            <button type="submit" class="btn btn-primary action-submit-btn">
+              Track Case
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NATIONAL CYBER DEFENSE METRICS SECTION -->
+    <section class="container" style="margin-block:2.5rem;" aria-labelledby="metrics-heading">
+      <div class="section-header-block" style="text-align:center;">
+        <span class="section-eyebrow">Real-Time Incident Statistics</span>
+        <h2 id="metrics-heading" class="section-title">National Cyber Defense &amp; Recovery Metrics</h2>
+        <p class="section-subtext">Operational data synchronized across 36 State Police Command Centres and 250+ Banking Nodes.</p>
+      </div>
+
+      <div class="metrics-ribbon-grid">
+        <div class="metric-ribbon-card">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Total Complaints Filed</span>
+          <div class="metric-ribbon-number">3,412,890+</div>
+          <span style="font-size:0.6875rem; color:var(--text-secondary);">Ingested Since Inception</span>
+        </div>
+
+        <div class="metric-ribbon-card">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Reported Last 24 Hours</span>
+          <div class="metric-ribbon-number" style="color:var(--gov-crimson);">14,820</div>
+          <span style="font-size:0.6875rem; color:var(--gov-crimson); font-weight:700;">Active Triage In-Flight</span>
+        </div>
+
+        <div class="metric-ribbon-card">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Funds Frozen in Golden Hour</span>
+          <div class="metric-ribbon-number" style="color:var(--gov-green);">₹ 1,480+ Cr</div>
+          <span style="font-size:0.6875rem; color:var(--gov-green); font-weight:700;">Bank Liens Dispatched</span>
+        </div>
+
+        <div class="metric-ribbon-card">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Average Lien Response</span>
+          <div class="metric-ribbon-number">4.2 Mins</div>
+          <span style="font-size:0.6875rem; color:var(--text-secondary);">Via 1930 CFCFRMS Protocol</span>
+        </div>
+
+        <div class="metric-ribbon-card">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Integrated Nodes</span>
+          <div class="metric-ribbon-number">295+</div>
+          <span style="font-size:0.6875rem; color:var(--text-secondary);">250+ Banks, 45 Wallets, NPCI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 PRIMARY CRIME CLASSIFICATION GATEWAYS -->
+    <section class="container" style="margin-block:2.5rem;" aria-labelledby="gateways-heading">
+      <div class="section-header-block">
+        <span class="section-eyebrow">Statutory Filing Channels</span>
+        <h2 id="gateways-heading" class="section-title">Select Cyber Crime Classification to Report</h2>
+        <p class="section-subtext">Choose the relevant channel below to access streamlined intake workflows.</p>
+      </div>
+
+      <div class="gateways-grid">
+        
+        <!-- Gateway 1: Financial Fraud -->
+        <article class="gateway-card">
+          <div class="gateway-illustration-svg">
+            <svg viewBox="0 0 100 80" width="80" height="64" fill="none">
+              <rect x="15" y="15" width="70" height="50" rx="6" fill="#0F2C59"/>
+              <rect x="25" y="25" width="50" height="6" rx="2" fill="#FBBF24"/>
+              <circle cx="35" cy="48" r="8" fill="#B91C1C"/>
+              <path d="M50 48 L75 48" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="gateway-badge" style="background:#FEF2F2; color:#B91C1C;">Emergency Channel</span>
+          <h3 class="gateway-title">1. Financial Cyber Fraud (1930 / UPI / Bank)</h3>
+          <p class="gateway-desc">
+            Immediate reporting for unauthorized UPI debits, credit/debit card compromises, fake KYC APKs, electricity bill frauds, and investment scams.
+          </p>
+          <ul class="gateway-features-list">
+            <li><strong>60-Second Express OCR:</strong> Auto-extracts UTR from screenshots</li>
+            <li>Direct API Lien dispatch to 250+ Banks &amp; NPCI</li>
+            <li>Real-time Golden Hour account freeze protocol</li>
+          </ul>
+          <a href="emergency-report.html?type=financial" class="btn btn-danger gateway-action-btn touch-target">
+            File Financial Fraud Report
+          </a>
+        </article>
+
+        <!-- Gateway 2: Women & Child Safety -->
+        <article class="gateway-card">
+          <div class="gateway-illustration-svg">
+            <svg viewBox="0 0 100 80" width="80" height="64" fill="none">
+              <circle cx="50" cy="32" r="16" fill="#0F2C59"/>
+              <path d="M25 65 C25 48 75 48 75 65 Z" fill="#0369A1"/>
+              <path d="M50 8 L50 20 M44 14 L56 14" stroke="#FBBF24" stroke-width="2"/>
+            </svg>
+          </div>
+          <span class="gateway-badge" style="background:#FDF2F8; color:#BE185D;">Special Protection Unit</span>
+          <h3 class="gateway-title">2. Cyber Crime Against Women &amp; Children</h3>
+          <p class="gateway-desc">
+            Strict statutory reporting for Child Sexual Abuse Material (CSAM), non-consensual imagery, online stalking, harassment, and morphing.
+          </p>
+          <ul class="gateway-features-list">
+            <li>Priority processing by State Women &amp; Child Cyber Units</li>
+            <li>Section 69A IT Act emergency takedown requests</li>
+            <li>Evidence preservation conforming to Section 65B</li>
+          </ul>
+          <a href="emergency-report.html?type=women-children" class="btn btn-primary gateway-action-btn touch-target">
+            File Women &amp; Child Safety Report
+          </a>
+        </article>
+
+        <!-- Gateway 3: Other Cyber Crimes -->
+        <article class="gateway-card">
+          <div class="gateway-illustration-svg">
+            <svg viewBox="0 0 100 80" width="80" height="64" fill="none">
+              <path d="M50 10 L80 25 L80 52 C80 68 50 78 50 78 C50 78 20 68 20 52 L20 25 Z" fill="#0F2C59"/>
+              <circle cx="50" cy="42" r="12" stroke="#10B981" stroke-width="3" fill="none"/>
+              <path d="M50 35 L50 48 M45 42 L55 42" stroke="#10B981" stroke-width="2"/>
+            </svg>
+          </div>
+          <span class="gateway-badge" style="background:#ECFDF5; color:#047857;">General Cyber Offenses</span>
+          <h3 class="gateway-title">3. Other Cyber Offenses &amp; Corporate Hacks</h3>
+          <p class="gateway-desc">
+            Comprehensive intake for ransomware attacks, identity theft, email account hijacking, data breaches, and illegal website domains.
+          </p>
+          <ul class="gateway-features-list">
+            <li>Technical log analysis &amp; IP header preservation</li>
+            <li>Digital forensics routing to State Cyber Cells</li>
+            <li>Statutory registration under IT Act 2000 &amp; BNS 2023</li>
+          </ul>
+          <a href="emergency-report.html?type=general" class="btn btn-primary gateway-action-btn touch-target">
+            File Cyber Crime Report
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VISUAL 4-STEP PROCESS SECTION -->
+    <section class="process-section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header-block" style="text-align:center;">
+          <span class="section-eyebrow">Transparent Citizen Workflow</span>
+          <h2 id="process-heading" class="section-title">How Your Report Protects Your Money</h2>
+          <p class="section-subtext">Clear 4-step statutory timeline from initial submission to inter-bank freeze and judicial refund.</p>
+        </div>
+
+        <div class="process-grid-4">
+          <div class="process-card">
+            <div class="process-step-badge">1</div>
+            <strong class="process-card-title">Express Intake (&lt; 60s)</strong>
+            <p class="process-card-desc">Citizen enters amount and UTR or uploads screenshot parsed via on-device WebAssembly OCR.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-step-badge">2</div>
+            <strong class="process-card-title">1930 Bank Node Alert</strong>
+            <p class="process-card-desc">Automated API signal pushed to beneficiary bank, wallet provider, and NPCI gateway.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-step-badge">3</div>
+            <strong class="process-card-title">Interim Account Lien</strong>
+            <p class="process-card-desc">Beneficiary bank puts temporary hold on suspect mule account to prevent ATM withdrawal.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-step-badge">4</div>
+            <strong class="process-card-title">Court Refund Order</strong>
+            <p class="process-card-desc">State Cyber Cell registers FIR and assists magistrate court in releasing frozen funds back to victim.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 4. FOOTER                                                                 -->
+  <!-- ========================================================================= -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-links-grid">
+        
+        <div>
+          <div class="footer-emblem-badge">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:32px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:28px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.5rem;">
+          </div>
+          <span class="footer-col-heading">Emergency Helplines</span>
+          <ul class="footer-nav-list">
+            <li><a href="tel:1930" style="color:#F87171; font-weight:800;">1930 Cyber Fraud Helpline (24x7)</a></li>
+            <li><a href="tel:112">112 National Emergency Helpline</a></li>
+            <li><a href="tel:1091">1091 Women Helpline</a></li>
+            <li><a href="tel:1098">1098 Childline</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer-col-heading">Citizen Services</span>
+          <ul class="footer-nav-list">
+            <li><a href="emergency-report.html">Emergency 60s Report</a></li>
+            <li><a href="login.html">Citizen Login / Dashboard</a></li>
+            <li><a href="suspect-lookup.html">Check Suspect Identifiers</a></li>
+            <li><a href="nodal-officers.html">36 State Cyber Nodal Directory</a></li>
+            <li><a href="volunteer.html">National Cyber Volunteers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer-col-heading">Knowledge &amp; Intelligence</span>
+          <ul class="footer-nav-list">
+            <li><a href="advisories.html">Official MHA Advisories</a></li>
+            <li><a href="resources.html">8 Cyber Safety Guidelines</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="https://cytrain.ncrb.gov.in/" target="_blank" rel="noopener noreferrer">CyTrain Online MOOCs</a></li>
+            <li><a href="https://tafcop.sancharsaathi.gov.in/" target="_blank" rel="noopener noreferrer">TAFCOP (Sanchar Saathi)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer-col-heading">Governance &amp; Contact</span>
+          <ul class="footer-nav-list">
+            <li><a href="https://twitter.com/CyberDost" target="_blank" rel="noopener noreferrer">Twitter / X: @CyberDost</a></li>
+            <li><a href="https://t.me/cyberdosti4c" target="_blank" rel="noopener noreferrer">Telegram: @CyberDostI4C</a></li>
+            <li><a href="resources.html#legal">IT Act 2000 &amp; BNS 2023 Provisions</a></li>
+            <li><a href="faq.html">Privacy Policy &amp; Terms</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-provenance-bar">
+        <div>
+          Designed &amp; Maintained on <strong>NIC S3WaaS Framework</strong> | Conforms to <strong>GIGW 3.0 &amp; UX4G Design Tokens</strong>
+        </div>
+        <div>
+          Indian Cyber Crime Coordination Centre (I4C), Ministry of Home Affairs, Government of India.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 5. "BUILD WHAT MOVES INDIA" WELCOME DIALOG (SHOWN ONCE)                   -->
+  <!-- ========================================================================= -->
+  <dialog id="hackathon-welcome-dialog" style="border:none; border-radius:var(--radius-lg); padding:0; max-width:34rem; width:92vw; box-shadow:var(--shadow-lg); background:var(--bg-surface); color:var(--text-primary); margin:auto; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:99999;">
+    <div style="background:var(--gov-navy); color:#FFFFFF; padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; border-top-left-radius:var(--radius-lg); border-top-right-radius:var(--radius-lg);">
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <div style="background:#FFFFFF; padding:0.25rem 0.5rem; border-radius:var(--radius-sm); display:flex; align-items:center;">
+          <img src="public/emblem-dark.png" alt="Emblem of India" style="height:28px; width:auto;">
+        </div>
+        <div>
+          <span style="font-size:0.6875rem; color:#FBBF24; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; display:block;">Build what moves India Hackathon</span>
+          <h2 style="font-size:1.125rem; font-weight:800; margin:0; line-height:1.2;">National Cyber Crime Reporting Portal</h2>
+        </div>
+      </div>
+      <button type="button" id="btn-close-welcome-dialog" style="background:none; border:none; color:#FFFFFF; font-size:1.25rem; cursor:pointer; padding:0.25rem 0.5rem;" aria-label="Close dialog">✕</button>
+    </div>
+
+    <div style="padding:1.5rem;">
+      <div style="background:#EFF6FF; border-left:4px solid #1D4ED8; padding:0.75rem 1rem; border-radius:var(--radius-sm); margin-bottom:1.25rem; font-size:0.8125rem; color:#1E3A8A; line-height:1.5;">
+        <strong>Welcome, Evaluators &amp; Citizens.</strong> This portal is developed for the <em>"Build what moves India"</em> Hackathon. It modernizes India's NCRP &amp; 1930 emergency reporting experience with GIGW 3.0 design tokens, on-device OCR, and real-time AI guidance.
+      </div>
+
+      <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55; margin-bottom:1rem;">
+        All statutory data, bank accounts, and case records on this prototype are mocked for demonstration.
+      </p>
+
+      <div style="background:var(--bg-surface-subtle); border:1.5px solid var(--border-color); border-radius:var(--radius-md); padding:1rem; margin-bottom:1.5rem;">
+        <div style="display:flex; align-items:center; gap:0.65rem; margin-bottom:0.4rem;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gov-crimson)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <strong style="font-size:0.875rem; color:var(--gov-navy);">Sample Demo Evidence Receipt</strong>
+        </div>
+        <p style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:0.75rem;">
+          Download this sample UPI payment screenshot to test the 60-Second Express On-Device OCR feature during your evaluation.
+        </p>
+        <button type="button" id="btn-download-sample-dialog" class="btn btn-danger btn-block touch-target" style="text-align:center; font-size:0.875rem;">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Sample Receipt for Demo</span>
+        </button>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem;">
+        <button type="button" class="btn btn-primary touch-target" id="btn-proceed-welcome" style="padding-inline:1.5rem;">
+          <span>Explore NCRP Portal →</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-auth.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dialog = document.getElementById('hackathon-welcome-dialog');
+      const closeBtn = document.getElementById('btn-close-welcome-dialog');
+      const proceedBtn = document.getElementById('btn-proceed-welcome');
+      const downloadBtn = document.getElementById('btn-download-sample-dialog');
+      const hasSeen = localStorage.getItem('ccp_hackathon_dialog_shown');
+
+      if (dialog && !hasSeen) {
+        if (typeof dialog.showModal === 'function') {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute('open', '');
+        }
+      }
+
+      function dismissWelcome() {
+        localStorage.setItem('ccp_hackathon_dialog_shown', 'true');
+        if (dialog) {
+          if (typeof dialog.close === 'function') dialog.close();
+          else dialog.removeAttribute('open');
+        }
+      }
+
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const link = document.createElement('a');
+          link.href = 'public/sample_upi_receipt.png';
+          link.download = 'sample_upi_receipt.png';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        });
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', dismissWelcome);
+      if (proceedBtn) proceedBtn.addEventListener('click', dismissWelcome);
+    });
+  </script>
+
+</body>
+</html>

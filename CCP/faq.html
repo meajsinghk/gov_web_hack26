@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="default" style="--font-scale: 1;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Frequently Asked Questions (FAQs) — National Cyber Crime Reporting Portal (NCRP / 1930 / I4C). Comprehensive citizen guidance on financial fraud freeze, anonymous reporting, evidence submission, and police FIR procedures.">
+  <title>Citizen FAQs &amp; Help Desk | National Cyber Crime Reporting Portal</title>
+  
+  <link rel="stylesheet" href="css/ccp-tokens.css">
+  <style>
+    .faq-category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+    .faq-pill {
+      background: var(--bg-surface-subtle);
+      border: 1px solid var(--border-color);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .faq-pill.is-active {
+      background-color: var(--gov-navy);
+      color: #FFFFFF;
+      border-color: var(--gov-navy);
+    }
+    .faq-item-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="high-contrast"] .faq-item-card {
+      background: #121212;
+      border: 2px solid #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sovereign Trust Header -->
+  <div class="sovereign-banner" role="region" aria-label="Official Government of India Verification">
+    <div class="container banner-header">
+      <div class="banner-identity">
+        <img src="public/emblem-dark.png" alt="Emblem of India" style="height:18px; width:auto; vertical-align:middle;">
+        <span><strong>भारत सरकार</strong> | Government of India — NCRP FAQs &amp; Knowledge Base</span>
+      </div>
+      <div class="banner-controls">
+        <button type="button" class="tool-btn" id="contrast-toggle">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contrast</span>
+        </button>
+        <select id="global-lang-select" class="tool-btn" aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="hi" disabled title="Coming soon">हिन्दी (Coming soon)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-flex">
+      <a href="index.html" class="brand-link">
+        <img src="public/emblem-dark.png" alt="Emblem" style="height:44px; width:auto;">
+        <img src="public/ic4.png" alt="I4C" style="height:38px; width:auto; border-left:1.5px solid rgba(0,0,0,0.15); padding-left:0.65rem;">
+        <div class="brand-text-block" style="margin-left:0.4rem;">
+          <span class="brand-title-hi">राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल</span>
+          <span class="brand-title-en">National Cyber Crime Reporting Portal (NCRP)</span>
+        </div>
+      </a>
+
+      <div class="header-actions-strip">
+        <a href="tel:1930" class="helpline-emergency-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Helpline: 1930 (24x7)</span>
+        </a>
+        <a href="login.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Citizen Login</span>
+        </a>
+        <a href="emergency-report.html" class="btn btn-danger">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Emergency 60s Report</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="emergency-report.html" class="nav-link">Emergency 60s Report</a></li>
+          <li><a href="suspect-lookup.html" class="nav-link">Suspect Identifier Check</a></li>
+          <li><a href="advisories.html" class="nav-link">Advisories &amp; Alerts</a></li>
+          <li><a href="resources.html" class="nav-link">Resources &amp; Safety</a></li>
+          <li><a href="nodal-officers.html" class="nav-link">Nodal Officers</a></li>
+          <li><a href="volunteer.html" class="nav-link">Cyber Volunteers</a></li>
+          <li><a href="faq.html" class="nav-link is-active" aria-current="page">Citizen FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" id="main-content" role="main" tabindex="-1" style="flex:1; padding-block:2rem;">
+    
+    <div style="text-align:center; max-width:44rem; margin-inline:auto; margin-bottom:1.5rem;">
+      <span class="section-eyebrow">Citizen Knowledge Base</span>
+      <h1 style="font-size:1.75rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+        Frequently Asked Questions &amp; Procedures
+      </h1>
+      <p style="font-size:0.875rem; color:var(--text-secondary);">
+        Authoritative guidance on 1930 emergency liens, evidence requirements, anonymous complaints, and judicial refunds.
+      </p>
+    </div>
+
+    <!-- Search & Filter Card -->
+    <div class="suspect-tool-card" style="max-width:46rem; margin-inline:auto; margin-bottom:2rem; padding:1.25rem;">
+      <label for="faq-keyword-search" class="sr-only">Search FAQ Articles</label>
+      <input type="search" id="faq-keyword-search" class="form-control" placeholder="Search keywords (e.g. 1930, bank lien, anonymous, UTR, FIR, evidence, refund)..." style="font-size:0.9375rem;">
+
+      <div class="faq-category-pills">
+        <button type="button" class="faq-pill is-active" data-cat="ALL">All Categories</button>
+        <button type="button" class="faq-pill" data-cat="FINANCIAL">Financial &amp; 1930 Freeze</button>
+        <button type="button" class="faq-pill" data-cat="WOMEN">Women &amp; Child Safety</button>
+        <button type="button" class="faq-pill" data-cat="EVIDENCE">Evidence &amp; Court Refunds</button>
+        <button type="button" class="faq-pill" data-cat="GENERAL">General &amp; Volunteers</button>
+      </div>
+    </div>
+
+    <!-- FAQs Accordion List -->
+    <div style="max-width:48rem; margin-inline:auto; display:flex; flex-direction:column; gap:1rem;" id="faq-articles-container">
+      
+      <!-- FAQ 1: Golden Hour -->
+      <article class="faq-item-card faq-item" data-cat="FINANCIAL" data-keywords="1930 financial freeze bank lien golden hour money lost cfcfrms">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q1: What is the "Golden Hour" and what happens when I report financial fraud?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          The <strong>Golden Hour</strong> refers to the initial 2 to 4 hours immediately following an unauthorized transaction. Reporting within this window via the 60-Second Express form or helpline <strong>1930</strong> triggers the <em>Citizen Financial Cyber Fraud Reporting &amp; Management System (CFCFRMS)</em> to push real-time API lien alerts across 250+ connected banks and payment gateways, placing a temporary hold on the suspect mule account before funds are cashed out at ATMs.
+        </p>
+      </article>
+
+      <!-- FAQ 2: UTR / RRN -->
+      <article class="faq-item-card faq-item" data-cat="FINANCIAL" data-keywords="utr rrn transaction id evidence screenshot proof">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q2: Where do I find the mandatory 12-digit Transaction UTR / RRN number?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          The <strong>Unique Transaction Reference (UTR)</strong> or <strong>Retrieval Reference Number (RRN)</strong> is a 12-digit numeric identifier found on:
+        </p>
+        <ul style="font-size:0.75rem; color:var(--text-secondary); line-height:1.45; padding-left:1.1rem; margin-top:0.25rem;">
+          <li>Your UPI app payment receipt (Google Pay, PhonePe, Paytm, BHIM).</li>
+          <li>The official debit SMS alert sent by your bank.</li>
+          <li>Your NetBanking statement or bank passbook entry.</li>
+        </ul>
+      </article>
+
+      <!-- FAQ 3: Anonymous Reporting -->
+      <article class="faq-item-card faq-item" data-cat="WOMEN" data-keywords="anonymous report women child safety identity csam privacy takedown">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q3: Can I report cyber crimes against women and children anonymously?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          <strong>Yes.</strong> For severe offenses involving Child Sexual Abuse Material (CSAM) or non-consensual sexually explicit imagery, you can file without providing your Aadhaar or identity proof. The report is routed directly to social media intermediaries and ISPs for emergency content removal under Section 69A of the Information Technology Act.
+        </p>
+      </article>
+
+      <!-- FAQ 4: Suspect Lookup Database -->
+      <article class="faq-item-card faq-item" data-cat="FINANCIAL" data-keywords="suspect check upi phone apk url phishing verify repository">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q4: How does the Public Suspect Identifier Search work?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          The Suspect Search engine cross-references queries against the I4C national registry of flagged mule VPAs, fraudulent phone numbers, bank accounts, and malicious APK domains reported across Indian police stations. It displays fraud severity risk scores (0–100) and case frequencies to alert citizens before transactions are finalized.
+        </p>
+      </article>
+
+      <!-- FAQ 5: Refund Process -->
+      <article class="faq-item-card faq-item" data-cat="EVIDENCE" data-keywords="refund magistrate court order release frozen money evidence act 65b">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q5: How do I get my money back once an interim lien has been placed on a mule account?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          Once the bank confirms frozen funds on the beneficiary account, the investigating Cyber Police officer submits an interim report to the jurisdictional Magistrate Court. Under Section 457 of the CrPC / Bharatiya Nagarik Suraksha Sanhita (BNSS), the court issues a release order directing the holding bank to credit the frozen amount back to your original bank account.
+        </p>
+      </article>
+
+      <!-- FAQ 6: Digital Arrest Scams -->
+      <article class="faq-item-card faq-item" data-cat="GENERAL" data-keywords="digital arrest cbi police skype call parcel customs scam">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q6: What is a "Digital Arrest" and what should I do if I receive such a video call?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          "Digital Arrest" is a complete fraud. Indian police, CBI, Customs, ED, or court judges <strong>never</strong> conduct arrests over Skype or WhatsApp video calls, nor do they ask citizens to stay in front of webcams or transfer money to "security escrow accounts". Immediately hang up and report the caller's number to <strong>1930</strong>.
+        </p>
+      </article>
+
+      <!-- FAQ 7: Volunteer Program -->
+      <article class="faq-item-card faq-item" data-cat="GENERAL" data-keywords="volunteer cytrain mha flagger awareness promoter join">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q7: How can citizens join the National Cyber Crime Volunteer Program?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          Any Indian citizen above 18 years of age can apply as a Cyber Volunteer on our <a href="volunteer.html" style="color:var(--gov-navy); font-weight:700; text-decoration:underline;">Cyber Volunteers Portal</a> to help flag unlawful online content or conduct local digital hygiene awareness workshops in their schools, colleges, and neighborhoods.
+        </p>
+      </article>
+
+      <!-- FAQ 8: Section 65B Evidence -->
+      <article class="faq-item-card faq-item" data-cat="EVIDENCE" data-keywords="section 65b indian evidence act digital electronic record certificate court">
+        <h2 style="font-size:1.0625rem; font-weight:800; color:var(--gov-navy); margin-bottom:0.4rem;">
+          Q8: What is Section 65B of the Indian Evidence Act and why is it needed?
+        </h2>
+        <p style="font-size:0.8125rem; color:var(--text-secondary); line-height:1.55;">
+          Section 65B (and corresponding provisions under Bharatiya Sakshya Adhiniyam) provides statutory admissibility for electronic records such as chat exports, transaction screenshots, and server logs. When you download our digitally stamped Complaint PDF, forensic hash metadata is applied to support legal validity during trial.
+        </p>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-provenance-bar">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <div class="footer-emblem-badge" style="margin-bottom:0;">
+            <img src="public/emblem-dark.png" alt="National Emblem of India" style="height:26px; width:auto;">
+            <img src="public/ic4.png" alt="I4C Logo" style="height:22px; width:auto; border-left:1px solid #CBD5E1; padding-left:0.4rem;">
+          </div>
+          <span>Designed on NIC S3WaaS Framework | Conforms to GIGW 3.0 &amp; UX4G Tokens</span>
+        </div>
+        <div>Indian Cyber Crime Coordination Centre (I4C), MHA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/ccp-config.js"></script>
+  <script src="js/ccp-db.js"></script>
+  <script src="js/ccp-chat.js"></script>
+  <script src="js/ccp-app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('faq-keyword-search');
+      const categoryPills = document.querySelectorAll('.faq-pill');
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      let currentCategory = 'ALL';
+
+      function filterFaqs() {
+        const q = (searchInput?.value || '').trim().toLowerCase();
+
+        faqItems.forEach(item => {
+          const itemCat = item.dataset.cat;
+          const text = item.textContent.toLowerCase();
+          const keywords = item.dataset.keywords || '';
+
+          const matchCat = currentCategory === 'ALL' || itemCat === currentCategory;
+          const matchQuery = !q || text.includes(q) || keywords.includes(q);
+
+          item.style.display = (matchCat && matchQuery) ? '' : 'none';
+        });
+      }
+
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => p.classList.remove('is-active'));
+          pill.classList.add('is-active');
+          currentCategory = pill.dataset.cat;
+          filterFaqs();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterFaqs);
+      }
+    });
+  </script>
+</body>
+</html>
